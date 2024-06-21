@@ -1,0 +1,37 @@
+.link::after
+{
+    position: absolute;
+   width: 0%;
+   height: 2px; 
+   content: '';
+   bottom: 0%;
+   left: 0;
+   background-color: #1e5e98;
+   transition: all ease-in-out .3s ;
+}
+.droped::before
+{
+    position: absolute;
+   width: 0;
+   height: 0; 
+   content: '';
+   bottom: 0;
+   right: -0.75rem;
+   cursor: pointer;
+   border-top: 5px solid #1e5e98;
+   border-left: 5px solid transparent;
+   border-right: 5px solid transparent;
+}
+.link:hover::after{
+   width: 100%;
+}
+#dropdown
+{
+    height: 0;
+    margin-top: -0.5rem;
+    z-index: 10;
+    overflow-y: hidden;
+}
+.cover{
+    background-color: transparent;
+}
