@@ -1,4 +1,4 @@
-<footer class=" w-full flex flex-col fixed  bottom-0 left-0 right-0 h-auto z-40">
+<footer class=" w-full flex flex-col relative">
     <div class=" w-full  flex flex-row gap-5 items-center lg:justify-between lg:px-24 overflow-x-scroll lg:overflow-hidden bg-gradient-to-l from-accent2 to-accent1 px-4 py-3">
         <div class=" w-[9.4rem] h-auto">
             <a href="#" class="w-[9.4rem] h-auto flex flex-col justify-center items-center">
@@ -130,9 +130,9 @@
                 <form action="" class=" w-full flex flex-col gap-2 lg:mt-4 ">
                    <div class=" w-full flex flex-col gap-2 lg:justify-between md:flex-row">
                     <input type="text" placeholder="Votre nom"
-                    class=" text-white bg-[transparent] outline-none border border-accent1 rounded-md px-4 py-2  focus:border-2">
+                    class=" lg:w-1/2 text-white bg-[transparent] outline-none border border-accent1 rounded-md px-4 py-2  focus:border-2">
                     <input type="email" placeholder="Votre E-mail"
-                    class=" text-white bg-[transparent] outline-none border border-accent1 rounded-md px-4 py-2 focus:border-2">
+                    class=" lg:w-1/2 text-white bg-[transparent] outline-none border border-accent1 rounded-md px-4 py-2 focus:border-2">
                    </div>
                     <textarea name="" id="" 
                     class=" lg:w-full md:w-1/2 text-white bg-[transparent] lg:h-[4.2rem] outline-none border border-accent1 rounded-md p-2 focus:border-2">

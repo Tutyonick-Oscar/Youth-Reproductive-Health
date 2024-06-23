@@ -434,17 +434,17 @@
     <section id="events" class=" w-full py-10 px-4">
         <div class=" w-full">
             <div class=" w-full flex flex-col gap-4">
-                <h2 class=" w-40 px-4 py-2 rounded-md bg-gradient-to-l from-accent1 to-accent2 text-white text-xl">
+                <h2 class=" w-40 px-4 py-2 rounded-md bg-gradient-to-l from-accent1 to-accent2 text-white text-lg md:text-xl">
                     <a href="#">Nos Evénements</a>
                 </h2>
-                <div class=" w-full flex justify-between pb-10">
-                    <div class=" w-1/2">
-                        <h1 class=" text-3xl text-bg font-bold">
+                <div class=" w-full flex flex-col md:flex-row gap-4 md:gap-10 lg:gap-24 pb-10">
+                    <div class=" w-full md:w-1/2">
+                        <h1 class=" text-2xl lg:text-3xl text-bg font-bold text-start">
                             Découvrez l'ensemble des événements Youth Reproductive Health
                         </h1>
                     </div>
-                    <div class=" w-1/2">
-                        <p class=" text-bg">
+                    <div class=" w-full md:w-1/2">
+                        <p class=" text-bg text-justify">
                             Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi
                             quasi facere accusantium reiciendis fuga laboriosam nobis maxime 
                             sunt aspernatur rerum.
@@ -452,29 +452,180 @@
                         </p>
                     </div>
                 </div>
-                <div class=" w-full flex justify-between">
-                    <div class=" w-1/2 bg-white shadow-lg rounded-lg flex flex-col gap-4">
+                <div class=" w-full flex flex-col md:flex-row gap-4 md:gap-10 lg:gap-24">
+                    <div class=" w-full md:w-1/2 bg-white shadow-lg rounded-lg flex flex-col gap-4 border-b border-accent1">
                         <img src="{{asset('images/Capture d’écran (134).png')}}" alt="" width="300" height="400"
-                            class="w-full h-[17rem] object-cover rounded-t-lg"
+                            class="w-full h-[15rem] object-cover rounded-t-lg"
                         >
-                        <div class=" w-full px-4 flex flex-col gap-2">
-                            <h2 class=" text-bg font-bold text-xl">
+                        <div class=" w-full px-4 flex flex-col gap-2 pb-4">
+                            <h2 class=" text-bg font-bold text-lg md:text-xl">
                                 Campagne de plaidoyer pour l'accès de femmes, filles et adolescentes
                                 à l'héritage et aux contraceptifs
                             </h2>
-                            <p class=" text-bg text-lg font-medium ">
-                                <span class="border border-accent1 rounded-md p-1 flex">
-                                    <i class="fa-solid fa-arrow-up bg-accent1 text-white rounded-md w-5 h-5 text-center"></i>
-                                </span> 
+                            <p class=" text-bg text-base md:text-lg font-medium flex gap-3 items-center">
+                                <span class=" bg-accent1 rounded-md flex justify-center items-center p-1 h-6 w-6 ">
+                                    <i class="fa-solid fa-arrow-up text-white text-sm border border-white rounded-md p-[3px]"></i>
+                                </span>
                                 statut : <span class=" text-accent1"> A venir</span>
                             </p> 
-                            <p class=" text-bg text-lg font-medium">
+                            <p class=" text-bg text-base md:text-lg font-medium flex gap-3 items-center">
+                                <span class=" bg-accent1 rounded-md flex justify-center items-center p-1 h-6 w-6 ">
+                                    <i class="fa-solid fa-calendar text-white text-sm border border-white rounded-md p-[3px]"></i>
+                                </span>
                                 date : <span class=" text-accent1"> 12/8/2024</span>
                             </p>
                         </div>
+                    </div>
+                    <div class=" w-full md:w-1/2 flex flex-col gap-6">
+                        <div class=" w-full flex flex-col pb-10 bg-white shadow-lg rounded-md">
+                            <div class="rounded-t-md w-full bg-gradient-to-r from-accent1 to-secodary flex items-center px-4 py-3">
+                                <h3 class=" text-white md:text-2xl text-lg ">
+                                    Retour sur les événements passés 
+                                </h3>
+                            </div>
+                            <div class=" w-full flex flex-col gap-3 bg-white shadow-lg">
+                                <div class=" w-full flex justify-between items-center px-4 py-3 border-b border-secodary">
+                                    <h2 class=" text-bg font-bold">
+                                        Appui en produits contraceptifs et formation de prestataires
+                                    </h2>
+                                    <p>
+                                        <a href="#"><i class=" fa-solid fa-arrow-right text-bg text-lg"></i></a>
+                                    </p>
+                                </div>
+                                <div class=" w-full flex justify-between items-center px-4 py-3 border-b border-secodary">
+                                    <h2 class=" text-bg font-bold">
+                                        Formation des femmes leaders sur le protocole de Misoprostol
+                                    </h2>
+                                    <p>
+                                        <a href="#"><i class=" fa-solid fa-arrow-right text-bg text-lg"></i></a>
+                                    </p>
+                                </div>
+                                <div class=" w-full flex justify-between items-center px-4 py-3 border-b border-secodary">
+                                    <h2 class=" text-bg font-bold">
+                                        Atelier de briefing émotionnel et prise en charge personnel aux défenseurs de
+                                         droits sexuels et reproductifs et les prestataires des services
+                                    </h2>
+                                    <p>
+                                        <a href="#"><i class=" fa-solid fa-arrow-right text-bg text-lg"></i></a>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <button class=" self-start border-2 border-accent1 px-1 py-2 rounded-md">
+                            <a href="#" class="w-full h-full bg-accent1 text-white rounded-md px-4 py-2 text-lg ">Tous les événements</a>
+                        </button>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+    <section class=" w-full px-4 py-10">
+        <div class=" w-full flex flex-col gap-4">
+            <h2 class=" w-44 md:w-52 px-4 py-2 rounded-md bg-gradient-to-l from-accent1 to-accent2 text-white text-lg md:text-xl">
+                <a href="#">Nos récents articles</a>
+            </h2>
+            <div class=" w-full flex flex-col md:flex-row gap-4 md:gap-10 lg:gap-24 pb-10">
+                <div class=" w-full md:w-1/2 flex flex-col gap-3">
+                    <h1 class="text-2xl md:text-3xl text-bg font-bold ">
+                        Découvrez nos articles de blog plus récents
+                    </h1>
+                    <p class="hidden md:block w-36 duration-500 ease-in-out hover:bg-accent1 hover:text-white shadow-lg bg-white cursor-pointer text-accent1 font-bold py-2 px-4 border-b-2 border-secodary rounded-lg">
+                        <a href="#">Voir tous les blog</a>
+                    </p>
+                </div>
+                <div class=" w-full md:w-1/2">
+                    <p class=" text-bg">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi
+                        quasi facere accusantium reiciendis fuga laboriosam nobis maxime 
+                        sunt aspernatur rerum.
+                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsam, laboriosam.
+                    </p>
+                </div>
+            </div>
+            <div class=" w-full flex gap-6 flex-col md:flex-row">
+                <div class=" w-full md:w-1/2 lg:w-[32%] h-auto flex flex-col gap-4 border-t border-secodary bg-white shadow-lg px-4 py-6 rounded-md">
+                    <div class=" w-full flex items-center h-[3.5rem]">
+                        <h2 class=" text-bg font-bold text-lg ">
+                            Formation sur les techniques de plaidoyer...
+                        </h2>
+                    </div>
+                    <div class=" w-full h-[10rem]">
+                        <img src="{{asset('images/8.JPG')}}" alt="" width="300" height="400" class=" w-full h-full object-cover rounded-lg">
+                    </div>
+                    <div class=" w-full flex justify-between">
+                        <p class=" flex gap-3 text-[gray] items-center">
+                            <i class="fa-solid fa-calendar text-accent1"></i>
+                            30 Août 2023
+                        </p>
+                        <p class=" text-[gray] flex gap-3 items-center">
+                            <i class="fa-solid fa-doc text-accent1"></i>
+                            formation
+                        </p>
+                    </div>
+                    <div class=" w-full">
+                        <p class="text-[gray] text-sm">
+                            Nous sommes ravis de vous partager les moments inspirants de la formation
+                            passionnante sur les techniques de plaidoyer...
+                        </p>
+                    </div>
+                </div>
+                <p class="md:hidden w-36 duration-500 ease-in-out hover:bg-accent1 hover:text-white shadow-lg bg-white cursor-pointer text-accent1 font-bold py-2 px-4 border-b-2 border-secodary rounded-lg">
+                    <a href="#">Voir tous les blog</a>
+                </p>
+                <div class="hidden  lg:w-[32%] md:w-1/2 h-auto md:flex flex-col gap-4 border-t border-secodary bg-white shadow-lg px-4 py-6 rounded-md">
+                    <div class="  w-full flex items-center h-[3.5rem]">
+                        <h2 class=" text-bg font-bold text-lg">
+                            Création d'une alliance de plaidoyer
+                        </h2>
+                    </div>
+                    <div class=" w-full h-[10rem]">
+                        <img src="{{asset('images/8.JPG')}}" alt="" width="300" height="400" class=" w-full h-full object-cover rounded-lg">
+                    </div>
+                    <div class=" w-full flex justify-between">
+                        <p class=" flex gap-3 text-[gray] items-center">
+                            <i class="fa-solid fa-calendar text-accent1"></i>
+                            24 Août 2023
+                        </p>
+                        <p class=" text-[gray] flex gap-3 items-center">
+                            <i class="fa-solid fa-doc text-accent1"></i>
+                            Networking
+                        </p>
+                    </div>
+                    <div class=" w-full">
+                        <p class="text-[gray] text-sm">
+                            Aujourd'hui, nous sommes ravis de partager avec vous une nouvelle passionnante 
+                            et porteuse d'espoir. Notre organisation a récemment eu le privilège
+                        </p>
+                    </div>
+                </div>
+                <div class=" hidden lg:w-[32%] md:w-12  h-auto lg:flex flex-col gap-4 border-t border-secodary bg-white shadow-lg px-4 py-6 rounded-md">
+                    <div class=" w-full h-[3.5rem] flex items-center">
+                        <h2 class=" text-bg font-bold text-lg">
+                            Atelier de briefing émotionnel et prise en charge...
+                        </h2>
+                    </div>
+                    <div class=" w-full h-[10rem]">
+                        <img src="{{asset('images/8.JPG')}}" alt="" width="300" height="400" class=" w-full h-full object-cover rounded-lg">
+                    </div>
+                    <div class=" w-full flex justify-between">
+                        <p class=" flex gap-3 text-[gray] items-center">
+                            <i class="fa-solid fa-calendar text-accent1"></i>
+                            11 Août 2024
+                        </p>
+                        <p class=" text-[gray] flex gap-3 items-center">
+                            <i class="fa-solid fa-doc text-accent1"></i>
+                            Atelier
+                        </p>
+                    </div>
+                    <div class=" w-full">
+                        <p class="text-[gray] text-sm">
+                            "Restaurer la force et la capacité des défenseurs des droits sexuels et reproductifs 
+                            : un atelier de briefing émotionnel et de prise en charge personnelle
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    @include('layouts.footer')
 @endsection
