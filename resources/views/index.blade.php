@@ -2,47 +2,29 @@
 @section('title', 'Youth Reproductive Health')
 @section('content')
     @include('layouts.nav')
-
-    <div class="relative w-full h-[18rem] lg:h-[27rem] flex mt-16 md:mt-12 lg:mt-40 overflow-y-hidden border-b border-red"> 
-        {{-- <div class=" z-30 absolute bg-red lg:h-[25rem] h-20 w-20 md:w-52 md:m-52 md:right-[30%] right-[35%] lg:w-52 lg:right-[38%]  md:flex"
-            style="clip-path: polygon(0 0, 0% 100%, 100% 100%);"
-        >
-        </div> --}}
-        {{-- <svg class=" lg:w-[50rem] w-[30rem] absolute -right-[6.5rem] md:right-[3rem] lg:right-[10%] rotate-[65deg] top-16 lg:top-40 z-0  lg:rotate-[60deg]"
-        id="wave" style="transition: 0.3s" 
-        viewBox="0 0 1440 490" version="1.1" xmlns="http://www.w3.org/2000/svg">
-        <defs><linearGradient id="sw-gradient-0" x1="0" x2="0" y1="1" y2="0">
-            <stop stop-color="rgba(20, 24, 33, 1)" offset="0%"></stop>
-            <stop stop-color="rgba(20, 24, 33, 1)" offset="100%"></stop>
-        </linearGradient></defs><path style="transform:translate(0, 0px); opacity:1" 
-        fill="url(#sw-gradient-0)" d="M0,343L30,326.7C60,310,120,278,180,220.5C240,163,
-        300,82,360,73.5C420,65,480,131,540,187.8C600,245,660,294,720,277.7C780,261,840,180,
-        900,179.7C960,180,1020,261,1080,294C1140,327,1200,310,1260,277.7C1320,245,1380,196,
-        1440,171.5C1500,147,1560,147,1620,179.7C1680,212,1740,278,1800,294C1860,310,1920,278,
-        1980,261.3C2040,245,2100,245,2160,228.7C2220,212,2280,180,2340,163.3C2400,147,2460,147,
-        2520,122.5C2580,98,2640,49,2700,65.3C2760,82,2820,163,2880,204.2C2940,245,3000,245,3060,
-        277.7C3120,310,3180,376,3240,367.5C3300,359,3360,278,3420,204.2C3480,131,3540,65,3600,
-        73.5C3660,82,3720,163,3780,228.7C3840,294,3900,343,3960,375.7C4020,408,4080,425,4140,
-        392C4200,359,4260,278,4290,236.8L4320,196L4320,490L4290,490C4260,490,4200,490,4140,
-        490C4080,490,4020,490,3960,490C3900,490,3840,490,3780,490C3720,490,3660,490,3600,490C3540,
-        490,3480,490,3420,490C3360,490,3300,490,3240,490C3180,490,3120,490,3060,490C3000,490,2940,
-        490,2880,490C2820,490,2760,490,2700,490C2640,490,2580,490,2520,490C2460,490,2400,490,2340,
-        490C2280,490,2220,490,2160,490C2100,490,2040,490,1980,490C1920,490,1860,490,1800,490C1740,
-        490,1680,490,1620,490C1560,490,1500,490,1440,490C1380,490,1320,490,1260,490C1200,490,1140,
-        490,1080,490C1020,490,960,490,900,490C840,490,780,490,720,490C660,490,600,490,540,490C480,
-        490,420,490,360,490C300,490,240,490,180,490C120,490,60,490,30,490L0,490Z">
-        </path>
-        </svg> --}}
-        <div class="relative w-[55%] lg:w-[100%] h-full  bg-opacity-0 bg-origin-padding">
-            <img src="images/cover.PNG" alt="cover bg forme" width="700" height="500" class=" w-full h-full object-cover cover">
-            <button class="text-accent1 hidden  hover:text-white duration-500 ease-in-out hover:bg-accent1 bg-white top-52 absolute left-5 h-10 w-10 rounded-full lg:flex justify-center items-center">
-                <i class="fa-solid fa-arrow-left"></i>
+    <div
+        style="background-image: url({{asset('images/8.JPG')}})"
+        id="Slidescontainer"  class="bg-blend-darken overflow-hidden  bg-bg bg-opacity-60 relative w-full h-[18rem] lg:h-[30rem] flex mt-16 sm:mt-12  lg:mt-[9.5rem]"> 
+        <div id="rounded2" class=" absolute w-0 h-0 -right-8 -bottom-8 bg-secodary rounded-full p-2">
+            <div class=" w-full h-full border border-white rounded-full">
+                 
+            </div>
+       </div>
+       <div id="rounded1" class=" absolute w-0 h-0 -left-8 -top-5 bg-secodary rounded-full p-2">
+            <div class=" w-full h-full border border-white rounded-full">   
+            </div>
+        </div>
+        <div style="" class="relative  w-[100%] h-full ">
+            <button
+                id="arrowL" class="text-accent1 hidden  hover:text-white duration-500 ease-in-out hover:bg-accent1 bg-white top-52 absolute left-5 h-10 w-10 rounded-full lg:flex justify-center items-center">
+                <i class="fa-solid fa-arrow-left "></i>
             </button>
-            <div class="lg:ml-[4.6rem] z-10 top-0 left-0 bottom-0 w-full h-full pl-4 lg:pl-10 pr-0 flex flex-col  items-center justify-center gap-4 xl:gap-8 lg:gap-4">
-                <h1 class=" text-white text-2xl xl:text-5xl lg:text-4xl lg:pt-10 xl:pt-0 font-medium tracking-wider">
-                    Aider les pauvres femmes à jouir de leurs droits sexuels et reproductifs
+            <div class="lg:ml-[4.6rem] absolute overflow-hidden z-10 top-0 left-0 bottom-0 right-0 w-full h-full pl-4 lg:pl-10 pr-0 flex flex-col  items-center justify-center gap-4 xl:gap-8 lg:gap-4">
+                <h1 
+                    id="title" class="opacity-0 sm:-translate-x-80  text-white text-3xl xl:text-6xl lg:text-5xl  font-semibold tracking-wider">
+                    Aider les pauvres femmes à jouir pleinement de leurs droits sexuels et reproductifs
                 </h1>
-                <p class=" text-white hidden lg:block">
+                <p id="text" class=" text-white hidden md:block opacity-0 translate-y-20">
                     Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptates, ipsa.
                     Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ex, sapiente.
                 </p>
@@ -53,13 +35,14 @@
                     <a href="#" class=" text-white text-xl">Faire un Don </a>
                 </button>
             </div>
+            
         </div>
-        <div class=" lg:w-[60%] w-[45%] h-full ">
-            <button class="text-accent1 hidden lg:flex hover:text-white duration-500 ease-in-out hover:bg-accent1 bg-white top-52 absolute right-5 h-10 w-10 rounded-full justify-center items-center">
-                <i class="fa-solid fa-arrow-right"></i>
-            </button>
-            <img src="images/8.JPG" alt="" height="400" width="300" class=" h-full w-full object-cover">
+        <div class=" lg:w-[60%] md:w-[45%] h-full w-0 ">
         </div>
+        <button 
+            id="arrowR" class="text-accent1 hidden lg:flex hover:text-white duration-500 ease-in-out hover:bg-accent1 bg-white top-52 absolute right-5 h-10 w-10 rounded-full justify-center items-center">
+            <i class="fa-solid fa-arrow-right"></i>
+        </button>
     </div>
     <section id="about" class=" w-full h-auto">
         <div class=" w-full flex flex-col px-4 items-center gap-2 pt-16">
@@ -68,10 +51,10 @@
                     <button class="rounded-md w-[9rem] lg:w-[10rem] bg-gradient-to-l lg:text-lg from-accent1 to-accent2 px-4 py-2 text-white">
                         A propos de nous
                     </button>
-                    <h2 class=" text-bg text-3xl font-semibold lg:text-4xl">
+                    <h2 class="unobserve text-bg text-3xl font-semibold lg:text-4xl">
                         Accompagner les femmes, filles et adolescentes survivantes des violences basées sur les genres
                     </h2>
-                    <p class=" text-[gray] lg:text-lg">
+                    <p class="unobserve text-[gray] lg:text-lg">
                         YOUTH REPRODUCTIVE HEALTH, est une organisation de la société civile, 
                         qui travaille activement dans la partie Est de la République Démocratique 
                         du Congo...
@@ -82,7 +65,7 @@
                     </span>
                 </div>
                 <img src="images/8.JPG" alt="a propos de nous" height="400" width="300" 
-                class=" rounded-md w-full object-cover h-[10rem] md:h-full md:w-1/2 lg:h-[17rem]">
+                class="unobserve rounded-md w-full object-cover h-[10rem] md:h-full md:w-1/2 lg:h-[17rem]">
             </div>
         </div>
     </section>
@@ -92,10 +75,10 @@
                 <button class="rounded-md w-[11rem]  bg-gradient-to-l lg:text-lg from-accent1 to-accent2 px-4 py-2 text-white">
                     Ce que nous faisons
                 </button>
-                <h2 class="text-bg text-3xl font-semibold lg:text-4xl">
+                <h2 class="unobserve text-bg text-3xl font-semibold lg:text-4xl">
                     Promouvoir Le Droit À La Santé Sexuelle Et Reproductive
                 </h2>
-                <p class="text-[gray] lg:text-lg">
+                <p class="unobserve text-[gray] lg:text-lg">
                     Youth Reproductive Health vise à promouvoir les droits et la santé reproductive 
                     des femmes – filles, et des adolescentes, en fournissant une information fiable sur
                     l’éducation sexuelle saine et complète à la communauté,...
@@ -105,11 +88,11 @@
                 </span>
             </div>
             <img src="images/8.JPG" alt="a propos de nous" height="400" width="300" 
-            class="md:pr-6  float-left rounded-md w-full object-cover h-[10rem] md:h-full md:w-1/2 lg:h-[17rem]">
+            class="unobserve md:pr-6  float-left rounded-md w-full object-cover h-[10rem] md:h-full md:w-1/2 lg:h-[17rem]">
         </div>
     </section>
     <section id="what we do suite" class=" w-full flex pt-16 px-4">
-        <div class="relative md:w-[33%] w-full shadow-md px-10 pb-10 flex flex-col gap-3">
+        <div class="lefthidden  boxs relative md:w-[33%] w-full shadow-md px-10 pb-10 flex flex-col gap-3">
             <h2 class=" text-bg text-lg font-semibold">
                 Promouvoir l'égalité entre le sexes
             </h2>
@@ -120,7 +103,7 @@
                 <i class="fa-solid fa-arrow-right"></i>
             </p>
         </div>
-        <div class="relative w-full md:w-[33%] shadow-md px-10 pb-10 hidden md:flex flex-col gap-3">
+        <div class="lefthidden boxs relative w-full md:w-[33%] shadow-md px-10 pb-10 hidden md:flex flex-col gap-3">
             <h2 class=" text-bg text-lg font-semibold">
                 Sante et droits sexuels et reproductifs
             </h2>
@@ -131,7 +114,7 @@
                 <i class="fa-solid fa-arrow-right"></i>
             </p>
         </div>
-        <div class="relative w-full md:w-[33%] shadow-md px-10 pb-10 hidden md:flex flex-col gap-3">
+        <div class="lefthidden boxs relative w-full md:w-[33%] shadow-md px-10 pb-10 hidden md:flex flex-col gap-3">
             <h2 class=" text-bg text-lg font-semibold">
                 Egalité entre les sexes
             </h2>
@@ -145,7 +128,7 @@
     </section>
     <section id="our vision" class=" w-full h-auto flex flex-col lg:flex-row gap-4 pt-16 pb-10 px-4 ">
         <div class="w-full lg:w-1/2 relative ">
-            <div class="w-[70%] lg:w-[80%] h-full "
+            <div class="w-[70%] lg:w-[80%] h-full"
                  style="clip-path: polygon(0 0, 93% 0, 75% 100%, 0% 100%);"
             >
                 <img src="images/Capture d’écran (133).png" alt="our vision images" width="500" height="600"
@@ -160,13 +143,13 @@
         </div>
         <div class="w-full lg:w-1/2 flex flex-col  items-center lg:pl-28 xl:pr-16 xl:pl-32  gap-6 lg:gap-4 ">
             <h2 class=" text-bg text-3xl font-semibold">Notre Vision</h2>
-            <p class=" text-accent1">
+            <p class=" text-accent1 unobserve">
                 Notre vision est de vivre dans une communauté où les femmes, filles 
                 et adolescentes accèdent librement et facilement aux opportunités sociales, 
                 économiques et sanitaires locales, sans restriction, stigmatisation, ni violence
                 sociale.
             </p>
-            <div class=" w-full flex gap-6  flex-wrap">
+            <div class=" w-full flex gap-6  flex-wrap unobserve">
                 <p class=" text-accent1 font-bold text-3xl flex flex-col">
                     +10 
                     <span class=" font-bold text-base text-bg ">Années d'expériences</span>
@@ -191,14 +174,14 @@
                 <button class="  px-4 py-2 text-bg text-lg font-semibold bg-white rounded-md w-40 absolute -top-6">
                     <a href="#">Notre Mission</a>
                 </button>
-                <h2 class=" text-accent1 font-semibold text-xl md:text-2xl">
+                <h2 class="unobserve text-accent1 font-semibold text-xl md:text-2xl">
                     Faciliter l’accès des femmes, filles et adolescentes aux opportunités 
                     sociales et économiques, ainsi qu’aux ressources et services complets de 
                     santé sexuelle et reproductive au sein de leurs communautés
                 </h2>
             </div>
             <div class="w-full lg:w-[40%] md:w-1/2 ">
-                <p class=" text-white">
+                <p class="unobserve text-white">
                     Pour y arriver, nous privilegieons l'autonomisation jurique
                     (renforcement des capacités) afin de mettre le pouvoir et la connaissance
                     de la loi entre les mains des communautés mal desservies, nous menons des
@@ -208,17 +191,17 @@
                 </p>
             </div>
         </div>
-        <div class="w-auto overflow-x-auto md:overflow-x-hidden  md:w-full flex flex-row gap-8 lg:gap-10 md:gap-5">
-            <div class="min-w-[20rem] lg:min-w-[31%] md:min-w-[32%] md:h-[17rem] h-[20rem]">
-                <img src="{{asset('images/WhatsApp Image youth 2.jpg')}}" alt="" height="320" width="400"
+        <div class="w-full flex flex-row gap-8 lg:gap-10 md:gap-5 ">
+            <div class="lefthidden boxs2 w-full  lg:min-w-[31%] md:min-w-[32%] md:h-[17rem] h-[20rem]">
+                <img src="{{asset('images/WhatsApp_Image_youth_3.jpg')}}" alt="" height="320" width="400"
                 class="w-full md:w-full h-full object-cover rounded-md">
             </div>
-            <div class="min-w-[20rem] lg:min-w-[31%] md:min-w-[32%] md:h-[17rem] h-[20rem]">
+            <div class="lefthidden boxs2 w-full hidden md:block lg:min-w-[31%] md:min-w-[32%] md:h-[17rem] h-[20rem]">
                 <img src="{{asset('images/8.JPG')}}" alt="" height="320" width="400"
                 class=" w-full h-full object-cover rounded-md">
             </div>
-            <div class="min-w-[20rem] lg:min-w-[31%] md:min-w-[32%] md:h-[17rem] h-[20rem]">
-                <img src="{{asset('images/WhatsApp Image youth 3.jpg')}}" alt="" height="320" width="400"
+            <div class="lefthidden boxs2 w-full hidden md:block lg:min-w-[31%] md:min-w-[32%] md:h-[17rem] h-[20rem]">
+                <img src="{{asset('images/WhatsApp_Image_youth_2.jpg')}}" alt="" height="320" width="400"
                 class=" w-full h-full object-cover rounded-md">
             </div>
         </div>
@@ -255,7 +238,7 @@
             </div>
         </div>
     </section>
-    <section class=" w-full h-auto px-4 py-10">
+    <section id="team" class=" w-full h-auto px-4 py-10">
         <h2 class=" text-white bg-gradient-to-l from-accent2 to-accent1 rounded-md px-4 py-2 text-xl w-40 mb-10">
             <a href="#">Notre Equipe</a>
         </h2>
@@ -439,12 +422,12 @@
                 </h2>
                 <div class=" w-full flex flex-col md:flex-row gap-4 md:gap-10 lg:gap-24 pb-10">
                     <div class=" w-full md:w-1/2">
-                        <h1 class=" text-2xl lg:text-3xl text-bg font-bold text-start">
+                        <h1 class=" text-2xl lg:text-3xl text-bg font-bold text-start unobserve">
                             Découvrez l'ensemble des événements Youth Reproductive Health
                         </h1>
                     </div>
                     <div class=" w-full md:w-1/2">
-                        <p class=" text-bg text-justify">
+                        <p class=" text-bg text-justify unobserve">
                             Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi
                             quasi facere accusantium reiciendis fuga laboriosam nobis maxime 
                             sunt aspernatur rerum.
@@ -526,7 +509,7 @@
             </h2>
             <div class=" w-full flex flex-col md:flex-row gap-4 md:gap-10 lg:gap-24 pb-10">
                 <div class=" w-full md:w-1/2 flex flex-col gap-3">
-                    <h1 class="text-2xl md:text-3xl text-bg font-bold ">
+                    <h1 class="text-2xl md:text-3xl text-bg font-bold unobserve">
                         Découvrez nos articles de blog plus récents
                     </h1>
                     <p class="hidden md:block w-36 duration-500 ease-in-out hover:bg-accent1 hover:text-white shadow-lg bg-white cursor-pointer text-accent1 font-bold py-2 px-4 border-b-2 border-secodary rounded-lg">
@@ -534,7 +517,7 @@
                     </p>
                 </div>
                 <div class=" w-full md:w-1/2">
-                    <p class=" text-bg">
+                    <p class=" text-bg unobserve">
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi
                         quasi facere accusantium reiciendis fuga laboriosam nobis maxime 
                         sunt aspernatur rerum.
@@ -543,7 +526,7 @@
                 </div>
             </div>
             <div class=" w-full flex gap-6 flex-col md:flex-row">
-                <div class=" w-full md:w-1/2 lg:w-[32%] h-auto flex flex-col gap-4 border-t border-secodary bg-white shadow-lg px-4 py-6 rounded-md">
+                <div class="lefthidden boxs3 w-full md:w-1/2 lg:w-[32%] h-auto flex flex-col gap-4 border-t border-secodary bg-white shadow-lg px-4 py-6 rounded-md">
                     <div class=" w-full flex items-center h-[3.5rem]">
                         <h2 class=" text-bg font-bold text-lg ">
                             Formation sur les techniques de plaidoyer...
@@ -572,7 +555,7 @@
                 <p class="md:hidden w-36 duration-500 ease-in-out hover:bg-accent1 hover:text-white shadow-lg bg-white cursor-pointer text-accent1 font-bold py-2 px-4 border-b-2 border-secodary rounded-lg">
                     <a href="#">Voir tous les blog</a>
                 </p>
-                <div class="hidden  lg:w-[32%] md:w-1/2 h-auto md:flex flex-col gap-4 border-t border-secodary bg-white shadow-lg px-4 py-6 rounded-md">
+                <div class="lefthidden boxs3 hidden  lg:w-[32%] md:w-1/2 h-auto md:flex flex-col gap-4 border-t border-secodary bg-white shadow-lg px-4 py-6 rounded-md">
                     <div class="  w-full flex items-center h-[3.5rem]">
                         <h2 class=" text-bg font-bold text-lg">
                             Création d'une alliance de plaidoyer
@@ -598,7 +581,7 @@
                         </p>
                     </div>
                 </div>
-                <div class=" hidden lg:w-[32%] md:w-12  h-auto lg:flex flex-col gap-4 border-t border-secodary bg-white shadow-lg px-4 py-6 rounded-md">
+                <div class="lefthidden boxs3 hidden lg:w-[32%] md:w-12  h-auto lg:flex flex-col gap-4 border-t border-secodary bg-white shadow-lg px-4 py-6 rounded-md">
                     <div class=" w-full h-[3.5rem] flex items-center">
                         <h2 class=" text-bg font-bold text-lg">
                             Atelier de briefing émotionnel et prise en charge...
@@ -628,4 +611,6 @@
         </div>
     </section>
     @include('layouts.footer')
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <script src="{{asset('js/home.js')}}"></script>
 @endsection
