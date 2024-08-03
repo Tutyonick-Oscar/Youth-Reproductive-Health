@@ -11,3 +11,6 @@ Route::get('/about',function (){
 Route::get('/causes',function (){
     return view('causes');
 });
+Route::get('/blog',function (){
+    return view('blog');
+});

@@ -92,3 +92,22 @@
 
     transition-delay: 400ms;
 }
+
+#tag::after
+{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    border-radius: 6px;
+    width: 0%;
+    height: 100%;
+    z-index: 10;
+    background: linear-gradient(#1e5e98,#0f0c29);
+    content: '';
+    transition: all ease-in-out .5s ;
+}
+#tag:hover::after
+{
+    width: 100%;
+}
