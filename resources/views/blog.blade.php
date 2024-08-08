@@ -255,7 +255,7 @@
                             Campagne
                         </a>
                     </button>
-                    <button id="tag" type="button" class="relative w-autopx-4 py-2 rounded-md border border-[#80808032]">
+                    <button id="tag" type="button" class="relative w-auto px-4 py-2 rounded-md border border-[#80808032]">
                         <a href="#" class="opacity-0">
                             sensibilisation
                         </a>

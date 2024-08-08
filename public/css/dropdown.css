@@ -92,6 +92,8 @@
 
     transition-delay: 400ms;
 }
+  
+/* blogs tags animations */
 
 #tag::after
 {
@@ -110,4 +112,25 @@
 #tag:hover::after
 {
     width: 100%;
+}
+
+/* form input animation */
+
+#name:focus+#label-name
+{
+    top: -0.75rem;
+    padding: 0 0.5rem;
+    color: #141821;
+}
+#email:focus+#label-email
+{
+    top: -0.75rem;
+    padding: 0 0.5rem;
+    color: #141821;
+}
+#content:focus+#label-content
+{
+    top: -0.75rem;
+    padding: 0 0.5rem;
+    color: #141821;
 }
