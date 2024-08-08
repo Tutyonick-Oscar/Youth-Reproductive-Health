@@ -120,17 +120,29 @@
 {
     top: -0.75rem;
     padding: 0 0.5rem;
-    color: #141821;
+    color: #1e5e98
 }
 #email:focus+#label-email
 {
     top: -0.75rem;
     padding: 0 0.5rem;
-    color: #141821;
+    color: #1e5e98
 }
 #content:focus+#label-content
 {
     top: -0.75rem;
     padding: 0 0.5rem;
-    color: #141821;
+    color: #1e5e98
+}
+
+/* contact infos design */
+#contactInfos::before
+{
+    position: absolute;
+    top: 19px;
+    left: 10px;
+    width: 1px;
+    height: 100%;
+    background-color: #1e5e98;
+    content: '';
 }

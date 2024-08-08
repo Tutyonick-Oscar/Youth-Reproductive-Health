@@ -160,6 +160,9 @@
                 <p class=" text-bg text-xl font-semibold">
                     2 Commentaires
                 </p>
+                <p class=" text-bg text-3xl">
+                    Laisser un commentaire
+                </p>
                 <div class="comments w-full flex flex-col gap-4">
                     <div class="user_comment w-auto h-auto flex flex-col gap-1">
                         <div class="w-auto min-w-[15.48rem] h-auto p-2 bg-secodary rounded-md  self-end ">

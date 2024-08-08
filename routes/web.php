@@ -17,3 +17,6 @@ Route::get('/blog',function (){
 Route::get('/blog-detail',function (){
     return view('blog-detail');
 });
+Route::get('/contact',function (){
+    return view('contact');
+});
