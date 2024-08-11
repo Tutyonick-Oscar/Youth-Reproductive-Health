@@ -160,7 +160,7 @@ document.getElementById('arrowR').addEventListener('click',(e)=>{
  * playing animation on phone divices 
  */
 
-if (window.matchMedia('(max-width:768px)').matches) {
+if (window.matchMedia('(max-width:1023px)').matches) {
     setInterval(() => {
         countSlides==slides.length-1?countSlides=0:countSlides++;
         sliding();
@@ -191,3 +191,103 @@ const toleftElementObserver = new IntersectionObserver (entries =>{
 document.querySelectorAll('.lefthidden').forEach(element =>{
     toleftElementObserver.observe(element);
 })
+/**
+ * Team slides
+ */
+
+const members = Array.from(document.querySelectorAll('#member'));
+const left = document.getElementById('left');
+const right = document.getElementById('right');
+let memberCount = 0;
+/**
+ * incrementing the variable memberCount for handling the slide
+ */
+const counting = (direction)=>{
+
+   if (direction === 'left') {
+    memberCount==0?memberCount=members.length-1:memberCount--;
+    return;
+   }
+    memberCount==members.length-1?memberCount=0:memberCount++;
+}
+/**
+ * slides animation
+ */
+const  memberSliding = ( direction )=> {
+
+    members[memberCount].animate([
+        {transform : 'translateX(0)', display : 'flex'}, {transform : 'translateX(-45%)',display : 'none'},
+    ],{
+        duration : 500,
+        fill : 'forwards'
+    })
+
+   counting(direction);
+
+    members[memberCount].animate([
+        {display : 'none', transform : 'translateX(50%)'}, {display : 'flex', transform : 'translateX(0)'},
+    ],{
+        duration : 500,
+        fill : 'forwards',
+        delay : 501
+    })
+   
+}
+left.addEventListener('click',(e)=>{
+    /**
+     * play slide animation
+     */
+    memberSliding ('left');
+})
+right.addEventListener('click',(e)=>{
+    /**
+     * play slide animation
+     */
+    memberSliding ('right');
+})
+
+/**
+ * our vision slides
+ */
+
+let visionElemets = Array.from(document.querySelectorAll('#visionImg'));
+let visionBtn = Array.from(document.querySelectorAll('#visionBtn'));
+
+let visions  = []
+
+visionElemets.map(element =>{
+    visions.push( {
+        button : visionBtn[visionElemets.indexOf(element)],
+        element : element,
+    })
+})
+let vCount = 0;
+
+if (window.matchMedia('(max-width:767px)').matches) {
+    setInterval(() => {
+        visions[vCount].element.animate([
+            {display : 'flex',filter: 'blur(0)', transform: 'translateX(0)'},
+            {display : 'none',filter: 'blur(5px)', transform: 'translateX(-100%)'},
+        ],{
+            duration : 1000,
+            fill : 'forwards',
+    
+        })
+        visions[vCount].button.classList.remove('bg-accent1')
+        visions[vCount].button.classList.add('bg-white')
+    
+        vCount == visions.length-1 ? vCount = 0 : vCount++; 
+    
+        visions[vCount].element.animate([
+            {display : 'none',filter: 'blur(5px)', transform: 'translateX(-100%)'},
+            {display : 'flex',filter: 'blur(0)', transform: 'translateX(0)'}
+        ],{
+            duration : 1000,
+            fill : 'forwards',
+            delay : 980
+        })
+        visions[vCount].button.classList.remove('bg-white')
+        visions[vCount].button.classList.add('bg-accent1')
+    
+    }, 5000);
+}

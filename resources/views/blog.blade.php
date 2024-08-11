@@ -124,7 +124,7 @@
         </div>
         <div class="blogs-specifications w-full lg:w-[35%] flex flex-col gap-6 lg:pt-10 pb-16">
             <div class="search-bar relative  w-full bg-white shadow-xl rounded-md px-6 py-6">
-                <input type="text" name="search" class=" w-full border border-bg rounded-lg pl-4 py-2 pr-10
+                <input type="text" name="search" class=" w-full border border-[gray] rounded-lg pl-4 py-2 pr-10
                 outline-none focus:border-2 text-bg" placeholder="rechercher...">
                 <i class="absolute flex justify-center items-center fa-solid fa-search text-[gray] px-4 border-l border-bg py-2 right-4 top-7"></i>
             </div>
@@ -179,8 +179,10 @@
                             class=" rounded-lg object-cover w-full h-full">
                         </div>
                         <div class=" flex flex-col gap-3">
-                            <h1 class=" text-bg text-xl">
+                            <h1 class=" text-bg text-xl cursor-pointer">
+                               <a href="#">
                                 Création d'une alliance de plaidoyer
+                               </a>
                             </h1>
                             <p class=" flex gap-3 text-[gray] items-center">
                                 <i class="fa-solid fa-calendar text-accent1"></i>
@@ -194,9 +196,11 @@
                             class=" rounded-lg object-cover w-full h-full">
                         </div>
                         <div class=" flex flex-col gap-3">
-                            <h1 class=" text-bg text-xl">
-                                Création d'une alliance de plaidoyer
-                            </h1>
+                            <h1 class=" text-bg text-xl cursor-pointer">
+                                <a href="#">
+                                 Création d'une alliance de plaidoyer
+                                </a>
+                             </h1>
                             <p class=" flex gap-3 text-[gray] items-center">
                                 <i class="fa-solid fa-calendar text-accent1"></i>
                                 30 Août 2023
@@ -209,9 +213,11 @@
                             class=" rounded-lg object-cover w-full h-full">
                         </div>
                         <div class=" flex flex-col gap-3">
-                            <h1 class=" text-bg text-xl">
-                                Création d'une alliance de plaidoyer
-                            </h1>
+                            <h1 class=" text-bg text-xl cursor-pointer">
+                                <a href="#">
+                                 Création d'une alliance de plaidoyer
+                                </a>
+                             </h1>
                             <p class=" flex gap-3 text-[gray] items-center">
                                 <i class="fa-solid fa-calendar text-accent1"></i>
                                 30 Août 2023

@@ -192,24 +192,24 @@
             </div>
         </div>
         <div class="w-full flex flex-row gap-8 lg:gap-10 md:gap-5 ">
-            <div class="lefthidden boxs2 w-full  lg:min-w-[31%] md:min-w-[32%] md:h-[17rem] h-[20rem]">
+            <div id="visionImg" class="lefthidden boxs2 w-full  lg:min-w-[31%] md:min-w-[32%] md:h-[17rem] h-[20rem]">
                 <img src="{{asset('images/WhatsApp_Image_youth_3.jpg')}}" alt="" height="320" width="400"
                 class="w-full md:w-full h-full object-cover rounded-md">
             </div>
-            <div class="lefthidden boxs2 w-full hidden md:block lg:min-w-[31%] md:min-w-[32%] md:h-[17rem] h-[20rem]">
+            <div id="visionImg" class="lefthidden boxs2 w-full hidden md:block lg:min-w-[31%] md:min-w-[32%] md:h-[17rem] h-[20rem]">
                 <img src="{{asset('images/8.JPG')}}" alt="" height="320" width="400"
                 class=" w-full h-full object-cover rounded-md">
             </div>
-            <div class="lefthidden boxs2 w-full hidden md:block lg:min-w-[31%] md:min-w-[32%] md:h-[17rem] h-[20rem]">
+            <div id="visionImg" class="lefthidden boxs2 w-full hidden md:block lg:min-w-[31%] md:min-w-[32%] md:h-[17rem] h-[20rem]">
                 <img src="{{asset('images/WhatsApp_Image_youth_2.jpg')}}" alt="" height="320" width="400"
                 class=" w-full h-full object-cover rounded-md">
             </div>
         </div>
         <div class=" w-full flex justify-center items-center pt-6  flex-col gap-4">
             <div class=" w-full flex gap-4 justify-center items-center lg:hidden">
-                <p class="w-3 h-3 bg-white rounded-full">  </p>
-                <p class="w-3 h-3 bg-white rounded-full">  </p>
-                <p class="w-3 h-3 bg-white rounded-full">  </p>
+                <p id="visionBtn" class="w-3 h-3 bg-accent1 rounded-full">  </p>
+                <p id="visionBtn" class="w-3 h-3 bg-white rounded-full">  </p>
+                <p id="visionBtn" class="w-3 h-3 bg-white rounded-full">  </p>
             </div>
             <p class="text-white text-lg">
                 <a href="#">
@@ -238,11 +238,11 @@
             </div>
         </div>
     </section>
-    <section id="team" class=" w-full h-auto px-4 py-10">
+    <section id="team" class=" w-full h-auto px-4 py-10 overflow-x-hidden">
         <h2 class=" text-white bg-gradient-to-l from-accent2 to-accent1 rounded-md px-4 py-2 text-xl w-40 mb-10">
             <a href="#">Notre Equipe</a>
         </h2>
-        <div class=" w-full flex gap-4 hidden">
+        <div id="member" class=" w-full flex gap-4">
             <div class=" w-full md:w-1/2 bg-white shadow-lg rounded-xl border-l-2 border-accent1 flex flex-col gap-4 p-4 md:p-10">
                 <p class="text-lg">
                     <i class=" text-bg">
@@ -323,7 +323,7 @@
                 </div>
             </div>
         </div>
-        <div class=" w-full flex gap-4">
+        <div id="member" class=" w-full flex gap-4 hidden translate-x-[50%]">
             <div class=" w-full md:w-1/2 bg-white shadow-lg rounded-xl border-l-2 border-accent1 flex flex-col gap-4 p-4 md:p-10">
                 <p class="text-lg">
                     <i class=" text-bg">
@@ -404,10 +404,10 @@
         <div class=" w-full flex justify-center items-center gap-3 my-10">
             <div class=" w-[40%] lg:w-[45%] h-[1px] bg-secodary"></div>
             <div class=" w-[22%] lg:w-[10%] flex gap-2 sm:gap-4 sm:pl-1 md:gap-8 lg:gap-4 xl:gap-10 md:pl-8 lg:pl-3">
-                <p class=" w-8 h-8 rounded-full border border-secodary flex justify-center items-center cursor-pointer">
+                <p id="left" class=" w-8 h-8 rounded-full border border-secodary flex justify-center items-center cursor-pointer">
                     <i class="fa-solid fa-arrow-left text-secodary text-xl"></i>
                 </p>
-                <p class=" w-8 h-8 rounded-full border border-secodary flex justify-center items-center cursor-pointer">
+                <p id="right" class=" w-8 h-8 rounded-full border border-secodary flex justify-center items-center cursor-pointer">
                     <i class="fa-solid fa-arrow-right text-secodary text-xl"></i>
                 </p>
             </div>

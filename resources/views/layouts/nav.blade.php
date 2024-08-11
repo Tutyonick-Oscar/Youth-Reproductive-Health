@@ -171,7 +171,7 @@
             <div class=" xl:w-[65%] w-[83%] h-20 translate-y-3  flex justify-center items-center gap-4 bg-white rounded-tl-lg rounded-tr-lg">
                 <ul class=" w-full flex justify-between items-center px-4 py-2">
                     <li class="link relative uppercase text-bg font-bold transition">
-                        <a  href="#">Acueille</a>
+                        <a  href="#">Accueil</a>
                     </li>
                     <li class="link droped relative uppercase text-bg font-bold ">
                         <a id="link" href="#">A propos</a>
