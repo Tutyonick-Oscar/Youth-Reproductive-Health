@@ -21,7 +21,10 @@ class User extends Authenticatable
         'email',
         'password',
     ];
-
+    public function slides ()
+    {
+        return $this->hasMany(HomeSlide::class);
+    }
     /**
      * The attributes that should be hidden for serialization.
      *

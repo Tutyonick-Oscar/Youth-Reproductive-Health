@@ -1,5 +1,4 @@
 /**
- * {html}
  * geting divs dropdown
  */
 let show = document.querySelectorAll('#show')

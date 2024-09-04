@@ -49,25 +49,25 @@
             </div>
             <div class=" w-full flex gap-2">
                 <p class=" w-10 h-10 lg:w-8 lg:h-8">
-                    <a href=""
+                    <a href="https://www.facebook.com/profile.php?id=100086390902576"
                         class="w-full h-full p-4 lg:p-2 border border-white rounded-full flex justify-center items-center">
                         <i class="fa-brands fa-facebook text-white text-lg lg:text-base "></i>
                     </a>
                 </p>
                 <p class=" w-10 h-10 lg:w-8 lg:h-8">
-                    <a href=""
+                    <a href="https://twitter.com/Y_R_Health"
                         class="w-full h-full p-4 lg:p-2 border border-white rounded-full flex justify-center items-center">
                         <i class="fa-solid fa-x text-white text-lg lg:text-base "></i>
                     </a>
                 </p>
                 <p class=" w-10 h-10 lg:w-8 lg:h-8">
-                    <a href=""
+                    <a href="https://www.instagram.com/youth_rep_health/"
                         class="w-full h-full p-4 lg:p-2 border border-white rounded-full flex justify-center items-center">
                         <i class="fa-brands fa-instagram text-white text-lg lg:text-base "></i>
                     </a>
                 </p>
                 <p class="w-10 h-10 lg:w-8 lg:h-8">
-                    <a href=""
+                    <a href="https://www.youtube.com/channel/UC5wEzJ_duBn6y9mR7gZ2Kaw"
                         class=" w-full h-full p-4 lg:p-2 border border-white rounded-full flex justify-center items-center">
                         <i class="fa-brands fa-youtube text-lg lg:text-base  text-red"></i>
                     </a>
@@ -106,19 +106,19 @@
                 <p class=" text-white text-xl font-medium lg:text-base lg:font-semibold">Entreprise </p>
                 <ul class=" w-full flex flex-col gap-2 lg:mt-4">
                     <li class=" text-white text-lg lg:text-base">
-                        <a href="#">Acueille</a>
+                        <a href="{{route('home')}}">Acueille</a>
                     </li>
                     <li class=" text-white text-lg lg:text-base">
-                        <a href="#">A propos de nous</a>
+                        <a href="{{route('about')}}">A propos de nous</a>
                     </li>
                     <li class=" text-white text-lg lg:text-base">
-                        <a href="#">Causes</a>
+                        <a href="{{route('causes')}}">Causes</a>
                     </li>
                     <li class=" text-white text-lg lg:text-base">
                         <a href="#">Evénements</a>
                     </li>
                     <li class=" text-white text-lg lg:text-base">
-                        <a href="#">Blog</a>
+                        <a href="{{route('blogs')}}">Blog</a>
                     </li>
                     <li class=" text-white text-lg lg:text-base">
                         <a href="#">Galerie</a>

@@ -1,22 +1,19 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('index');
-});
-Route::get('/about',function (){
-    return view('about');
-});
-Route::get('/causes',function (){
-    return view('causes');
-});
-Route::get('/blog',function (){
-    return view('blog');
-});
-Route::get('/blog-detail',function (){
-    return view('blog-detail');
-});
-Route::get('/contact',function (){
-    return view('contact');
-});
+use App\Http\Controllers\AdminViewsController;
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\viewController;
+
+Route::get('/',[ViewController::class,'index'])->name('home');
+Route::get('/about',[ViewController::class,'aboutUs'])->name('about');
+Route::get('/causes',[ViewController::class,'causes'])->name('causes');
+Route::get('/blogs',[ViewController::class,'blogs'])->name('blogs');
+Route::get('/blog/{id}',[ViewController::class,'blogDetail'])->name('blog.detail');
+Route::get('/contact',[ViewController::class,'contact'])->name('contact');
+
+/**
+ * dashboard routes
+ */
+
+Route::get('/adminpanel',[AdminViewsController::class,'welcome'])->name('admin.welcome');

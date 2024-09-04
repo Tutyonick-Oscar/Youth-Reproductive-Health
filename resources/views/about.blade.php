@@ -17,7 +17,7 @@
             </span>
         </div>
     </section>
-    <section class=" w-full h-auto pt-16 px-4 lg:px-8 -mt-1 pb-5">
+    <section id="text" class=" w-full h-auto pt-16 px-4 lg:px-8 -mt-1 pb-5">
         <div class=" w-full px-4 lg:px-8 border-b border-x border-[gray] py-5">
             <p class=" text-[gray] text-justify">
                 YOUTH REPRODUCTIVE HEALTH, est une organisation de la société civile, qui travaille activement dans la partie Est de la République Démocratique du Congo dont l'objectif est de transformer le contexte socioculturel pour contribuer à la promotion de l’égalité entre les sexes et au respect des droits sexuels et reproductifs des femmes, filles et adolescentes opprimés par des normes sociétales rétrogrades. <br>

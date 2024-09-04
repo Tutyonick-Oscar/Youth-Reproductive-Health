@@ -6,7 +6,7 @@
             <h1 class=" text-white text-lg md:hidden">YRHealth</h1>
         </div>
         <div class=" flex gap-2 items-center justify-center">
-            <a href="#" class="text-white text-lg px-3 py-1 rounded-md bg-gradient-to-l from-accent1 to-accent2">
+            <a href="{{route('contact')}}" class="text-white text-lg px-3 py-1 rounded-md bg-gradient-to-l from-accent1 to-accent2">
                 Nous contacter
             </a>
             <p id="menu">
@@ -29,11 +29,11 @@
                 <div class=" flex flex-col gap-4 pt-10 w-full h-auto">
                     <ul class="flex flex-col gap-6  w-full h-auto pl-14">
                         <li class="w-full border-b border-bg">
-                            <a class=" uppercase " href="#">Accueil</a>
+                            <a class=" uppercase " href="{{route('home')}}">Accueil</a>
                         </li>
                         <li class=" w-full flex flex-col gap-1 h-[1.5625rem] overflow-y-hidden border-b border-bg">
                             <div class=" flex justify-between items-center  w-full  pr-5">
-                                <a href="#" class=" uppercase">A propos</a>
+                                <a href="{{route('about')}}" class=" uppercase">A propos</a>
                                 <p class="">
                                     <i id="arrow" data-show="about"
                                         class="fa-solid fa-arrow-right text-accent1 text-xl "></i>
@@ -45,14 +45,14 @@
                                         <a href="#" class=" pl-8">Nos services</a>
                                     </li>
                                     <li class=" w-full border-b border-bg">
-                                        <a href="#" class=" pl-8">Nos volontaires</a>
+                                        <a href="{{route('about')}}/#volontaires" class=" pl-8">Nos volontaires</a>
                                     </li>
                                 </ul>
                             </div>
                         </li>
                         <li class=" w-full flex flex-col gap-1 h-[1.5625rem] overflow-y-hidden border-b border-bg ">
                             <div class=" flex justify-between items-center  w-full pr-5">
-                                <a href="#" class=" uppercase">Causes</a>
+                                <a href="{{route('causes')}}" class=" uppercase">Causes</a>
                                 <p class="">
                                     <i id="arrow" data-show="causes"
                                         class="fa-solid fa-arrow-right text-accent1 text-xl"></i>
@@ -98,7 +98,7 @@
                         </li>
                         <li class=" w-full flex flex-col gap-1 h-[1.5625rem] overflow-y-hidden border-b border-bg">
                             <div class=" flex justify-between items-center  w-full  pr-5">
-                                <a href="#" class=" uppercase">Blog</a>
+                                <a href="{{route('blogs')}}" class=" uppercase">Blog</a>
                                 <p class="">
                                     <i id="arrow" data-show="blog"
                                         class="fa-solid fa-arrow-right text-accent1 text-xl"></i>
@@ -123,7 +123,7 @@
                             <a href="#" class=" uppercase">Gallerie</a>
                         </li>
                         <li class="w-full border-b border-bg">
-                            <a href="#" class=" uppercase">Nous contacter</a>
+                            <a href="{{route('contact')}}" class=" uppercase">Nous contacter</a>
                         </li>
                     </ul>
                 </div>
@@ -141,22 +141,22 @@
             <div class=" w-auto flex gap-4">
                 <p class=" text-white ">Nos media sociaux : </p>
                 <p>
-                    <a href="">
+                    <a href="https://www.facebook.com/profile.php?id=100086390902576">
                         <i class="fa-brands fa-facebook text-white text-base"></i>
                     </a>
                 </p>
                 <p>
-                    <a href="">
+                    <a href="https://twitter.com/Y_R_Health">
                         <i class="fa-solid fa-x text-white text-base"></i>
                     </a>
                 </p>
                 <p>
-                    <a href="">
+                    <a href="https://www.instagram.com/youth_rep_health/">
                         <i class="fa-brands fa-instagram text-white text-base"></i>
                     </a>
                 </p>
                 <p>
-                    <a href="">
+                    <a href="https://www.youtube.com/channel/UC5wEzJ_duBn6y9mR7gZ2Kaw">
                         <i class="fa-brands fa-youtube text-base text-red"></i>
                     </a>
                 </p>
@@ -171,24 +171,24 @@
             <div class=" xl:w-[65%] w-[83%] h-20 translate-y-3  flex justify-center items-center gap-4 bg-white rounded-tl-lg rounded-tr-lg">
                 <ul class=" w-full flex justify-between items-center px-4 py-2">
                     <li class="link relative uppercase text-bg font-bold transition">
-                        <a  href="#">Accueil</a>
+                        <a  href="{{route('home')}}">Accueil</a>
                     </li>
                     <li class="link droped relative uppercase text-bg font-bold ">
-                        <a id="link" href="#">A propos</a>
+                        <a id="link" href="{{route('about')}}">A propos</a>
                         <ul id="dropdown" class="bg-white w-[15rem] h-0 flex flex-col gap-2  shadow-lg lowercase text-lg absolute top-8 pt-2">
                             <li class=" w-full text-bg border-b border-bg py-2 px-4 pt-6">
-                                <a href="#">A propos de nous</a>
+                                <a href="{{route('about')}}/#text">A propos de nous</a>
                             </li>
                             <li class=" w-full text-bg border-b border-bg py-2 px-4">
                                 <a href="#">Nos services</a>
                             </li>
                             <li class=" w-full  py-2 px-4">
-                                <a href="#">Nos volontaires</a>
+                                <a href="{{route('about')}}/#volontaires">Nos volontaires</a>
                             </li>
                         </ul>
                     </li>
                     <li class="link droped relative uppercase text-bg font-bold">
-                        <a id="link" href="#">Causes</a>
+                        <a id="link" href="{{route('causes')}}">Causes</a>
                         <ul id="dropdown" class=" w-[15rem] h-0 flex flex-col gap-2 bg-white shadow-lg lowercase text-lg absolute top-8 pt-2">
                             <li class=" w-full text-bg border-b border-bg py-2 px-4 pt-6">
                                 <a href="#"> promouvoir le droit à la santé sexuelle et reproductive </a>
@@ -211,7 +211,7 @@
                         </ul>
                     </li>
                     <li class="link droped relative uppercase text-bg font-bold">
-                        <a id="link" href="#">Blog</a>
+                        <a id="link" href="{{route('blogs')}}">Blog</a>
                         <ul id="dropdown" class=" w-[15rem] h-0  flex flex-col gap-2 bg-white shadow-lg lowercase text-lg absolute top-8 pt-2">
                             <li class=" w-full text-bg border-b border-bg py-2 px-4 pt-6">
                                 <a href="#"> promouvoir le droit à la santé sexuelle et reproductive </a>
@@ -225,7 +225,7 @@
                         <a href="#">Gallerie</a>
                     </li>
                     <li class=" z-20 text-white text-lg px-4 py-2 rounded-md bg-gradient-to-l from-accent1 to-accent2">
-                        <a href="#">Nous contacter</a>
+                        <a href="{{route('contact')}}">Nous contacter</a>
                     </li>
                 </ul>
             </div>

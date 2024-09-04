@@ -1,0 +1,6 @@
+.md-show
+{
+    width: 10rem;
+    background-color: #141821;
+    transition: all .5s ease-in-out;
+}

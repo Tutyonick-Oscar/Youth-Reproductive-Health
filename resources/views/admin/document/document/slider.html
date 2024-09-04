@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="./st/output.css">
+    <title>Document</title>
+</head>
+<body>
+  <div class="flex-col flex md:flex-row w-full min-h-full   justify-center ">
+    <aside class="w-full md:w-[20%] min-h-full bg-sky-800 ">
+      <div class=" h-[10vh] bg-sky-800 text-white font-bold flex justify-between p-2 capitalize">admin <i class="bi bi-list"></i></div>
+      <div class="min-h-[90vh] hidden md:block"></div>
+  </aside>
+    <!-- barre de navigation -->
+    <div class=" md:w-[80%] min-h-[100vh] bg-slate-100 p-3">
+      <div class="w-full h-[15vh] border-b-2 border-black flex justify-between">
+        <h2 class="text-slate-600 text-[1rem] capitalize">
+          admin
+        </h2>
+        <div class="text-sky-900 capitalize text-[1rem]">
+          log out
+          <i class="bi bi-box-arrow-right"></i>
+        </div>
+      </div>
+      <!---------------- nom de la page ---------------->
+      <div class="flex flex-col pt-1 gap-4 ">
+        <h2 class="capitalize text-slate-500 font-[600] text-[1.5rm] mt-5">
+          home / ours volunters management
+        </h2>
+        <div class="flex flex-col gap-2">
+          <h1 class="text-2xl capitalize text-slate-700">
+            ours volunters management
+          </h1>
+          <!--------------- boutton +add ---------------------------->
+          <div class="w-[50%]   text-white capitalize flex items-center  text-[0.8rem] md:w-[20%] ">
+            <button class="bg-sky-800 p-3">
+              + add our services
+            </button>
+        </div>
+        </div>
+        <!----------- tableau --------------->
+        <div>
+        <div>
+        <div>
+         <div class=" w-full">
+          <!------------ barre de l'input ------------>
+            <div class="w-full h-[10vh] bg-white p-2 flex items-center justify-between">
+                <div class=" flex flex-col  gap-2 text-slate-400 md:flex-row items-center">
+                  <div class=" flex gap-1 px-3 py-1 shadow bg-slate-50">10 <i class="bi bi-check"></i></div>
+                  record per page
+                </div>
+                <!-------- input de recherche ------------>
+                <div class="">
+                  <button>
+                    search
+                  </button>
+                  <input type="text" class="border-2 border-gray-200n rounded">
+                </div>
+            </div>
+            <!-----categories du tableau -->
+             <!-- barre -->
+            <div class="display-grid w-full min-h-[5vh] bg-slate-50 grid grid-cols-4 pl-2 ">
+              <div class="flex gap-2">
+                <div class="flex"><h2 class="font-bold capitalize flex gap-3">si no <i class="bi bi-chevron-down"></i> </h2></div>
+              </div>
+              <div class=" capitalize pl-2 border-l border-slate-300">
+                    image
+              </div>
+              <div class=" capitalize pl-2 border-l border-slate-300">
+                   title 
+              </div>
+              <div class=" capitalize pl-2 border-l border-slate-300">
+                    action
+              </div>
+
+            </div> 
+             <!----------------donnees du tableau (1)------------------> 
+            <div class="w-full ">
+                <div class="display-grid w-full h-[15vh] bg-slate-100  p-1 items-center">
+                  <div>1</div>
+                  <div class="pl-2  "><img src="" alt="" class="size-20 "></div>
+                  <div class="pl-2 capitalize text-slate-400">vous pouvez aider les pauvres femmes</div>
+                    <div class="flex flex-col capitalize md:flex-row pl-2 gap-1 items-center">
+                      <div class="flex gap-3">
+                        <i class="bi bi-pencil-fill bg-slate-300 px-3 py-1 rounded-sm text-[0.8rem]"></i>
+                        <p>edit</p>
+                      </div>
+                      <div class="bg-red-600 flex items-center justify-center rounded  text-white text-[0.8rem] pr-2">
+                         <p class="bg-red-800 px-3 py-1">x</p>
+                        <p>delete</i></p>
+                      </div>
+                </div>
+                </div>
+                <!----------------donnees du tableau (2)------------------> 
+                <div class="display-grid w-full h-[15vh] bg-slate-100  p-1  items-center">
+                  <div>2</div>
+                  <div class="pl-2  "><img src="" alt="" class="size-20 "></div>
+                  <div class="pl-2 capitalize text-slate-400">les pauvres ont besoin de vous</div>
+                  <div class="flex flex-col capitalize md:flex-row pl-2 gap-1 items-center">
+                     <div class="flex gap-3">
+                      <i class="bi bi-pencil-fill bg-slate-300 px-3 py-1 rounded-sm text-[0.8rem]"></i>
+                      <p>edit</p>
+                     </div>
+                     <div class="bg-red-600 flex items-center justify-center rounded  text-white text-[0.8rem] pr-2">
+                        <p class="bg-red-800 px-3 py-1">x</p>
+                       <p>delete</i></p>
+                     </div>
+                  </div>
+                </div>
+                </div>
+            </div>
+                <!----------------donnees du tableau (3)------------------> 
+                <div class="display-grid w-full h-[15vh] bg-slate-100  p-1  items-center">
+                  <div>3</div>
+                  <div class="pl-2  "><img src="" alt="" class="size-20 "></div>
+                  <div class="pl-2 capitalize text-slate-400">aider les pauvres</div>
+                  <div class="flex flex-col capitalize md:flex-row pl-2 gap-1 items-center">
+                     <div class="flex gap-3">
+                      <i class="bi bi-pencil-fill bg-slate-300 px-3 py-1 rounded-sm text-[0.8rem]"></i>
+                      <p> edit</p>
+                     </div>
+                     <div class="bg-red-600 flex items-center justify-center rounded  text-white text-[0.8rem] pr-2">
+                        <p class="bg-red-800 px-3 py-1">x</p>
+                       <p>delete</i></p>
+                     </div>
+                  </div>
+                </div>
+                </div>
+            </div>
+                <!----------------donnees du tableau (4)------------------> 
+                <div class="display-grid w-full h-[15vh] bg-slate-100  p-1  items-center">
+                  <div>4</div>
+                  <div class="pl-2  "><img src="" alt="" class="size-20 "></div>
+                  <div class="pl-2 capitalize text-slate-400">dialogue communautaire</div>
+                  <div class="flex flex-col capitalize md:flex-row pl-2 gap-1 items-center">
+                     <div class="flex gap-3">
+                      <i class="bi bi-pencil-fill bg-slate-300 px-3 py-1 rounded-sm text-[0.8rem]"></i>
+                      <p>edit</p>
+                     </div>
+                     <div class="bg-red-600 flex items-center justify-center rounded  text-white text-[0.8rem] pr-2">
+                        <p class="bg-red-800 px-3 py-1">x</p>
+                       <p>delete</i></p>
+                     </div>
+                  </div>
+                </div>
+                </div>
+            </div>
+            <!-- -----categories du bas du tableau(2)--------- -->
+            <div class="display-grid w-full min-h-[5vh] bg-slate-50 grid grid-cols-4 text-slate-400 ">
+              <div class="flex gap-2 pl-2">
+                <div class="flex"><h2 class=" capitalize flex gap-3">si no </h2></div>
+              </div>
+              <div class=" capitalize pl-2 border-l border-slate-300">
+                    image
+              </div>
+              <div class=" capitalize pl-2 border-l border-slate-300">
+                   title 
+              </div>
+              <div class=" capitalize pl-2 border-l border-slate-300">
+                    action
+              </div>
+
+            </div>
+            <!------------- bas du tableau--------- -->
+            <div class= "w-full h-[6vh] bg-white flex justify-between items-center p-2">
+                <div>showing 1 to 2 of 2 entries </div>
+                <div class="flex">
+                 <i class="bi bi-chevron-left border border-slate-300 px-1"></i>
+                   <p class="bg-sky-800 px-2 text-white">1</p>
+                   <i class="bi bi-chevron-right border border-slate-300 px-1"></i>
+                </div>
+            </div>
+            <div class="w-full h-[10vh] flex items-center">
+              <p>&copy; 2016</p>
+           </div>
+          </div>
+         
+         </div> 
+         
+
+   
+   <script src="app.js"></script>
+</body>
+</html>
