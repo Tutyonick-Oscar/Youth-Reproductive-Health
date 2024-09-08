@@ -4,3 +4,17 @@
     background-color: #141821;
     transition: all .5s ease-in-out;
 }
+.dash-border{
+    border-width: 0.1px;
+    border-color: rgba(128, 128, 128, 0.125);
+}
+.centered{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.x-red{
+    border-width: 0.1px;
+    border-color: crimson;
+    background-color: rgba(220, 20, 60, 0.209);
+}

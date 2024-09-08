@@ -17,6 +17,7 @@
             font-family: "Abel",sans-serif;
             font-style: normal;
         }
+        ::-webkit-scrollbar { width: 0 !important }
     </style>
     <title>@yield('title')</title>
 </head>
