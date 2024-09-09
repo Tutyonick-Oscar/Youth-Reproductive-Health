@@ -1,6 +1,7 @@
 <?php
 
 
+use App\Http\Controllers\admin\AdminLoginController;
 use App\Http\Controllers\AdminViewsController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\viewController;
@@ -16,15 +17,26 @@ Route::get('/contact',[ViewController::class,'contact'])->name('contact');
  * dashboard routes
  */
 
-Route::get('/adminpanel/login',[AdminViewsController::class,'login'])->name('admin.login');
-Route::get('/adminpanel',[AdminViewsController::class,'welcome'])->name('admin.welcome');
-Route::get('/adminpanel/slides',[AdminViewsController::class,'slider'])->name('admin.slider');
-Route::get('/adminpanel/vision',[AdminViewsController::class,'vision'])->name('admin.vision');
-Route::get('/adminpanel/add',[AdminViewsController::class,'addContent'])->name('admin.addContent');
-Route::get('/adminpanel/blogsmanager',[AdminViewsController::class,'blogs'])->name('admin.blogsManager');
-Route::get('/adminpanel/addblog',[AdminViewsController::class,'addBlog'])->name('admin.addblog');
-Route::get('/adminpanel/donations',[AdminViewsController::class,'donations'])->name('admin.donations');
-Route::get('/adminpanel/infocontacts',[AdminViewsController::class,'infocontacts'])->name('admin.infocontacts');
-Route::get('/adminpanel/blogComments',[AdminViewsController::class,'blogComments'])->name('admin.blogComments');
+Route::prefix('adminpanel/login')->group(function () {
+    Route::get('/',[AdminViewsController::class,'login'])->name('login');
+    Route::post('/',[AdminLoginController::class,'login'])->name('logedIn');
+});
+
+Route::middleware('auth')->group(function (){
+    Route::prefix('/adminpanel')->name('admin.')->group( function (){
+        Route::get('/',[AdminViewsController::class,'welcome'])->name('welcome');
+        Route::get('/slides',[AdminViewsController::class,'slider'])->name('slider');
+        Route::get('/set/{page}',[AdminViewsController::class,'setContent'])->name('content');
+        Route::get('/add',[AdminViewsController::class,'addContent'])->name('addContent');
+        Route::get('/blogsmanager',[AdminViewsController::class,'blogs'])->name('blogsManager');
+        Route::get('/addblog',[AdminViewsController::class,'addBlog'])->name('addblog');
+        Route::get('/donations',[AdminViewsController::class,'donations'])->name('donations');
+        Route::get('/infocontacts',[AdminViewsController::class,'infocontacts'])->name('infocontacts');
+        Route::get('/blogComments',[AdminViewsController::class,'blogComments'])->name('blogComments');
+        Route::post('/logout',[AdminLoginController::class,'logout'])->name('logout');
+
+    });
+});
+
 
 

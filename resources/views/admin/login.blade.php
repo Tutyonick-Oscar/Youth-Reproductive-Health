@@ -33,10 +33,10 @@
               >
               <div class="relative flex items-center">
                 <input
-                  name="name"
+                  name="user_name"
                   type="text"
                   required
-                  autofocus autocomplete="name" value="{{old('name')}}"
+                  autofocus autocomplete="user_name" value="{{old('user_name')}}"
                   class="w-full text-sm text-bg border bg-white dash-border outline-none px-4 py-3 rounded-[4px]"
                   placeholder="Enter user name"
                 />
@@ -50,7 +50,7 @@
               >
                 Please enter a username.
               </div>
-              @error('name')
+              @error('user_name')
                   <small class="text-[#fe3a3a] ">
                     {{$message}}
                   </small>

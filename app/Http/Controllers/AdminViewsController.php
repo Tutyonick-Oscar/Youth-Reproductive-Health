@@ -14,7 +14,7 @@ class AdminViewsController extends Controller
     {
         return view('admin.slider');
     }
-    public function vision ()
+    public function setContent ()
     {
         return view('admin.contentsetter');
     }
