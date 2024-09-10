@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\HomeSlide;
 use Illuminate\Http\Request;
 
 class AdminViewsController extends Controller
@@ -10,11 +11,20 @@ class AdminViewsController extends Controller
     {
         return view('admin.welcome');
     }
+    /**
+     * 
+     * slides
+     */
     public function slider ()
     {
-        return view('admin.slider');
+        return view('admin.slider',[
+            'slides'=> HomeSlide::paginate(5)
+        ]);
     }
-    public function setContent ()
+    public function addSlider (){
+        return view ('admin.addSlide');
+    }
+    public function setVision ()
     {
         return view('admin.contentsetter');
     }

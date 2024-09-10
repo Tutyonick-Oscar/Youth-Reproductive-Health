@@ -22,11 +22,16 @@
             GESTIONNAIRE DES SLIDES
         </h1>
         <p class=" rounded-md px-4 py-1 cursor-pointer bg-secodary text-white text-lg w-[7rem]">
-            <a href="#" class=" w-full text-base">
+            <a href="{{route('admin.addSlider')}}" class=" w-full text-base">
                 Ajouter slide
             </a>
         </p>
     </div>
+    @session('success')
+        <p class="fixed right-6 px-4 py-2 rounded-[4px] dash-border text-[gray] bg-[#00800031]">
+            {{session('success')}}
+        </p>
+    @endsession
    </section>
    <section class=" flex flex-col gap-4 px-8 w-full ">
         <div class=" w-full flex justify-between items-center bg-[#fff] py-4 px-4 rounded-sm">
@@ -56,20 +61,23 @@
                 </tr>
             </thead>
             <tbody>
+                @forelse ($slides as $slide)
                 <tr class="h-[2rem]">
-                    <td class="w-10  border-r dash-border h-[4rem] text-center"> ID 3 </td>
-                    <td class="w-[10rem] border-r dash-border  py-2 h-[50px] px-4"> 
-                        <img src="{{asset('images/8.JPG')}}" alt="" width="80" height="50" class="
-                        w-[65%] h-[50px] object-cover img rounded-md">
+                    <td class="w-10  border-r dash-border h-[4rem] text-center"> {{$slide->id}} </td>
+                    <td class="w-[10rem] border-r dash-border  py-2 h-[50px] px-2"> 
+                        <img src="/storage/{{$slide->image}}" alt="" width="80" height="50" class="
+                        w-[90%] h-[50px] object-cover img rounded-md">
                     </td>
-                    <td class="w-[35rem] border-r dash-border text-center "> titre 3 </td>
+                    <td class="w-[35rem] border-r dash-border text-center "> {{$slide->title}} </td>
                     <td class="dash-border px-2">
                         <div class=" flex gap-3 w-full justify-center items-center">
-                            <a href="#" class=" border border-bg rounded-md flex justify-center items-center px-2 py-1 gap-1 text-base text-bg">
+                            <a href="{{route('admin.updateSlide',['id'=>$slide->id])}}" class=" border border-bg rounded-md flex justify-center items-center px-2 py-1 gap-1 text-base text-bg">
                                 <i class="fa-solid fa-pen"></i>
                                 Editer
                              </a>
-                             <form action="" class=" flex items-center">
+                             <form action="{{route('admin.deleteSlide',['id'=>$slide->id])}}" class=" flex items-center" method="POST">
+                                @csrf
+                                @method('delete')
                                 <button type="submit" class=" rounded-md text-base gap-1 text-white bg-red flex justify-center items-center px-2 py-1">
                                     <i class=" fa-solid fa-trash text-base "></i>
                                     Supprimer
@@ -78,50 +86,9 @@
                         </div>
                    </td>
                 </tr>
-                <tr class="h-[2rem]">
-                    <td class="w-10  border-r dash-border h-[4rem] text-center"> ID 3 </td>
-                    <td class="w-[10rem] border-r dash-border  py-2 h-[50px] px-4"> 
-                        <img src="{{asset('images/8.JPG')}}" alt="" width="80" height="50" class="
-                        w-[65%] h-[50px] object-cover img rounded-md">
-                    </td>
-                    <td class="w-[35rem] border-r dash-border text-center "> titre 3 </td>
-                    <td class="dash-border px-2">
-                        <div class=" flex gap-3 w-full justify-center items-center">
-                            <a href="#" class=" border border-bg rounded-md flex justify-center items-center px-2 py-1 gap-1 text-base text-bg">
-                                <i class="fa-solid fa-pen"></i>
-                                Editer
-                             </a>
-                             <form action="" class=" flex items-center">
-                                <button type="submit" class=" rounded-md text-base gap-1 text-white bg-red flex justify-center items-center px-2 py-1">
-                                    <i class=" fa-solid fa-trash text-base "></i>
-                                    Supprimer
-                                </button>
-                             </form>
-                        </div>
-                   </td>
-                </tr>
-                <tr class="h-[2rem]">
-                    <td class="w-10  border-r dash-border h-[4rem] text-center"> ID 3 </td>
-                    <td class="w-[10rem] border-r dash-border  py-2 h-[50px] px-4"> 
-                        <img src="{{asset('images/8.JPG')}}" alt="" width="80" height="50" class="
-                        w-[65%] h-[50px] object-cover img rounded-md">
-                    </td>
-                    <td class="w-[35rem] border-r dash-border text-center "> titre 3 </td>
-                    <td class="dash-border px-2">
-                        <div class=" flex gap-3 w-full justify-center items-center">
-                            <a href="#" class=" border border-bg rounded-md flex justify-center items-center px-2 py-1 gap-1 text-base text-bg">
-                                <i class="fa-solid fa-pen"></i>
-                                Editer
-                             </a>
-                             <form action="" class=" flex items-center">
-                                <button type="submit" class=" rounded-md text-base gap-1 text-white bg-red flex justify-center items-center px-2 py-1">
-                                    <i class=" fa-solid fa-trash text-base "></i>
-                                    Supprimer
-                                </button>
-                             </form>
-                        </div>
-                   </td>
-                </tr>
+                @empty
+                    
+                @endforelse
             </tbody>
         </table>
    </section>
@@ -129,20 +96,20 @@
     <div class=" w-full flex justify-between items-center bg-[#fff] py-4 px-4 rounded-sm">
         <div>
             <p class=" text-bg text-base">
-                1 à 4 résultats sur 4
+                {{$slides->firstItem()}} à {{$slides->lastItem()}} résultats sur {{count($slides)}}
             </p>
         </div>
         <div class=" flex">
             <button class=" px-4 py-1 text-sm text-accent1 rounded-tl-[4px] rounded-bl-[4px] border border-accent1">
-                <a href="#">
+                <a href="{{$slides->previousPageUrl()}}">
                     <
                 </a>
             </button>
             <button class=" px-3 py-1 bg-accent1 text-white">
-                1
+                {{$slides->currentPage()}}
             </button>
             <button  class=" px-4 py-1 text-sm text-accent1 rounded-tr-[4px] rounded-br-[4px] border border-accent1">
-                <a href="#">
+                <a href="{{$slides->nextPageUrl()}}">
                     >
                 </a>
             </button>

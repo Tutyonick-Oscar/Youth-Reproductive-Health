@@ -2,6 +2,7 @@
 
 
 use App\Http\Controllers\admin\AdminLoginController;
+use App\Http\Controllers\admin\DataStoreController;
 use App\Http\Controllers\AdminViewsController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\viewController;
@@ -25,8 +26,19 @@ Route::prefix('adminpanel/login')->group(function () {
 Route::middleware('auth')->group(function (){
     Route::prefix('/adminpanel')->name('admin.')->group( function (){
         Route::get('/',[AdminViewsController::class,'welcome'])->name('welcome');
+        
+        /**
+         * slides
+         */
         Route::get('/slides',[AdminViewsController::class,'slider'])->name('slider');
-        Route::get('/set/{page}',[AdminViewsController::class,'setContent'])->name('content');
+        Route::get('/slides/add',[AdminViewsController::class,'addSlider'])->name('addSlider');
+        Route::post('/slides/store',[DataStoreController::class,'storeSlide'])->name('storeSlide');
+        Route::get('/slides/{id}',[DataStoreController::class,'updateSlide'])->name('updateSlide');
+        Route::put('/slides/{id}',[DataStoreController::class,'updatedSlide'])->name('updatedSlide');
+        Route::delete('/slides/delete/{id}',[DataStoreController::class,'deleteSlide'])->name('deleteSlide');
+        
+
+        Route::get('/set/vision',[AdminViewsController::class,'setVision'])->name('setVision');
         Route::get('/add',[AdminViewsController::class,'addContent'])->name('addContent');
         Route::get('/blogsmanager',[AdminViewsController::class,'blogs'])->name('blogsManager');
         Route::get('/addblog',[AdminViewsController::class,'addBlog'])->name('addblog');
