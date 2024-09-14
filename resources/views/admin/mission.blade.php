@@ -1,6 +1,6 @@
 
 @extends('admin.layouts.header')
-@section('title','Youth Reproductive Health | Vision')
+@section('title','Youth Reproductive Health | Mission')
 @section('content')
 <div class="w-full md:flex h-auto">
   {{-- side bar --}}
@@ -16,11 +16,11 @@
     {{-- starting the main content --}}
     <section class=" flex flex-col gap-4 py-5 px-8">
         <div class=" w-full">
-            <p> Accueil / notre vision </p>
+            <p> Accueil / notre mission </p>
         </div>
         <div class=" flex flex-col gap-6 w-full">
             <h1 class=" text-2xl">
-                NOTRE VISION
+                NOTRE MISSION
             </h1>
         </div>
         @session('success')
@@ -30,8 +30,8 @@
         @endsession
        </section>
        <section class="w-full flex flex-col gap-4 pb-5 px-8">
-        <form id="form" action="{{isset($vision) ? route('admin.updateVision') : route('admin.storeVision')}}" class="w-full flex gap-10 items-center h-auto justify-center" enctype="multipart/form-data" method="POST">
-            @if (isset($vision))
+        <form id="form" action="{{isset($mission) ? route('admin.updateMission') : route('admin.storeMission')}}" class="w-full flex gap-10 items-center h-auto justify-center" enctype="multipart/form-data" method="POST">
+            @if (isset($mission))
                 @method('PUT')
             @endif
             @csrf
@@ -42,7 +42,7 @@
                 <div class="w-full flex flex-col gap-6">
                     <div class=" w-[13rem] h-[10rem] relative">
                         <img id="noimage1" src="
-                        @if (isset($vision))/storage/{{$vision->image1}}
+                        @if (isset($mission))/storage/{{$mission->image1}}
                         @else
                           {{asset('images/noimage.png')}}  
                         @endif" alt="" width="200" height="150"
@@ -59,7 +59,7 @@
                     </div>
                     <div class=" w-[13rem] h-[10rem] relative ">
                         <img id="noimage2" src="
-                        @if (isset($vision))/storage/{{$vision->image2}}
+                        @if (isset($mission))/storage/{{$mission->image2}}
                         @else
                           {{asset('images/noimage.png')}}  
                         @endif"
@@ -84,7 +84,7 @@
             <div class="w-full flex flex-col gap-3 h-[28.8rem] md:pb-10 lg:pb-6">
                 <div class=" w-full flex gap-4 px-4 py-4 rounded-[4px] bg-[#fff] items-center">
                     <label for="title" class="text-bg text-base font-bold">Titre : </label>
-                    <input type="text" name="title" value="{{isset($vision) ? $vision->title : old('title')}}" required class="w-[90%] outline-none duration-300 ease-in-out dash-border rounded-[4px] px-4 py-1 focus:border-accent1">
+                    <input type="text" name="title" value="{{isset($mission) ? $mission->title : old('title')}}" required class="w-[90%] outline-none duration-300 ease-in-out dash-border rounded-[4px] px-4 py-1 focus:border-accent1">
                     @error('title')
                         <small class="text-red">
                             {{$message}}
@@ -100,11 +100,11 @@
                 <small id="error" class="text-red hidden">le contenu ne doit pas être vide !</small>
                 <input type="text" name="content" id="content"  class="hidden">
                 <div id="json" class="json hidden">
-                    {{isset($vision) ? $vision->content : ''}}
+                    {{isset($mission) ? $mission->content : ''}}
                 </div>
                 <div class=" flex gap-4 w-full">
                     <button type="submit" class="w-auto cursor-pointer px-4 py-1 rounded-[4px] bg-accent1 text-white text-base font-semibold">
-                        {{isset($vision) ? 'Mettre à jour' : 'Envoyer'}}
+                        {{isset($mission) ? 'Mettre à jour' : 'Envoyer'}}
                     </button>
                     <button type="button" class="w-auto px-4 py-1 rounded-[4px] dash-border cursor-pointer">
                         Reset

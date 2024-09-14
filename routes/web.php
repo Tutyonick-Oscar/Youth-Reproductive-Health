@@ -1,12 +1,13 @@
 <?php
 
 
-use App\Http\Controllers\admin\AdminLoginController;
-use App\Http\Controllers\admin\DataStoreController;
-use App\Http\Controllers\admin\OurVisionController;
-use App\Http\Controllers\AdminViewsController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\viewController;
+use App\Http\Controllers\MissionController;
+use App\Http\Controllers\AdminViewsController;
+use App\Http\Controllers\admin\DataStoreController;
+use App\Http\Controllers\admin\OurVisionController;
+use App\Http\Controllers\admin\AdminLoginController;
 
 Route::get('/',[ViewController::class,'index'])->name('home');
 Route::get('/about',[ViewController::class,'aboutUs'])->name('about');
@@ -42,10 +43,16 @@ Route::middleware('auth')->group(function (){
          * vision
          */
 
-        Route::get('/set/vision',[AdminViewsController::class,'setVision'])->name('setVision');
-        Route::post('/set/vision',[OurVisionController::class,'store'])->name('storeVision');
-        Route::put('/set/vision',[OurVisionController::class,'update'])->name('updateVision');
+        Route::get('/vision',[AdminViewsController::class,'setVision'])->name('setVision');
+        Route::post('/vision',[OurVisionController::class,'store'])->name('storeVision');
+        Route::put('/vision',[OurVisionController::class,'update'])->name('updateVision');
 
+        /**
+         * Mission
+         */
+        Route::get('/mission',[AdminViewsController::class,'setmission'])->name('setmission');
+        Route::post('/mission',[MissionController::class,'store'])->name('storeMission');
+        Route::put('/mission',[MissionController::class,'update'])->name('updateMission');
 
         Route::get('/add',[AdminViewsController::class,'addContent'])->name('addContent');
         Route::get('/blogsmanager',[AdminViewsController::class,'blogs'])->name('blogsManager');

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Vision;
+use App\Models\Mission;
 use App\Models\HomeSlide;
 use Illuminate\Http\Request;
 use BumpCore\EditorPhp\EditorPhp;
@@ -38,6 +39,21 @@ class AdminViewsController extends Controller
         // //dd($json);
         return view('admin.contentsetter',[
             'vision'=>$vision,
+        ]);
+
+    }
+    public function setmission ()
+    {   
+        $mission = Mission::find(1);
+        if ($mission === null) {
+            return view('admin.mission');
+        }
+        // $editor =  EditorPhp::make($vision->content);
+        // //dd($editor);
+        // $json = $editor->blocks->jsonSerialize();
+        // //dd($json);
+        return view('admin.mission',[
+            'mission'=>$mission,
         ]);
 
     }

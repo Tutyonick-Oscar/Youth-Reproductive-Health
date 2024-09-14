@@ -1,16 +1,15 @@
 <?php
 
-namespace App\Http\Controllers\admin;
+namespace App\Http\Controllers;
 
-use App\Models\Vision;
+use App\Models\Mission;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
-use App\Http\Requests\SetVisionRequest;
+use App\Http\Requests\StoreMissionRequest;
 
-class OurVisionController extends Controller
+class MissionController extends Controller
 {
-    public function store (SetVisionRequest $request)
+    public function store (StoreMissionRequest $request)
     {
         $data  =  $request->validated();
        
@@ -21,15 +20,15 @@ class OurVisionController extends Controller
           $data['image2'] = $request->image2->store('vision','public');
         }
         //dd($data);
-        Vision::create($data);
-        return to_route('admin.setVision')->with('success','vision définit avec succès !');
+        Mission::create($data);
+        return to_route('admin.storeMission')->with('success','mission définit avec succès !');
     }
     public function update (Request $request)
     {
         if (Auth::user()->id !== 1) {
-            return  to_route('admin.setVision')->withErrors(['title'=>'Seuls les supers Admins peuvent mettre à jour la vision']);
+            return  to_route('admin.setMission')->withErrors(['title'=>'Seuls les supers Admins peuvent mettre à jour la mission']);
         }
-        $vision = Vision::find(1);
+        $mission = Mission::find(1);
         $data  =  $request->validate([
             'title'=>['required'],
             'image1' => ['image'],
@@ -42,7 +41,7 @@ class OurVisionController extends Controller
         if ($request->image2 !== null && !$request->image2->getError()){
           $data['image2'] = $request->image2->store('vision','public');
         }
-        $vision->update($data);
-        return to_route('admin.setVision')->with('success','vision mis à jour !');
+        $mission->update($data);
+        return to_route('admin.storeMission')->with('success','mission mis à jour !');
     }
 }
