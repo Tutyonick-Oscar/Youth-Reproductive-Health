@@ -25,7 +25,7 @@
           <p class="lg:flex text md:hidden list-name md:opacity-0 lg:opacity-[1]">Dashboard</p>
         </a>
         <a
-          href="#"
+          href="{{route('admin.slider')}}"
           class="hover:bg-blue-600 py-2 md:h-[30px]  flex items-center gap-4 nav-item border-b-[0.2px] border-secodary"
         >
           <p class="md:ml-4 " id="list">

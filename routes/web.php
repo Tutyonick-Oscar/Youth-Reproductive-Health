@@ -3,6 +3,7 @@
 
 use App\Http\Controllers\admin\AdminLoginController;
 use App\Http\Controllers\admin\DataStoreController;
+use App\Http\Controllers\admin\OurVisionController;
 use App\Http\Controllers\AdminViewsController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\viewController;
@@ -37,8 +38,15 @@ Route::middleware('auth')->group(function (){
         Route::put('/slides/{id}',[DataStoreController::class,'updatedSlide'])->name('updatedSlide');
         Route::delete('/slides/delete/{id}',[DataStoreController::class,'deleteSlide'])->name('deleteSlide');
         
+        /**
+         * vision
+         */
 
         Route::get('/set/vision',[AdminViewsController::class,'setVision'])->name('setVision');
+        Route::post('/set/vision',[OurVisionController::class,'store'])->name('storeVision');
+        Route::put('/set/vision',[OurVisionController::class,'update'])->name('updateVision');
+
+
         Route::get('/add',[AdminViewsController::class,'addContent'])->name('addContent');
         Route::get('/blogsmanager',[AdminViewsController::class,'blogs'])->name('blogsManager');
         Route::get('/addblog',[AdminViewsController::class,'addBlog'])->name('addblog');

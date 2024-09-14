@@ -1,3 +1,9 @@
+let jsonData =''
+try {
+  jsonData = document.getElementById('json').innerText
+} catch (error) {
+  console.log(error.message);
+}
 const editor = new EditorJS(
   {
     holder: 'editorjs',
@@ -8,7 +14,7 @@ const editor = new EditorJS(
         config: {
           placeholder: 'Titres',
           levels: [1, 2, 3],
-          defaultLevel: 2,
+          defaultLevel: 1,
           
         },
         inlineToolbar : true 
@@ -24,6 +30,7 @@ const editor = new EditorJS(
     },
     placeholder : 'Ecrire le texte ici !',
     autofocus : true ,
+    data : jsonData.trim().length === 0 ? {} : JSON.parse(jsonData)
   },
   
 );
@@ -35,56 +42,70 @@ const editor = new EditorJS(
   .catch((reason) => {
     console.log(`Editor.js initialization failed because of ${reason}`)
   });
-
-const tagInput = document.getElementById('tags')
-/**
- * array of all tags
- *@type HTMLParagraphElement[]
- */
-let tags = []
-/**
- * array of all x buttons used to remove tags
- *@type HTMLElement[]
- */
-let xTags = []
-
-const tagsDiv = document.getElementById('tagsDiv');
-
-tagInput.addEventListener('input',(e)=>{
-  if (e.data == ',') {
-    let tag = document.createElement('p')
-    tag.setAttribute('id','taged')
-    tag.setAttribute('class','relative whitespace-nowrap  px-4 py-1 dash-border rounded-xl')
-    let value = e.currentTarget.value.split(',').join('');
-    tag.innerHTML = value;
-    //add x button
-    let removetag = document.createElement('i')
-    removetag.setAttribute('class','fa-solid fa-x absolute text-[10px] rounded-full text-bg -top-2 -right-1 p-1 x-red cursor-pointer')
-    tag.appendChild(removetag);
-    tagsDiv.insertBefore(tag,e.currentTarget);
-    tags.push(tag);
-    xTags.push(removetag)
-    //reinitialize input
-    e.currentTarget.value = '',
-    e.currentTarget.focus();
-  }
   
-})
-tagsDiv.addEventListener('click',e=>{
-  xTags.forEach(x =>{
-    if (e.target == x) {
-      tags.splice(tags.indexOf(x.parentNode),1)
-      tagsDiv.removeChild(x.parentNode)
-    }
-  })
-})
-savedTags = []
+/**
+ * fetching the vision store route 
+ */
+// async function postVision (data) {
+//   const response = await fetch('http://127.0.0.1:8000/adminpanel/set/vision',{
+//     method : 'POST',
+//     headers : {
+//       'Accept' : 'application/json',
+//       'Content-Type' : 'application/json',
+//       'X-CSRF-TOKEN' : document.head.querySelector('meta[name="csrf-token"]').content
+//     },
+//     body : JSON.stringify({
+//       title : data.title,
+//       content : data.content
+//     })
+//   })
+//   if (response.ok) {
+//     return response.json()
+//   }
+//   //throw new Error("impossible de contacter le serveur...");
+// }
+/**
+ * storing images
+ */
+// const images = {}
+// const inputImgFiles = Array.from(document.querySelectorAll('.img_store'))
+
+// inputImgFiles.forEach(inputImgFile =>{
+//   inputImgFile.addEventListener('change',(e)=>{
+//     let data = new FormData()
+//     data.append(`image${inputImgFiles.indexOf(inputImgFile)+1}`,inputImgFile.files[0])
+//     const response = fetch('http://127.0.0.1:8000/adminpanel/set/vision',{
+//       method : 'POST',
+//       headers : {
+//         'Content-Type' : 'multipart/form-data',
+//         'X-CSRF-TOKEN' : document.head.querySelector('meta[name="csrf-token"]').content
+//       },
+//       body : data
+//     }).then(response => console.log(response.text())).catch(reason =>  console.log(reason))
+//   })
+// })
+
 const form = document.getElementById('form')
 form.addEventListener('submit',(e)=>{
-  e.preventDefault()
-  tags.forEach(tag => {
-    savedTags.push(tag.innerText);
-  })
-  console.log(savedTags.join(','));
-})
+  editor.save()
+    .then(datas =>{
+      if (datas.blocks.length == 0) {
+        e.preventDefault();
+        document.getElementById('error').classList.remove('hidden')
+      }else{
+        // const visionInfos = {
+        //   title : document.getElementById('title'),
+        //   content : datas.blocks
+        // }
+        // postVision(visionInfos)
+        //   .then(response =>{console.log(response);})
+        //   .catch(reason =>{console.log(`failed to post vision cause :  ${reason.message}`);})
 
+        document.getElementById('error').classList.add('hidden')
+        document.getElementById('content').value = JSON.stringify(datas);
+      }
+    })
+    .catch(reason =>{
+      console.log('saving failed because of '+reason);
+    })
+})

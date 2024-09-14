@@ -1,7 +1,9 @@
-const preview = document.getElementById('noimage');
-const imageInput = document.getElementById('image');
 
-const previewPhoto = () => {
+
+const previewPhoto = (id = '') => {
+    const preview = document.getElementById(`noimage${id}`);
+    const imageInput = document.getElementById(`image${id}`);
+    
     const file = imageInput.files;
     if (file) {
         const fileReader = new FileReader();

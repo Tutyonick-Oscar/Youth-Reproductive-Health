@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Vision;
 use App\Models\HomeSlide;
 use Illuminate\Http\Request;
+use BumpCore\EditorPhp\EditorPhp;
 
 class AdminViewsController extends Controller
 {
@@ -25,8 +27,19 @@ class AdminViewsController extends Controller
         return view ('admin.addSlide');
     }
     public function setVision ()
-    {
-        return view('admin.contentsetter');
+    {   
+        $vision = Vision::find(1);
+        if ($vision === null) {
+            return view('admin.contentsetter');
+        }
+        // $editor =  EditorPhp::make($vision->content);
+        // //dd($editor);
+        // $json = $editor->blocks->jsonSerialize();
+        // //dd($json);
+        return view('admin.contentsetter',[
+            'vision'=>$vision,
+        ]);
+
     }
     public function addContent ()
     {
