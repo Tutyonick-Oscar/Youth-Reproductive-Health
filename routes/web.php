@@ -3,6 +3,7 @@
 
 use App\Http\Controllers\AboutUsController;
 use App\Http\Controllers\CauseContoller;
+use App\Http\Controllers\TeamController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\viewController;
 use App\Http\Controllers\MissionController;
@@ -68,9 +69,18 @@ Route::middleware('auth')->group(function (){
         Route::get('/causes',[CauseContoller::class, 'show'])->name('causes');
         Route::get('/causes/add',[CauseContoller::class, 'add'])->name('addCauses');
         Route::post('/causes/add',[CauseContoller::class, 'store'])->name('storeCauses');
-        Route::get('/causes/{id}',[CauseContoller::class, 'getCauses'])->name('getCauses');
-        Route::put('/causes/{id}',[CauseContoller::class, 'update'])->name('updateCauses');
-        Route::delete('/causes/{id}',[CauseContoller::class, 'delete'])->name('deleteCauses');
+        Route::get('/cause/{id}',[CauseContoller::class, 'getCauses'])->name('getCauses');
+        Route::put('/cause/{id}',[CauseContoller::class, 'update'])->name('updateCauses');
+        Route::delete('/cause/{id}',[CauseContoller::class, 'delete'])->name('deleteCauses');
+        /**
+         * Team Members
+         */
+        Route::get('/team-members',[TeamController::class, 'show'])->name('members');
+        Route::get('/team-members/add',[TeamController::class, 'add'])->name('addMember');
+        Route::post('/team-members/add',[TeamController::class, 'store'])->name('storeMember');
+        Route::get('team-member/{id}',[TeamController::class, 'getMember'])->name('getMember');
+        Route::put('/team/-member{id}',[TeamController::class, 'update'])->name('updateMember');
+        Route::delete('/team-member/{id}',[TeamController::class, 'delete'])->name('deleteMember');
 
         Route::get('/add',[AdminViewsController::class,'addContent'])->name('addContent');
         Route::get('/blogsmanager',[AdminViewsController::class,'blogs'])->name('blogsManager');
