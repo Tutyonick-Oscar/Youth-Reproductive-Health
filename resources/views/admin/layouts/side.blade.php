@@ -16,7 +16,7 @@
       </div>
       <nav class="space-y-2 element md:block hidden">
         <a
-          href="#"
+          href="{{route('admin.welcome')}}"
           class="hover:bg-blue-600  py-2  flex items-center gap-4 nav-item border-b-[0.2px] border-secodary"
         >
           <p class="md:ml-4 " id="list">
@@ -34,7 +34,7 @@
           <p class=" lg:flex text md:hidden list-name md:opacity-0 lg:opacity-[1]">Home Slider</p>
         </a>
         <a
-          href="#"
+          href="{{route('admin.setMission')}}"
           class="hover:bg-blue-600 py-2  flex items-center gap-4 nav-item border-b-[0.2px] border-secodary"
         >
           <p class="md:ml-4 " id="list">
@@ -43,7 +43,7 @@
           <p class=" lg:flex text md:hidden list-name md:opacity-0 lg:opacity-[1]">Notre mission</p>
         </a>
         <a
-          href="#"
+          href="{{route('admin.setVision')}}"
           class="hover:bg-blue-600 py-2  flex items-center gap-4 nav-item border-b-[0.2px] border-secodary"
         >
           <p class="md:ml-4 " id="list">
@@ -52,7 +52,7 @@
           <p class="lg:flex text md:hidden list-name md:opacity-0 lg:opacity-[1]">Notre vision</p>
         </a>
         <a
-          href="#"
+          href="{{route('admin.about')}}"
           class="hover:bg-blue-600 py-2  flex items-center gap-4 nav-item border-b-[0.2px] border-secodary"
         >
           <p class="md:ml-4 " id="list">
@@ -61,7 +61,7 @@
           <p class="lg:flex text md:hidden list-name md:opacity-0 lg:opacity-[1]">A propos de nous</p>
         </a>
         <a
-          href="#"
+          href="{{route('admin.causes')}}"
           class="hover:bg-blue-600 py-2  flex items-center gap-4 nav-item border-b-[0.2px] border-secodary"
         >
           <p class="md:ml-4 " id="list">

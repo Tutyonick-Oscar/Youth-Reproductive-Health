@@ -1,6 +1,8 @@
 <?php
 
 
+use App\Http\Controllers\AboutUsController;
+use App\Http\Controllers\CauseContoller;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\viewController;
 use App\Http\Controllers\MissionController;
@@ -50,9 +52,25 @@ Route::middleware('auth')->group(function (){
         /**
          * Mission
          */
-        Route::get('/mission',[AdminViewsController::class,'setmission'])->name('setmission');
+        Route::get('/mission',[AdminViewsController::class,'setmission'])->name('setMission');
         Route::post('/mission',[MissionController::class,'store'])->name('storeMission');
         Route::put('/mission',[MissionController::class,'update'])->name('updateMission');
+        
+        /**
+         * About us
+         */
+        Route::get('/aboutus',[AboutUsController::class, 'show'])->name('about');
+        Route::post('/aboutus',[AboutUsController::class, 'store'])->name('storeAbout');
+        Route::put('/aboutus',[AboutUsController::class, 'update'])->name('updateAbout');
+        /**
+         * Causes
+         */
+        Route::get('/causes',[CauseContoller::class, 'show'])->name('causes');
+        Route::get('/causes/add',[CauseContoller::class, 'add'])->name('addCauses');
+        Route::post('/causes/add',[CauseContoller::class, 'store'])->name('storeCauses');
+        Route::get('/causes/{id}',[CauseContoller::class, 'getCauses'])->name('getCauses');
+        Route::put('/causes/{id}',[CauseContoller::class, 'update'])->name('updateCauses');
+        Route::delete('/causes/{id}',[CauseContoller::class, 'delete'])->name('deleteCauses');
 
         Route::get('/add',[AdminViewsController::class,'addContent'])->name('addContent');
         Route::get('/blogsmanager',[AdminViewsController::class,'blogs'])->name('blogsManager');
