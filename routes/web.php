@@ -1,6 +1,7 @@
 <?php
 
 
+use App\Http\Controllers\ContactController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\CauseContoller;
@@ -18,7 +19,9 @@ Route::get('/about',[ViewController::class,'aboutUs'])->name('about');
 Route::get('/causes',[ViewController::class,'causes'])->name('causes');
 Route::get('/blogs',[ViewController::class,'blogs'])->name('blogs');
 Route::get('/blog/{id}',[ViewController::class,'blogDetail'])->name('blog.detail');
-Route::get('/contact',[ViewController::class,'contact'])->name('contact');
+Route::get('/contact',action: [ViewController::class,'contact'])->name('contact');
+Route::post('/contact',[ContactController::class,'toContact'])->name('toContact');
+
 
 /**
  * dashboard routes
@@ -95,9 +98,13 @@ Route::middleware('auth')->group(function (){
         Route::delete('/blog/{id}',[BlogController::class,'delete'])->name('deleteBlog');
         Route::get('/blog/{id}',[BlogController::class,'getBlog'])->name('getBlog');
 
-        
+        /**
+         * Contacts : 
+         */
+        Route::get('/infocontacts',[ContactController::class,'infocontacts'])->name('infocontacts');
+        Route::delete('/infocontacts/{id}',[ContactController::class,'deleteContacts'])->name('deleteContacts');
+
         Route::get('/donations',[AdminViewsController::class,'donations'])->name('donations');
-        Route::get('/infocontacts',[AdminViewsController::class,'infocontacts'])->name('infocontacts');
         Route::get('/blogComments',[AdminViewsController::class,'blogComments'])->name('blogComments');
         Route::post('/logout',[AdminLoginController::class,'logout'])->name('logout');
 

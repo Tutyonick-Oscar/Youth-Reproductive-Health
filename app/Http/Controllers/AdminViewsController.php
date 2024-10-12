@@ -80,10 +80,7 @@ class AdminViewsController extends Controller
     {
         return view ('admin.donations');
     }
-    public function infocontacts ()
-    {
-        return view('admin.infoContacts');
-    }
+   
     public function blogComments ()
     {
         return view('admin.comments');

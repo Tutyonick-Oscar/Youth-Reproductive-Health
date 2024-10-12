@@ -8,13 +8,7 @@
     <!-- Main content -->
     <div class="w-full flex flex-col">
       <div class="flex flex-col px-6">
-        <div class="w-full flex justify-between items-center mt-4">
-          <p class="text-secodary">Admin</p>
-          <div class="md:flex items-center gap-2 text-secodary hidden">
-            <p>Log Out</p>
-            <i class="fa-solid fa-arrow-right"></i>
-          </div>
-        </div>
+        @include('admin.layouts.logout')
         <div class="w-full border-b-2 border-b-bg mt-8"></div>
       </div>
     </div>
@@ -28,6 +22,11 @@
             GESTIONNAIRE DES CONTACTS
         </h1>
     </div>
+    @session('success')
+        <p class="fixed right-6 px-4 py-2 rounded-[4px] dash-border text-[gray] bg-[#00800031]">
+            {{session('success')}}
+        </p>
+    @endsession
    </section>
    <section class=" flex flex-col gap-4 px-8 w-full ">
         <div class=" w-full flex justify-between items-center bg-[#fff] py-4 px-4 rounded-sm">
@@ -59,21 +58,24 @@
                 </tr>
             </thead>
             <tbody>
+                @forelse ($contacts as $contact)
                 <tr class="h-[2rem]">
-                    <td class="w-[8%]  border-r dash-border h-[4rem] text-center"> ID 3 </td>
+                    <td class="w-[8%]  border-r dash-border h-[4rem] text-center"> {{$contact->id}} </td>
                     <td class="w-[16%] border-r dash-border  py-2  px-4"> 
-                        Tutyonick
+                        {{$contact->contactname}}
                     </td>
                     <td class="w-[16%] border-r dash-border text-center "> 
-                        Tutyonickoscar367@gmail.com 
+                        {{$contact->contactemail}}
                     </td>
                     <td class="w-[50%] border-r dash-border text-center "> 
-                        Tutyonickoscar367@gmail.com's Message klk chose
+                        {{$contact->contactmessage}}
                     </td>
-                    <td class="w-[10%] border-r dash-border text-center "> 8 Aug 2023 </td>
+                    <td class="w-[10%] border-r dash-border text-center "> {{$contact->created_at->format('M, d-Y')}} </td>
                     <td class="dash-border px-2">
                         <div class=" flex gap-3 w-full justify-center items-center">
-                             <form action="" class=" flex items-center">
+                             <form action="{{route('admin.deleteContacts',['id' => $contact->id])}}" method="POST" class=" flex items-center">
+                                @csrf
+                                @method('DELETE')
                                 <button type="submit" class=" rounded-md text-base gap-1 text-white bg-red flex justify-center items-center px-2 py-1">
                                     <i class=" fa-solid fa-trash text-base "></i>
                                     Supprimer
@@ -82,6 +84,13 @@
                         </div>
                    </td>
                 </tr>
+                @empty
+                    <tr class="">
+                        <td class="pl-20 whitespace-nowrap py-4 ">
+                            Aucun contact pour le moment
+                        </td>
+                    </tr>
+                @endforelse
             </tbody>
         </table>
    </section>
@@ -89,23 +98,23 @@
     <div class=" w-full flex justify-between items-center bg-[#fff] py-4 px-4 rounded-sm">
         <div>
             <p class=" text-bg text-base">
-                1 à 4 résultats sur 4
+                {{$contacts->firstItem()}} à {{$contacts->lastItem()}} résultats sur {{count($contacts)}}
             </p>
         </div>
         <div class=" flex">
             <button class=" px-4 py-1 text-sm text-accent1 rounded-tl-[4px] rounded-bl-[4px] border border-accent1">
-                <a href="#">
+                <a href="{{$contacts->previousPageUrl()}}">
                     <
                 </a>
             </button>
             <button class=" px-3 py-1 bg-accent1 text-white">
-                1
+                {{$contacts->currentPage()}}
             </button>
             <button  class=" px-4 py-1 text-sm text-accent1 rounded-tr-[4px] rounded-br-[4px] border border-accent1">
-                <a href="#">
+                <a href="{{$contacts->nextPageUrl()}}">
                     >
                 </a>
-            </button>
+            </button
         </div>
     </div>
    </section>

@@ -114,24 +114,24 @@
                 </p>
             </div>
             <div class=" w-full">
-                <form action="" method="POST" class=" w-full flex flex-col gap-6 pt-5">
+                <form action="{{route('toContact')}}" method="POST" class=" w-full flex flex-col gap-6 pt-5">
                     @csrf
                     <div class=" w-full flex flex-col gap-6 md:flex-row">
                         <div class="relative w-full flex flex-col gap-3">
-                            <input required type="text" name="name" id="name" class="bg-[transparent] duration-500 ease-in-out text-white px-4 py-2 outline-none border border-accent1 rounded-md w-full focus:border-2"
-                            autocomplete="name" value="{{old('name')}} ">
+                            <input required type="text" name="contactname" id="name" class="bg-[transparent] duration-500 ease-in-out text-white px-4 py-2 outline-none border border-accent1 rounded-md w-full focus:border-2"
+                            autocomplete="contactname" value="{{old('contactname')}} ">
                             <label for="name" id="label-name" class="text-[gray] duration-500 ease-in-out bg-secodary w-auto absolute top-2 px-0 left-4">votre nom</label>
-                            @error('name')
+                            @error('contactname')
                                 <small class=" text-red">
                                     {{$message}}
                                 </small>
                             @enderror
                         </div>
                         <div class="relative w-full">
-                            <input required type="email" name="email" id="email" class="bg-[transparent] duration-500 ease-in-out text-white px-4 py-2 outline-none border border-accent1 rounded-md w-full focus:border-2"
-                            autocomplete="email" value="{{old('email')}}">
+                            <input required type="email" name="contactemail" id="email" class="bg-[transparent] duration-500 ease-in-out text-white px-4 py-2 outline-none border border-accent1 rounded-md w-full focus:border-2"
+                            autocomplete="contactemail" value="{{old('contactemail')}}">
                             <label for="email" id="label-email" class="text-[gray] duration-500 ease-in-out bg-secodary w-auto absolute top-2 left-4">votre E-mail</label>
-                            @error('email')
+                            @error('contactemail')
                                 <small class=" text-red">
                                     {{$message}}
                                 </small>
@@ -139,11 +139,11 @@
                         </div>
                     </div>
                     <div class="relative w-full">
-                        <textarea name="content" id="content" class="bg-[transparent] duration-500 ease-in-out text-left text-white px-4 py-4 outline-none border border-accent1 rounded-md w-full focus:border-2" 
-                        autocomplete="content" rows="3">
+                        <textarea name="contactmessage" id="content" class="bg-[transparent] duration-500 ease-in-out text-left text-white px-4 py-4 outline-none border border-accent1 rounded-md w-full focus:border-2" 
+                        autocomplete="contactmessage" rows="3">
                         </textarea>
                         <label for="content" id="label-content" class="text-[gray] duration-500 ease-in-out bg-secodary w-auto absolute top-2 left-4">votre message</label>
-                        @error('content')
+                        @error('contactmessage')
                             <small class=" text-red">
                                 {{$message}}
                             </small>

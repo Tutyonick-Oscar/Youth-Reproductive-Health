@@ -127,17 +127,37 @@
             </div>
             <div class=" w-full lg:w-[40%] flex flex-col gap-3">
                 <p class=" text-white text-xl font-medium lg:text-base lg:font-semibold">Nous Ecrire</p>
-                <form action="" class=" w-full flex flex-col gap-2 lg:mt-4 ">
+                <form action="{{route('toContact')}}" class=" w-full flex flex-col gap-2 lg:mt-4 ">
+                    @csrf
                    <div class=" w-full flex flex-col gap-2 lg:justify-between md:flex-row">
-                    <input type="text" placeholder="Votre nom"
-                    class=" lg:w-1/2 text-white bg-[transparent] outline-none border border-accent1 rounded-md px-4 py-2  focus:border-2">
-                    <input type="email" placeholder="Votre E-mail"
-                    class=" lg:w-1/2 text-white bg-[transparent] outline-none border border-accent1 rounded-md px-4 py-2 focus:border-2">
-                   </div>
-                    <textarea name="" id="" 
+                        <div class=" w-full md:w-1/2">
+                            <input type="text" placeholder="Votre nom" name="contactname"
+                            class=" lg:w-full text-white bg-[transparent] outline-none border border-accent1 rounded-md px-4 py-2  focus:border-2">
+                            @error('contactname')
+                                <small class=" text-red">
+                                    {{$message}}
+                                </small>
+                            @enderror
+                        </div>
+                        <div class=" w-full md:w-1/2">
+                            <input type="email" placeholder="Votre E-mail" name="contactemail"
+                            class=" lg:w-full text-white bg-[transparent] outline-none border border-accent1 rounded-md px-4 py-2 focus:border-2">
+                            @error('contactemail')
+                                <small class=" text-red">
+                                    {{$message}}
+                                </small>
+                            @enderror
+                        </div>
+                    </div>
+                    <textarea name="contactmessage" id="" 
                     class=" lg:w-full md:w-1/2 text-white bg-[transparent] lg:h-[4.2rem] outline-none border border-accent1 rounded-md p-2 focus:border-2">
 
                     </textarea>
+                    @error('contactmessage')
+                        <small class=" text-red">
+                            {{$message}}
+                        </small>
+                    @enderror
                     <input type="submit" value="Envoyer"
                     class="md:w-1/2 lg:w-full cursor-pointer px-3 py-2 bg-gradient-to-l from-accent1 rounded-md to-accent2 text-white text-lg">
                 </form>
