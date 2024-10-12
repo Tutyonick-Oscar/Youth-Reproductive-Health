@@ -41,13 +41,13 @@ tagsDiv.addEventListener('click',e=>{
   })
 })
 savedTags = []
-const form = document.getElementById('form')
-form.addEventListener('submit',(e)=>{
-  e.preventDefault()
+const formular = document.getElementById('form')
+formular.addEventListener('submit',(e)=>{
+  //e.preventDefault()
   tags.forEach(tag => {
     savedTags.push(tag.innerText);
   })
-  console.log(savedTags.join(','));
+  tagInput.value = savedTags.join(',')
 })
 
 

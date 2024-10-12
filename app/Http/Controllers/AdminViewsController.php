@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use Carbon\Carbon;
+use App\Models\Blog;
 use App\Models\Vision;
 use App\Models\Mission;
 use App\Models\HomeSlide;
@@ -63,11 +65,16 @@ class AdminViewsController extends Controller
     }
     public function blogs ()
     {
-        return view ('admin.blogsManager');
+        return view ('admin.blogsManager',[
+            'blogs' => Blog::paginate(5),
+            'carbon' =>Carbon::class
+            ]);
     }
     public function addBlog ()
     {
-        return view('admin.addBlog');
+        return view('admin.addBlog',[
+            'currentDate' => Carbon::now()->format('m-d-Y')
+        ]);
     }
     public function donations ()
     {

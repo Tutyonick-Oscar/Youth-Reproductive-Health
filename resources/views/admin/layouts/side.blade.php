@@ -1,4 +1,4 @@
-<div class="bg-bg w-full md:w-[9%] lg:w-[20%] items-center text-white px-4 border-r border-blue-600 navbar relative">
+<div class="bg-bg !w-full md:!w-[9%] lg:!w-[20%] items-center text-white px-4 border-r border-blue-600 navbar relative">
     <!-- Sidebar content -->
     <div class="text-white md:py-6 py-2">
       <div class="mb-4 items-center flex justify-between pr-5">
@@ -119,7 +119,7 @@
               </div>
         </div>
         <a
-          href="#"
+          href="{{route('admin.blogsManager')}}"
           class="hover:bg-blue-600 py-2  flex items-center gap-4 nav-item border-b-[0.2px] border-secodary"
         >
           <p class="md:ml-4 " id="list">
