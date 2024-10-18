@@ -18,7 +18,7 @@ class ContactController extends Controller
         $data = $request->validate([
             'contactname' => ['required'],
             'contactemail' => ['required', 'email'],
-            'contactmessage' => ['required']
+            'contactmessage' => ['required','min:10']
         ]);
         Contact::create($data);
         return to_route('contact')->with(['success' => 'votre message a bien été envoyé']);

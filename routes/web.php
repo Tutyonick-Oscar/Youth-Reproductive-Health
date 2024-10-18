@@ -14,6 +14,8 @@ use App\Http\Controllers\admin\DataStoreController;
 use App\Http\Controllers\admin\OurVisionController;
 use App\Http\Controllers\admin\AdminLoginController;
 
+#Route::get('/createuser',[ViewController::class,'createuser']);
+
 Route::get('/',[ViewController::class,'index'])->name('home');
 Route::get('/about',[ViewController::class,'aboutUs'])->name('about');
 Route::get('/causes',[ViewController::class,'causes'])->name('causes');

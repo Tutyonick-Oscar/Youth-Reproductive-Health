@@ -1,136 +1,142 @@
-<footer class=" w-full flex flex-col relative">
-    <div class=" w-full  flex flex-row gap-5 items-center lg:justify-between lg:px-24 overflow-x-scroll lg:overflow-hidden bg-gradient-to-l from-accent2 to-accent1 px-4 py-3">
+<footer class="relative flex flex-col w-full ">
+    <div class="flex flex-row items-center w-full gap-5 px-4 py-3 overflow-x-scroll lg:justify-between lg:px-24 lg:overflow-hidden bg-gradient-to-l from-accent2 to-accent1">
         <div class=" w-[9.4rem] h-auto">
             <a href="#" class="w-[9.4rem] h-auto flex flex-col justify-center items-center">
                 <img src="images/logoAM.jpg" alt="Logo patterner" width="100" height="100"
-                    class="w-24 h-24 lg:w-16 lg:h-16 object-cover rounded-full">
-                <h2 class=" text-white text-xl font-semibold">Action Miséricorde</h2>
-                <p class=" text-white text-sm text-center">les droits humains des femmes</p>
+                    class="object-cover w-24 h-24 rounded-full lg:w-16 lg:h-16">
+                <h2 class="text-xl font-semibold text-white ">Action Miséricorde</h2>
+                <p class="text-sm text-center text-white ">les droits humains des femmes</p>
             </a>
         </div>
         <div class=" w-[9.4rem] h-auto">
             <a href="#" class="flex flex-col justify-center items-center w-[9.4rem] h-auto">
                 <img src="images/youth.jpg" alt="Logo patterner" width="100" height="100"
-                    class="w-24 h-24 lg:w-16 lg:h-16 object-cover rounded-full">
-                <h2 class=" text-white text-xl font-semibold text-center">Youth Reproductive</h2>
-                <p class=" text-white text-sm text-center">droits sexuels et reproductifs</p>
+                    class="object-cover w-24 h-24 rounded-full lg:w-16 lg:h-16">
+                <h2 class="text-xl font-semibold text-center text-white ">Youth Reproductive</h2>
+                <p class="text-sm text-center text-white ">droits sexuels et reproductifs</p>
             </a>
         </div>
         <div class=" w-[9.4rem] h-auto">
             <a href="#" class=" flex flex-col justify-center items-center w-[9.4rem] h-auto">
                 <img src="images/youth.jpg" alt="Logo patterner" width="100" height="100"
-                    class="w-24 h-24 lg:w-16 lg:h-16 object-cover rounded-full">
-                <h2 class=" text-white text-xl font-semibold text-center">Youth Reproductive</h2>
-                <p class=" text-white text-sm text-center">droits sexuels et reproductifs</p>
+                    class="object-cover w-24 h-24 rounded-full lg:w-16 lg:h-16">
+                <h2 class="text-xl font-semibold text-center text-white ">Youth Reproductive</h2>
+                <p class="text-sm text-center text-white ">droits sexuels et reproductifs</p>
             </a>
         </div>
         <div class=" w-[9.4rem] h-auto">
             <a href="#" class=" flex flex-col justify-center items-center w-[9.4rem] h-auto">
                 <img src="images/youth.jpg" alt="Logo patterner" width="100" height="100"
-                    class="w-24 h-24 lg:w-16 lg:h-16 object-cover rounded-full">
-                <h2 class=" text-white text-xl font-semibold text-center">Youth Reproductive</h2>
-                <p class=" text-white text-sm text-center">droits sexuels et reproductifs</p>
+                    class="object-cover w-24 h-24 rounded-full lg:w-16 lg:h-16">
+                <h2 class="text-xl font-semibold text-center text-white ">Youth Reproductive</h2>
+                <p class="text-sm text-center text-white ">droits sexuels et reproductifs</p>
             </a>
         </div>
     </div>
-    <div class=" w-full  bg-bg bg-blend-darken pb-16 lg:pt-10 flex flex-col lg:flex-row gap-5 lg:gap-10 px-4 lg:px-10 pt-3">
+    <div class="flex flex-col w-full gap-5 px-4 pt-3 pb-16 bg-bg bg-blend-darken lg:pt-10 lg:flex-row lg:gap-10 lg:px-10">
         <div class=" w-full lg:w-[20%] h-auto flex flex-col bg-secodary rounded-md p-4 gap-4">
-            <div class=" w-full flex gap-2 items-center">
+            <div class="flex items-center w-full gap-2 ">
                 <img src="images/youth.jpg" alt="logo Youth" width="50" height="50"
-                    class=" w-10 h-10 lg:w-8 lg:h-8 object-cover rounded-md">
-                <p class=" text-white text-xl font-medium lg:text-base lg:font-semibold">Youth Reproductive Health</p>
+                    class="object-cover w-10 h-10 rounded-md lg:w-8 lg:h-8">
+                <p class="text-xl font-medium text-white lg:text-base lg:font-semibold">Youth Reproductive Health</p>
             </div>
-            <div class=" w-full">
-                <p class=" text-white lg:text-sm">
+            <div class="w-full ">
+                <p class="text-white lg:text-sm">
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum
                     consequatur iure officia assumenda ipsa neque obcaecati delectus
                     consequuntur sequi tenetur!
                 </p>
             </div>
-            <div class=" w-full flex gap-2">
-                <p class=" w-10 h-10 lg:w-8 lg:h-8">
+            <div class="flex w-full gap-2 ">
+                <p class="w-10 h-10 lg:w-8 lg:h-8">
                     <a href="https://www.facebook.com/profile.php?id=100086390902576"
-                        class="w-full h-full p-4 lg:p-2 border border-white rounded-full flex justify-center items-center">
-                        <i class="fa-brands fa-facebook text-white text-lg lg:text-base "></i>
+                        class="flex items-center justify-center w-full h-full p-4 border border-white rounded-full lg:p-2">
+                        <i class="text-lg text-white fa-brands fa-facebook lg:text-base "></i>
                     </a>
                 </p>
-                <p class=" w-10 h-10 lg:w-8 lg:h-8">
+                <p class="w-10 h-10 lg:w-8 lg:h-8">
                     <a href="https://twitter.com/Y_R_Health"
-                        class="w-full h-full p-4 lg:p-2 border border-white rounded-full flex justify-center items-center">
-                        <i class="fa-solid fa-x text-white text-lg lg:text-base "></i>
+                        class="flex items-center justify-center w-full h-full p-4 border border-white rounded-full lg:p-2">
+                        <i class="text-lg text-white fa-solid fa-x lg:text-base "></i>
                     </a>
                 </p>
-                <p class=" w-10 h-10 lg:w-8 lg:h-8">
+                <p class="w-10 h-10 lg:w-8 lg:h-8">
                     <a href="https://www.instagram.com/youth_rep_health/"
-                        class="w-full h-full p-4 lg:p-2 border border-white rounded-full flex justify-center items-center">
-                        <i class="fa-brands fa-instagram text-white text-lg lg:text-base "></i>
+                        class="flex items-center justify-center w-full h-full p-4 border border-white rounded-full lg:p-2">
+                        <i class="text-lg text-white fa-brands fa-instagram lg:text-base "></i>
                     </a>
                 </p>
                 <p class="w-10 h-10 lg:w-8 lg:h-8">
                     <a href="https://www.youtube.com/channel/UC5wEzJ_duBn6y9mR7gZ2Kaw"
-                        class=" w-full h-full p-4 lg:p-2 border border-white rounded-full flex justify-center items-center">
-                        <i class="fa-brands fa-youtube text-lg lg:text-base  text-red"></i>
+                        class="flex items-center justify-center w-full h-full p-4 border border-white rounded-full lg:p-2">
+                        <i class="text-lg fa-brands fa-youtube lg:text-base text-red"></i>
                     </a>
                 </p>
             </div>
         </div>
         <div class=" w-full lg:w-[80%] flex flex-col lg:flex-row gap-4 border-b lg:justify-between border-white pb-5">
             <div class=" w-full lg:w-[30%] flex flex-col gap-3 lg:gap-5">
-                <p class=" text-white text-xl font-medium lg:text-base lg:font-semibold">Info de contact</p>
-                <p class=" w-full flex gap-3 items-center lg:mt-4">
-                    <span class="bg-white rounded-full p-3 lg:p-2 flex justify-center items-center">
-                        <i class=" fa-solid fa-location text-accent1 text-2xl lg:text-xl "></i>
+                <p class="text-xl font-medium text-white lg:text-base lg:font-semibold">Info de contact</p>
+                <p class="flex items-center w-full gap-3 lg:mt-4">
+                    <span class="flex items-center justify-center p-3 bg-white rounded-full lg:p-2">
+                        <i class="text-2xl fa-solid fa-location text-accent1 lg:text-xl"></i>
                     </span>
-                    <span class=" text-white lg:text-sm">
+                    <span class="text-white lg:text-sm">
                         Sud-Kivu/DRC <br> Uvira Nyamianda Rue n12
                     </span>
                 </p>
-                <p class=" w-full flex gap-3 items-center">
-                    <span class="bg-white rounded-full p-3 lg:p-2 flex justify-center items-center">
-                        <i class=" fa-solid fa-envelope text-accent1 text-2xl lg:text-xl "></i>
+                <p class="flex items-center w-full gap-3 ">
+                    <span class="flex items-center justify-center p-3 bg-white rounded-full lg:p-2">
+                        <i class="text-2xl fa-solid fa-envelope text-accent1 lg:text-xl"></i>
                     </span>
-                    <span class=" text-white lg:text-sm">
+                    <span class="text-white lg:text-sm">
                         info@youthreproductiveheakth.org <br> +243 993 881 612
                     </span>
                 </p>
-                <p class=" w-full flex gap-3 items-center">
-                    <span class="bg-white rounded-full p-3 lg:p-2 flex justify-center items-center">
-                        <i class=" fa-solid fa-phone text-accent1 text-2xl lg:text-xl "></i>
+                <p class="flex items-center w-full gap-3 ">
+                    <span class="flex items-center justify-center p-3 bg-white rounded-full lg:p-2">
+                        <i class="text-2xl fa-solid fa-phone text-accent1 lg:text-xl"></i>
                     </span>
-                    <span class=" text-white lg:text-sm">
+                    <span class="text-white lg:text-sm">
                         Lundi - Vendredi / 8h - 16H <br> fermé : Samedi - dimanche
                     </span>
                 </p>
             </div>
             <div class=" w-full lg:w-[30%] flex flex-col gap-3 ">
-                <p class=" text-white text-xl font-medium lg:text-base lg:font-semibold">Entreprise </p>
-                <ul class=" w-full flex flex-col gap-2 lg:mt-4">
-                    <li class=" text-white text-lg lg:text-base">
+                <p class="text-xl font-medium text-white lg:text-base lg:font-semibold">Entreprise </p>
+                <ul class="flex flex-col w-full gap-2 lg:mt-4">
+                    <li class="text-lg text-white lg:text-base">
                         <a href="{{route('home')}}">Acueille</a>
                     </li>
-                    <li class=" text-white text-lg lg:text-base">
+                    <li class="text-lg text-white lg:text-base">
                         <a href="{{route('about')}}">A propos de nous</a>
                     </li>
-                    <li class=" text-white text-lg lg:text-base">
+                    <li class="text-lg text-white lg:text-base">
                         <a href="{{route('causes')}}">Causes</a>
                     </li>
-                    <li class=" text-white text-lg lg:text-base">
+                    <li class="text-lg text-white lg:text-base">
                         <a href="#">Evénements</a>
                     </li>
-                    <li class=" text-white text-lg lg:text-base">
+                    <li class="text-lg text-white lg:text-base">
                         <a href="{{route('blogs')}}">Blog</a>
                     </li>
-                    <li class=" text-white text-lg lg:text-base">
+                    <li class="text-lg text-white lg:text-base">
                         <a href="#">Galerie</a>
                     </li>
                 </ul>
             </div>
-            <div class=" w-full lg:w-[40%] flex flex-col gap-3">
-                <p class=" text-white text-xl font-medium lg:text-base lg:font-semibold">Nous Ecrire</p>
-                <form action="{{route('toContact')}}" class=" w-full flex flex-col gap-2 lg:mt-4 ">
+            <div class=" w-full lg:w-[40%] flex flex-col gap-3 relative">
+                <small id="contact_sent" class="absolute top-0 right-4 bg-[#00800051] rounded-[4px] px-4 py-2 text-sm text-white hidden">
+                    message envoye
+                </small>
+                <small id="contact_sent_error" class="absolute hidden top-0 right-4 bg-red rounded-[4px] px-4 py-2 text-sm text-white">
+                    une erreur est survenue !
+                </small>
+                <p class="text-xl font-medium text-white lg:text-base lg:font-semibold">Nous Ecrire</p>
+                <form id="footer_form" action="{{route('toContact')}}" class="flex flex-col w-full gap-2 lg:mt-4" method="POST">
                     @csrf
-                   <div class=" w-full flex flex-col gap-2 lg:justify-between md:flex-row">
-                        <div class=" w-full md:w-1/2">
+                   <div class="flex flex-col w-full gap-2 lg:justify-between md:flex-row">
+                        <div class="w-full md:w-1/2">
                             <input type="text" placeholder="Votre nom" name="contactname"
                             class=" lg:w-full text-white bg-[transparent] outline-none border border-accent1 rounded-md px-4 py-2  focus:border-2">
                             @error('contactname')
@@ -139,7 +145,7 @@
                                 </small>
                             @enderror
                         </div>
-                        <div class=" w-full md:w-1/2">
+                        <div class="w-full md:w-1/2">
                             <input type="email" placeholder="Votre E-mail" name="contactemail"
                             class=" lg:w-full text-white bg-[transparent] outline-none border border-accent1 rounded-md px-4 py-2 focus:border-2">
                             @error('contactemail')
@@ -159,16 +165,16 @@
                         </small>
                     @enderror
                     <input type="submit" value="Envoyer"
-                    class="md:w-1/2 lg:w-full cursor-pointer px-3 py-2 bg-gradient-to-l from-accent1 rounded-md to-accent2 text-white text-lg">
+                    class="px-3 py-2 text-lg text-white rounded-md cursor-pointer md:w-1/2 lg:w-full bg-gradient-to-l from-accent1 to-accent2">
                 </form>
             </div>
         </div>
-        <div class=" absolute bottom-5 right-1 justify-center  flex gap-3 items-center">
-            <p class=" text-white text-sm">
+        <div class="absolute flex items-center justify-center gap-3 bottom-5 right-1">
+            <p class="text-sm text-white ">
                 copyright 2024 youth reproductive health
             </p>
-            <p class="self-end flex justify-center items-center w-10 h-10 bg-accent1 text-white p-3 rounded-full">
-                <i class=" fa-solid fa-arrow-up text-lg text-center"></i>
+            <p class="flex items-center self-end justify-center w-10 h-10 p-3 text-white rounded-full bg-accent1">
+                <i class="text-lg text-center fa-solid fa-arrow-up"></i>
             </p>
         </div>
     </div>
