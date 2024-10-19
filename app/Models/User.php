@@ -30,6 +30,10 @@ class User extends Authenticatable
     {
         return $this->hasMany(Blog::class);
     }
+    public function events () : HasMany
+    {
+        return $this->hasMany(Event::class);
+    }
     /**
      * The attributes that should be hidden for serialization.
      *

@@ -2,6 +2,7 @@
 
 
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\EventController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\CauseContoller;
@@ -99,6 +100,18 @@ Route::middleware('auth')->group(function (){
         Route::put('/blog/{id}',[BlogController::class,'update'])->name('updateBlog');
         Route::delete('/blog/{id}',[BlogController::class,'delete'])->name('deleteBlog');
         Route::get('/blog/{id}',[BlogController::class,'getBlog'])->name('getBlog');
+
+        /**
+         * Events
+         */
+        Route::get('/events/{status}',[EventController::class,'getEvents'])->name('getEvents');
+        Route::get('/addevent',[EventController::class,'addEvent'])->name('addEvent');
+        Route::post('/addevent',[EventController::class,'store'])->name('createEvent');
+        Route::get('/event/{id}',[EventController::class,'getEvent'])->name('getEvent');
+        Route::put('/blog/{id}',[EventController::class,'update'])->name('updateEvent');
+        Route::delete('/blog/{id}',[EventController::class,'delete'])->name('deleteEvent');
+
+
 
         /**
          * Contacts : 

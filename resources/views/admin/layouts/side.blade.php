@@ -99,7 +99,7 @@
               </p>
               <div class="flex flex-col pl-10 md:pl-4 lg:pl-10">
                   <a
-                  href="#"
+                  href="{{route('admin.getEvents',['status'=>'past'])}}"
                   class="hover:bg-blue-600 py-2 md-show flex items-center gap-4 nav-item border-b-[0.2px] border-secodary"
                   >
                       <p id="list" class="cursor-pointer ">
@@ -108,7 +108,7 @@
                       <p class="lg:flex text md:hidden list-name md:opacity-0 lg:opacity-[1]">Evénements passés</p>
                   </a>
                   <a
-                  href="#"
+                  href="{{route('admin.getEvents',['status'=>'upcoming'])}}"
                   class="hover:bg-blue-600 py-2 md-show flex items-center gap-4 nav-item border-b-[0.2px] border-secodary"
                   >
                       <p id="list" class="cursor-pointer ">
