@@ -5,6 +5,11 @@ namespace App\Http\Controllers;
 use App\Models\Blog;
 use Auth;
 use Illuminate\Http\Request;
+use BumpCore\EditorPhp\Blocks\Header;
+use BumpCore\EditorPhp\Blocks\Image;
+use BumpCore\EditorPhp\Blocks\ListBlock;
+use BumpCore\EditorPhp\Blocks\Paragraph;
+use BumpCore\EditorPhp\EditorPhp;
 
 class BlogController extends Controller
 {
@@ -57,5 +62,44 @@ class BlogController extends Controller
         $blog =  Blog::find($id);
         $blog->delete();
         return to_route('admin.blogsManager')->with('success','blog supprimé !');
+    }
+
+    public function typeOfBlog ( string $type )
+    {
+        EditorPhp::useTailwind();
+
+        EditorPhp::register([
+            'image' =>Image::class,
+            'paragraph' => Paragraph::class,
+            'header' => Header::class,
+            'list'=>ListBlock::class,
+        ]);
+        $blogs = Blog::where('type',$type)->orderBy('created_at','desc')->paginate(3);
+        return view('blog',[
+            'blogs' => $blogs,
+            'editorphp'=> EditorPhp::class,
+            'allblogs'=> Blog::all(),
+            'recentBlogs'=>Blog::where('created_at','>',$blogs[0]->created_at)->orderBy('created_at','desc')->limit(3)->get(),
+
+        ]);
+    }
+    public function blogDetail (int $id) 
+
+    {
+        EditorPhp::useTailwind();
+
+        EditorPhp::register([
+            'image' =>Image::class,
+            'paragraph' => Paragraph::class,
+            'header' => Header::class,
+            'list'=>ListBlock::class,
+        ]);
+        $blog = Blog::find($id);
+        return view('blog-detail',[
+            'blog'=> $blog,
+            'blogs'=>Blog::orderBy('created_at','desc')->get(),
+            'editorphp'=> EditorPhp::class,
+            'recentBlogs'=>Blog::where('created_at','>',$blog->created_at)->orderBy('created_at','desc')->limit(3)->get(),
+        ]);
     }
 }

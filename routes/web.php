@@ -1,6 +1,7 @@
 <?php
 
 
+use App\Http\Controllers\CommentController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\EventController;
 use Illuminate\Support\Facades\Route;
@@ -18,10 +19,16 @@ use App\Http\Controllers\admin\AdminLoginController;
 #Route::get('/createuser',[ViewController::class,'createuser']);
 
 Route::get('/',[ViewController::class,'index'])->name('home');
+Route::get('/getslides',[ViewController::class,'getSlides']);
+
 Route::get('/about',[ViewController::class,'aboutUs'])->name('about');
 Route::get('/causes',[ViewController::class,'causes'])->name('causes');
-Route::get('/blogs',[ViewController::class,'blogs'])->name('blogs');
-Route::get('/blog/{id}',[ViewController::class,'blogDetail'])->name('blog.detail');
+Route::get('/blogs',action: [ViewController::class,'blogs'])->name('blogs');
+Route::get('/blogs/{type}',action: [BlogController::class,'typeOfBlog'])->name('typeOfBlog');
+
+Route::get('/blog/{id}/detail',[BlogController::class,'blogDetail'])->name('blog.detail');
+Route::post('/blog/{id}/detail',[CommentController::class,'comment'])->name('blog.comment');
+
 Route::get('/contact',action: [ViewController::class,'contact'])->name('contact');
 Route::post('/contact',[ContactController::class,'toContact'])->name('toContact');
 
@@ -97,9 +104,10 @@ Route::middleware('auth')->group(function (){
         Route::post('/addblog',[BlogController::class,'store'])->name('createBlog');
         Route::get('/addblog',[AdminViewsController::class,'addBlog'])->name('addblog');
         Route::get('/blogsmanager',[AdminViewsController::class,'blogs'])->name('blogsManager');
-        Route::put('/blog/{id}',[BlogController::class,'update'])->name('updateBlog');
-        Route::delete('/blog/{id}',[BlogController::class,'delete'])->name('deleteBlog');
         Route::get('/blog/{id}',[BlogController::class,'getBlog'])->name('getBlog');
+        Route::put('/blog/{id}/update',[BlogController::class,'update'])->name('updateBlog');
+        Route::delete('blog/{id}/delete',[BlogController::class,'delete'])->name('deleteBlog');
+
 
         /**
          * Events
@@ -119,8 +127,15 @@ Route::middleware('auth')->group(function (){
         Route::get('/infocontacts',[ContactController::class,'infocontacts'])->name('infocontacts');
         Route::delete('/infocontacts/{id}',[ContactController::class,'deleteContacts'])->name('deleteContacts');
 
+        /**
+         * Blogs Comments
+         */
+        Route::get('/blogcomments',[AdminViewsController::class,'blogComments'])->name('blogComments');
+        Route::delete('/blogcomment/{id}',[CommentController::class,'deleteComment'])->name('deleteComment');
+
+
+
         Route::get('/donations',[AdminViewsController::class,'donations'])->name('donations');
-        Route::get('/blogComments',[AdminViewsController::class,'blogComments'])->name('blogComments');
         Route::post('/logout',[AdminLoginController::class,'logout'])->name('logout');
 
     });

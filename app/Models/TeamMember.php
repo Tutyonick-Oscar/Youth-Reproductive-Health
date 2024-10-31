@@ -11,6 +11,7 @@ class TeamMember extends Model
     protected $fillable = [
         'name',
         'image',
-        'content'
+        'content',
+        'function'
     ];
 }

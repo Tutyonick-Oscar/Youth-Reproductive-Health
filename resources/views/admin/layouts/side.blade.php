@@ -146,7 +146,7 @@
           <p class="lg:flex text md:hidden list-name md:opacity-0 lg:opacity-[1]">Info Contact</p>
         </a>
         <a
-          href="#"
+          href="{{route('admin.blogComments')}}"
           class="hover:bg-blue-600 py-2  flex items-center gap-4 nav-item border-b-[0.2px] border-secodary"
         >
           <p class="md:ml-4 " id="list">

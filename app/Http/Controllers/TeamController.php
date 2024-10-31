@@ -20,7 +20,8 @@ class TeamController extends Controller
         $data = $request->validate([
             'name' => ['required'],
             'image' => ['required','file','image'],
-            'content' => ['required','json']
+            'content' => ['required','json'],
+            'function'=>'required|min:10'
         ]);
         if ($request->image !== null && !$request->image->getError()){
             $data['image'] = $request->image->store('members','public');
@@ -43,7 +44,8 @@ class TeamController extends Controller
         $data = $request->validate([
             'name' => ['required'],
             'image' => ['file','image'],
-            'content' => ['required','json']
+            'content' => ['required','json'],
+            'function'=>'required|min:10'
         ]);
 
         if ($request->image !== null && !$request->image->getError()){

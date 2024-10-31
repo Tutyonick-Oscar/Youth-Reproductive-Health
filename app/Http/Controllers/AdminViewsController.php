@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Blogcomment;
 use Carbon\Carbon;
 use App\Models\Blog;
 use App\Models\Vision;
@@ -77,13 +78,16 @@ class AdminViewsController extends Controller
         ]);
     }
     public function donations ()
+
     {
         return view ('admin.donations');
     }
    
     public function blogComments ()
     {
-        return view('admin.comments');
+        return view('admin.comments',[
+            'comments'=> Blogcomment::paginate(5),
+        ]);
     }
     public function login ()
     {

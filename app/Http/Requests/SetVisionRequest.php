@@ -12,7 +12,7 @@ class SetVisionRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        if (Auth::user()->id == 1) {
+        if (Auth::user()->id == 2) {
             return true;
         }
         return false;

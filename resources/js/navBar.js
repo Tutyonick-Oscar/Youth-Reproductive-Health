@@ -37,7 +37,9 @@ const menu = document.getElementById('menu')
 let sideBarWidth = 0;
 sideBar.addEventListener('click',e =>{
     sideBarWidth = (sideBar.clientWidth/16).toString()+'rem'
-    if (e.target == e.currentTarget) {
+    if (e.target == e.currentTarget || e.target.classList.contains('navLink')){
+        console.log(e.target,'ok');
+        
        sideBar.animate([
         {width : '100%'},{width: 0 }
        ],{
@@ -51,8 +53,7 @@ sideBar.addEventListener('click',e =>{
         fill : 'forwards'
        })
     } 
-    
-    e.preventDefault();
+    else e.preventDefault();
 })
 x.addEventListener('click',e=>{
     sideBarWidth = (sideBar.clientWidth/16).toString()+'rem'

@@ -1,3 +1,4 @@
+
 const rounded1  = document.querySelector("#rounded1")
 let countRound = 0;
 setInterval(() => {
@@ -97,20 +98,36 @@ const observeText = new IntersectionObserver(
 const text = document.getElementById('text')
 observeText.observe(text);
 let countSlides = 0;
-let slides = [
-    {
-        url : 'http://127.0.0.1:8000/images/8.JPG',
-        title : ' Aider les pauvres femmes à jouir pleinement de leurs droits sexuels et reproductifs'
-    },
-    {
-        url : 'http://127.0.0.1:8000/images/WhatsApp_Image_youth_2.jpg',
-        title : ' Accompagner les femmes, filles et adolescentes survivantes des violences basées sur les genres'
-    },
-    {
-        url : 'http://127.0.0.1:8000/images/WhatsApp_Image_youth_3.jpg',
-        title : ' Faciliter l\'accès des femmes, filles et adolescentes aux opportunités sociales et économiques'
-    }
-]
+
+let slides = []
+
+window.addEventListener('load',e =>{
+    
+    fetch('http://127.0.0.1:8000/getslides',{
+        method : "GET",
+        headers :{
+            'Accept' : 'application/json',
+        }
+    })
+
+    .then(response => {
+        response.json()
+        .then
+        (
+            data => {
+                data.data.forEach(slide => {
+                    slides.push({
+                        image : slide.image,
+                        title : slide.title
+                    })
+                });
+            }
+        )
+        .catch(e => console.log('error while fetching data from http://127.0.0.1:8000/getslides \n detail : ',e.message)
+        )
+    })
+})
+
 const Slidescontainer = document.getElementById('Slidescontainer');
 
 /**
@@ -126,7 +143,7 @@ const sliding = ()=>{
         fill : 'backwards'
     })
     setTimeout(() => {
-        Slidescontainer.style.backgroundImage = `url(${slides[countSlides].url})`
+        Slidescontainer.style.backgroundImage = `url(/storage/${slides[countSlides].image})`
         Slidescontainer.animate([
             {backgroundSize : '100rem'},{backgroundSize : '83.125rem'},
         ],
@@ -206,9 +223,12 @@ const counting = (direction)=>{
 
    if (direction === 'left') {
     memberCount==0?memberCount=members.length-1:memberCount--;
+    
     return;
    }
+
     memberCount==members.length-1?memberCount=0:memberCount++;
+    
 }
 /**
  * slides animation
@@ -216,7 +236,7 @@ const counting = (direction)=>{
 const  memberSliding = ( direction )=> {
 
     members[memberCount].animate([
-        {transform : 'translateX(0)', display : 'flex'}, {transform : 'translateX(-45%)',display : 'none'},
+        {transform : 'translateX(0)', display :'flex'}, {transform : 'translateX(-50%)',display:'none'},
     ],{
         duration : 500,
         fill : 'forwards'
@@ -225,7 +245,7 @@ const  memberSliding = ( direction )=> {
    counting(direction);
 
     members[memberCount].animate([
-        {display : 'none', transform : 'translateX(50%)'}, {display : 'flex', transform : 'translateX(0)'},
+        {display :'none', transform : 'translateX(50%)'}, {display :'flex', transform : 'translateX(0)'},
     ],{
         duration : 500,
         fill : 'forwards',

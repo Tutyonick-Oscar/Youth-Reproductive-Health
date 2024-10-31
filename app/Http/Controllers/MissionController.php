@@ -25,7 +25,7 @@ class MissionController extends Controller
     }
     public function update (Request $request)
     {
-        if (Auth::user()->id !== 1) {
+        if (Auth::user()->id !== 2) {
             return  to_route('admin.setMission')->withErrors(['title'=>'Seuls les supers Admins peuvent mettre à jour la mission']);
         }
         $mission = Mission::find(1);
