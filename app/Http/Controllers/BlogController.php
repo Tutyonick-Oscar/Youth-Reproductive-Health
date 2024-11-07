@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Blog;
+use App\Models\Cause;
 use Auth;
 use Illuminate\Http\Request;
 use BumpCore\EditorPhp\Blocks\Header;
@@ -79,7 +80,9 @@ class BlogController extends Controller
             'blogs' => $blogs,
             'editorphp'=> EditorPhp::class,
             'allblogs'=> Blog::all(),
-            'recentBlogs'=>Blog::where('created_at','>',$blogs[0]->created_at)->orderBy('created_at','desc')->limit(3)->get(),
+            'causes' => Cause::limit(4)->orderBy('created_at','desc')->get(),
+
+            'recentBlogs'=>Blog::where([['created_at','>',$blogs[0]->created_at],['type',$blogs[0]->type]])->orderBy('created_at','desc')->limit(3)->get(),
 
         ]);
     }
@@ -99,6 +102,7 @@ class BlogController extends Controller
             'blog'=> $blog,
             'blogs'=>Blog::orderBy('created_at','desc')->get(),
             'editorphp'=> EditorPhp::class,
+            'causes' => Cause::limit(4)->orderBy('created_at','desc')->get(),
             'recentBlogs'=>Blog::where('created_at','>',$blog->created_at)->orderBy('created_at','desc')->limit(3)->get(),
         ]);
     }

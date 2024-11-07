@@ -25,9 +25,12 @@ Route::get('/about',[ViewController::class,'aboutUs'])->name('about');
 Route::get('/causes',[ViewController::class,'causes'])->name('causes');
 Route::get('/blogs',action: [ViewController::class,'blogs'])->name('blogs');
 Route::get('/blogs/{type}',action: [BlogController::class,'typeOfBlog'])->name('typeOfBlog');
+Route::get('/events/{status}',action: [EventController::class,'events'])->name('events');
+Route::get('/event/{id}/details',[EventController::class,'eventDetail'])->name('event.detail');
 
-Route::get('/blog/{id}/detail',[BlogController::class,'blogDetail'])->name('blog.detail');
-Route::post('/blog/{id}/detail',[CommentController::class,'comment'])->name('blog.comment');
+
+Route::get('/blog/{id}/details',[BlogController::class,'blogDetail'])->name('blog.detail');
+Route::post('/blog/{id}/details',[CommentController::class,'comment'])->name('blog.comment');
 
 Route::get('/contact',action: [ViewController::class,'contact'])->name('contact');
 Route::post('/contact',[ContactController::class,'toContact'])->name('toContact');
@@ -116,8 +119,8 @@ Route::middleware('auth')->group(function (){
         Route::get('/addevent',[EventController::class,'addEvent'])->name('addEvent');
         Route::post('/addevent',[EventController::class,'store'])->name('createEvent');
         Route::get('/event/{id}',[EventController::class,'getEvent'])->name('getEvent');
-        Route::put('/blog/{id}',[EventController::class,'update'])->name('updateEvent');
-        Route::delete('/blog/{id}',[EventController::class,'delete'])->name('deleteEvent');
+        Route::put('/event/{id}',[EventController::class,'update'])->name('updateEvent');
+        Route::delete('/event/{id}',[EventController::class,'delete'])->name('deleteEvent');
 
 
 

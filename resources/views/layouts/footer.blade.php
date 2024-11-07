@@ -2,7 +2,7 @@
     <div class="flex flex-row items-center w-full gap-5 px-4 py-3 overflow-x-scroll lg:justify-between lg:px-24 lg:overflow-hidden bg-gradient-to-l from-accent2 to-accent1">
         <div class=" w-[9.4rem] h-auto">
             <a href="#" class="w-[9.4rem] h-auto flex flex-col justify-center items-center">
-                <img src="images/logoAM.jpg" alt="Logo patterner" width="100" height="100"
+            <img src="{{asset('images/logoAM.jpg')}}" alt="Logo patterner" width="100" height="100"
                     class="object-cover w-24 h-24 rounded-full lg:w-16 lg:h-16">
                 <h2 class="text-xl font-semibold text-white ">Action Miséricorde</h2>
                 <p class="text-sm text-center text-white ">les droits humains des femmes</p>
@@ -10,7 +10,7 @@
         </div>
         <div class=" w-[9.4rem] h-auto">
             <a href="#" class="flex flex-col justify-center items-center w-[9.4rem] h-auto">
-                <img src="images/youth.jpg" alt="Logo patterner" width="100" height="100"
+                <img src="{{asset('images/youth.jpg')}}" alt="Logo patterner" width="100" height="100"
                     class="object-cover w-24 h-24 rounded-full lg:w-16 lg:h-16">
                 <h2 class="text-xl font-semibold text-center text-white ">Youth Reproductive</h2>
                 <p class="text-sm text-center text-white ">droits sexuels et reproductifs</p>
@@ -18,7 +18,7 @@
         </div>
         <div class=" w-[9.4rem] h-auto">
             <a href="#" class=" flex flex-col justify-center items-center w-[9.4rem] h-auto">
-                <img src="images/youth.jpg" alt="Logo patterner" width="100" height="100"
+                <img src="{{asset('images/youth.jpg')}}" alt="Logo patterner" width="100" height="100"
                     class="object-cover w-24 h-24 rounded-full lg:w-16 lg:h-16">
                 <h2 class="text-xl font-semibold text-center text-white ">Youth Reproductive</h2>
                 <p class="text-sm text-center text-white ">droits sexuels et reproductifs</p>
@@ -26,7 +26,7 @@
         </div>
         <div class=" w-[9.4rem] h-auto">
             <a href="#" class=" flex flex-col justify-center items-center w-[9.4rem] h-auto">
-                <img src="images/youth.jpg" alt="Logo patterner" width="100" height="100"
+                <img src="{{asset('images/youth.jpg')}}" alt="Logo patterner" width="100" height="100"
                     class="object-cover w-24 h-24 rounded-full lg:w-16 lg:h-16">
                 <h2 class="text-xl font-semibold text-center text-white ">Youth Reproductive</h2>
                 <p class="text-sm text-center text-white ">droits sexuels et reproductifs</p>
@@ -36,7 +36,7 @@
     <div class="flex flex-col w-full gap-5 px-4 pt-3 pb-16 bg-bg bg-blend-darken lg:pt-10 lg:flex-row lg:gap-10 lg:px-10">
         <div class=" w-full lg:w-[20%] h-auto flex flex-col bg-secodary rounded-md p-4 gap-4">
             <div class="flex items-center w-full gap-2 ">
-                <img src="images/youth.jpg" alt="logo Youth" width="50" height="50"
+                <img src="{{asset('images/youth.jpg')}}" alt="logo Youth" width="50" height="50"
                     class="object-cover w-10 h-10 rounded-md lg:w-8 lg:h-8">
                 <p class="text-xl font-medium text-white lg:text-base lg:font-semibold">Youth Reproductive Health</p>
             </div>
@@ -90,7 +90,7 @@
                         <i class="text-2xl fa-solid fa-envelope text-accent1 lg:text-xl"></i>
                     </span>
                     <span class="text-white lg:text-sm">
-                        info@youthreproductiveheakth.org <br> +243 993 881 612
+                        info@youthreproductivehealth.org <br> +243 993 881 612
                     </span>
                 </p>
                 <p class="flex items-center w-full gap-3 ">
@@ -115,7 +115,7 @@
                         <a href="{{route('causes')}}">Causes</a>
                     </li>
                     <li class="text-lg text-white lg:text-base">
-                        <a href="#">Evénements</a>
+                        <a href="{{route('events',['status'=>'upcoming'])}}">Evénements</a>
                     </li>
                     <li class="text-lg text-white lg:text-base">
                         <a href="{{route('blogs')}}">Blog</a>
@@ -155,9 +155,9 @@
                             @enderror
                         </div>
                     </div>
-                    <textarea name="contactmessage" id="" 
+                    <textarea name="contactmessage" id="" value="votre message !"
                     class=" lg:w-full md:w-1/2 text-white bg-[transparent] lg:h-[4.2rem] outline-none border border-accent1 rounded-md p-2 focus:border-2">
-
+                        votre message
                     </textarea>
                     @error('contactmessage')
                         <small class=" text-red">

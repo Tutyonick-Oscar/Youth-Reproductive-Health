@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\About;
 use App\Models\Blog;
 use App\Models\Cause;
+use App\Models\Event;
 use App\Models\HomeSlide;
 use App\Models\Mission;
 use App\Models\TeamMember;
@@ -15,6 +16,7 @@ use BumpCore\EditorPhp\Blocks\Image;
 use BumpCore\EditorPhp\Blocks\ListBlock;
 use BumpCore\EditorPhp\Blocks\Paragraph;
 use BumpCore\EditorPhp\EditorPhp;
+use Carbon\Carbon;
 use Hash;
 use Illuminate\Http\Request;
 use BumpCore\EditorPhp\Casts\EditorPhpCast;
@@ -42,6 +44,9 @@ class viewController extends Controller
             'vision' => Vision::first(),
             'mission' => Mission::first(),
             'members' => TeamMember::all(),
+            'carbon' => Carbon::class,
+            'event' => Event::where('status','upcoming')->latest()->first(),
+            'pastEvents' => Event::where('status','past')->orderBy('created_at','desc')->limit(5)->get(),
         ]);
     }
 
@@ -53,10 +58,19 @@ class viewController extends Controller
         ]);
     }
     public function aboutUs () 
+
     {
+        EditorPhp::register([
+            'image' =>Image::class,
+            'paragraph' => Paragraph::class,
+            'header' => Header::class,
+            'list'=>ListBlock::class,
+        ]);
         return view('about',[
             'causes' => Cause::limit(4)->get(),
             'blogs' => Blog::orderBy('created_at','desc')->limit(3)->get(),
+            'about' => About::first(),
+            'editorphp'=> EditorPhp::class,
         ]);
     }
     public function causes () 

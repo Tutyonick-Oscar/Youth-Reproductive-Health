@@ -4,7 +4,7 @@
     @include('layouts.nav')
     <div
         style="background-image: url({{asset('images/8.JPG')}})"
-        id="Slidescontainer"  class="bg-blend-darken overflow-hidden  bg-bg bg-opacity-60 relative w-full h-[18rem] lg:h-[30rem] flex mt-16 sm:mt-12  lg:mt-[9.5rem]"> 
+        id="Slidescontainer"  class="bg-blend-darken overflow-hidden  bg-bg bg-opacity-60 relative w-full h-[18rem] lg:h-[35rem] flex mt-16 sm:mt-12  lg:mt-[9.5rem]"> 
         <div id="rounded2" class="absolute w-0 h-0 p-2 rounded-full -right-8 -bottom-8 bg-secodary">
             <div class="w-full h-full border border-white rounded-full ">
                  
@@ -87,7 +87,7 @@
             class="unobserve md:pr-6  float-left rounded-md w-full object-cover h-[10rem] md:h-full md:w-1/2 lg:h-[25rem]">
         </div>
     </section>
-    <section id="what we do suite" class="flex w-full px-4 pt-16 ">
+    <section id="what we do suite" class="flex w-full gap-4 px-8 pt-16 ">
         {{-- <div class="lefthidden  boxs relative md:w-[33%] w-full shadow-md px-10 pb-10 flex flex-col gap-3">
             <h2 class="text-lg font-semibold text-bg">
                 Promouvoir l'égalité entre le sexes
@@ -127,7 +127,7 @@
         @endforeach
         
     </section>
-    <section id="our vision" class="flex flex-col w-full h-auto gap-4 px-4 pt-16 pb-10 lg:flex-row">
+    <section id="our vision" class="flex flex-col w-full h-auto gap-4 px-8 pt-16 pb-10 lg:flex-row">
         <div class="relative w-full lg:w-1/2 ">
             <div class="w-[70%] lg:w-[80%] h-full"
                  style="clip-path: polygon(0 0, 93% 0, 75% 100%, 0% 100%);"
@@ -166,7 +166,7 @@
             </button>
         </div>
     </section>
-    <section class="flex flex-col w-full px-4 py-16 bg-secodary">
+    <section class="flex flex-col w-full px-8 py-16 bg-secodary">
         <div class="relative flex flex-col w-full gap-4 py-10 md:flex-row">
             <div class="w-full lg:w-[60%] md:w-1/2 flex flex-col gap-4">
                 <button class="absolute w-40 px-4 py-2 text-lg font-semibold bg-white rounded-md text-bg -top-6">
@@ -322,7 +322,7 @@
             <div class=" w-[40%] lg:w-[45%] h-[1px] bg-secodary"></div>
         </div>
     </section>
-    <section id="events" class="w-full px-4 py-10 ">
+    <section id="events" class="w-full px-8 py-10 ">
         <div class="w-full ">
             <div class="flex flex-col w-full gap-4 ">
                 <h2 class="w-40 px-4 py-2 text-lg text-white rounded-md bg-gradient-to-l from-accent1 to-accent2 md:text-xl">
@@ -345,25 +345,28 @@
                 </div>
                 <div class="flex flex-col w-full gap-4 md:flex-row md:gap-10 lg:gap-24">
                     <div class="flex flex-col w-full gap-4 bg-white border-b rounded-lg shadow-lg md:w-1/2 border-accent1">
-                        <img src="{{asset('images/Capture d’écran (134).png')}}" alt="" width="300" height="400"
-                            class="w-full h-[15rem] object-cover rounded-t-lg"
+                        <img src="/storage/{{$event->image}}" alt="" width="300" height="400"
+                            class="w-full h-[20rem] object-cover rounded-t-lg"
                         >
                         <div class="flex flex-col w-full gap-2 px-4 pb-4 ">
                             <h2 class="text-lg font-bold text-bg md:text-xl">
-                                Campagne de plaidoyer pour l'accès de femmes, filles et adolescentes
-                                à l'héritage et aux contraceptifs
+                                <a href="{{route('event.detail',['id'=>$event->id])}}">
+                                    {{$event->title}}
+                                </a>
                             </h2>
                             <p class="flex items-center gap-3 text-base font-medium text-bg md:text-lg">
                                 <span class="flex items-center justify-center w-6 h-6 p-1 rounded-md bg-accent1">
                                     <i class="fa-solid fa-arrow-up text-white text-sm border border-white rounded-md p-[3px]"></i>
                                 </span>
-                                statut : <span class=" text-accent1"> A venir</span>
+                                statut : <span class=" text-accent1"> 
+                                {{$event->status=='upcoming'? "A venir" : "Passe"}}
+                                </span>
                             </p> 
                             <p class="flex items-center gap-3 text-base font-medium text-bg md:text-lg">
                                 <span class="flex items-center justify-center w-6 h-6 p-1 rounded-md bg-accent1">
                                     <i class="fa-solid fa-calendar text-white text-sm border border-white rounded-md p-[3px]"></i>
                                 </span>
-                                date : <span class=" text-accent1"> 12/8/2024</span>
+                                date : <span class=" text-accent1"> {{$carbon::parse($event->date)->format('d/m/Y')}} </span>
                             </p>
                         </div>
                     </div>
@@ -371,39 +374,30 @@
                         <div class="flex flex-col w-full pb-10 bg-white rounded-md shadow-lg ">
                             <div class="flex items-center w-full px-4 py-3 rounded-t-md bg-gradient-to-r from-accent1 to-secodary">
                                 <h3 class="text-lg text-white md:text-2xl">
-                                    Retour sur les événements passés 
+                                    <a href="{{route('events',['status'=>'past'])}}">
+                                         Retour sur les événements passés 
+                                    </a>
                                 </h3>
                             </div>
-                            <div class="flex flex-col w-full gap-3 bg-white shadow-lg ">
-                                <div class="flex items-center justify-between w-full px-4 py-3 border-b border-secodary">
+                            <div class="flex flex-col w-full gap-3 bg-white">
+                               @forelse ($pastEvents as $pastevent)
+                                <div class="flex items-center justify-between w-full px-4 py-3 @if ($pastevent!=$pastEvents[count($pastEvents)-1]) border-b border-secodary @endif">
                                     <h2 class="font-bold text-bg">
-                                        Appui en produits contraceptifs et formation de prestataires
+                                        <a href="{{route('event.detail',['id'=>$pastevent->id])}}">
+                                            {{$pastevent->title}}
+                                        </a>
                                     </h2>
                                     <p>
-                                        <a href="#"><i class="text-lg fa-solid fa-arrow-right text-bg"></i></a>
+                                        <a href="{{route('event.detail',['id'=>$pastevent->id])}}"><i class="text-lg fa-solid fa-arrow-right text-bg"></i></a>
                                     </p>
                                 </div>
-                                <div class="flex items-center justify-between w-full px-4 py-3 border-b border-secodary">
-                                    <h2 class="font-bold text-bg">
-                                        Formation des femmes leaders sur le protocole de Misoprostol
-                                    </h2>
-                                    <p>
-                                        <a href="#"><i class="text-lg fa-solid fa-arrow-right text-bg"></i></a>
-                                    </p>
-                                </div>
-                                <div class="flex items-center justify-between w-full px-4 py-3 border-b border-secodary">
-                                    <h2 class="font-bold text-bg">
-                                        Atelier de briefing émotionnel et prise en charge personnel aux défenseurs de
-                                         droits sexuels et reproductifs et les prestataires des services
-                                    </h2>
-                                    <p>
-                                        <a href="#"><i class="text-lg fa-solid fa-arrow-right text-bg"></i></a>
-                                    </p>
-                                </div>
+                               @empty
+                                   Pas d'evenements passes
+                               @endforelse
                             </div>
                         </div>
                         <button class="self-start px-1 py-2 border-2 rounded-md border-accent1">
-                            <a href="#" class="w-full h-full px-4 py-2 text-lg text-white rounded-md bg-accent1 ">Tous les événements</a>
+                            <a href="{{route('events',['status'=> 'past'] )}}" class="w-full h-full px-4 py-2 text-lg text-white rounded-md bg-accent1 ">Tous les événements</a>
                         </button>
                     </div>
                 </div>

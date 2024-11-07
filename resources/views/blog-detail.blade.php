@@ -36,32 +36,6 @@
                 <div class="w-full ">
                      {!! $editorphp::make($blog->content)->toHtml() !!}
                 </div>
-                {{--<div class="w-full ">
-                    <p class="pl-5 border-l border-accent1">
-                        <i class="text-[gray] md:text-sm">
-                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. 
-                            Voluptate delectus cupiditate laborum! Corrupti molestiae nesciunt 
-                            earum voluptatem placeat voluptas tenetur.
-                        </i>
-                    </p>
-                </div>
-                <div class="w-full ">
-                    <h2 class="text-3xl text-bg">
-                        D'autres titres peuvent également être mentionnés
-                    </h2>
-                </div>
-                <div class="w-full ">
-                    <img src="{{asset('images/8.JPG')}}" alt="" width="360" height="400" class="object-cover w-full h-40 rounded-md sm:h-48 md:h-80">
-                </div>
-                <div class="w-full ">
-                    <p class="text-[gray] md:text-sm">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                        Corporis aliquid, sunt, a soluta accusantium, repudiandae 
-                        pariatur quidem neque optio obcaecati labore iste sed esse 
-                        ut quaerat rerum necessitatibus quod vel ad. Est quas totam 
-                        officiis quidem enim laboriosam itaque impedit!
-                    </p>
-                </div> --}}
                 <div class="share w-full border-t border-[#80808042] pt-10 flex flex-col gap-3">
                     <div class="flex w-full gap-3 ">
                         <p class="font-semibold text-bg">Share : </p>
@@ -283,14 +257,14 @@
                    @forelse ($recentBlogs as $recent)
     
                         <div class="recent-blog w-full flex gap-4 items-center pb-4 border-b border-[#80808032]">
-                            <div class=" w-[6rem] h-[5.3rem] ">
+                            <div class=" w-[25%] h-[5.3rem] ">
                                 <img src="/storage/{{$recent->image}}" alt="article/{{$recent->title}}" width="80" height="80"
                                 class="object-cover w-full h-full rounded-lg ">
                             </div>
-                            <div class="flex flex-col gap-3 ">
+                            <div class="flex flex-col gap-3 w-[70%] ">
                                 <h1 class="text-xl cursor-pointer text-bg">
-                                    <a href="{{route('blog.detail',['id'=>$recent->id])}}">
-                                    {{$recent->title}}
+                                    <a id="recentEventTitle" href="{{route('blog.detail',['id'=>$recent->id])}}">
+                                        {{$recent->title}}
                                     </a>
                                 </h1>
                                 <p class=" flex gap-3 text-[gray] items-center">
@@ -407,4 +381,5 @@
         </div>
     </section>
     @include('layouts.footer')
+     <script src="{{asset('js/events.js')}}"></script>
 @endsection
