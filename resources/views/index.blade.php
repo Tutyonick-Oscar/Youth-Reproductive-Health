@@ -326,7 +326,7 @@
         <div class="w-full ">
             <div class="flex flex-col w-full gap-4 ">
                 <h2 class="w-40 px-4 py-2 text-lg text-white rounded-md bg-gradient-to-l from-accent1 to-accent2 md:text-xl">
-                    <a href="#">Nos Evénements</a>
+                    <a href="{{route('events',['status'=>'upcoming'])}}">Nos Evénements</a>
                 </h2>
                 <div class="flex flex-col w-full gap-4 pb-10 md:flex-row md:gap-10 lg:gap-24">
                     <div class="w-full md:w-1/2">
@@ -468,7 +468,6 @@
         </div>
     </section>
     @include('layouts.footer')
-    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <script src="{{asset('js/home.js')}}"></script>
     <script src="{{asset('js/home_substringer.js')}}"></script>
 @endsection

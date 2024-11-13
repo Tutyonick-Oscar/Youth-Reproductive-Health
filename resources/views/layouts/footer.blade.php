@@ -126,6 +126,24 @@
                 </ul>
             </div>
             <div class=" w-full lg:w-[40%] flex flex-col gap-3 relative">
+                <div id="loading" class="absolute top-0 right-4 hidden">
+                    <div class="loader">
+
+                        <div class="bar1"></div>
+                        <div class="bar2"></div>
+                        <div class="bar3"></div>
+                        <div class="bar4"></div>
+                        <div class="bar5"></div>
+                        <div class="bar6"></div>
+                        <div class="bar7"></div>
+                        <div class="bar8"></div>
+                        <div class="bar9"></div>
+                        <div class="bar10"></div>
+                        <div class="bar11"></div>
+                        <div class="bar12"></div>
+                    </div>
+                </div>
+
                 <small id="contact_sent" class="absolute top-0 right-4 bg-[#00800051] rounded-[4px] px-4 py-2 text-sm text-white hidden">
                     message envoye
                 </small>
@@ -140,7 +158,7 @@
                             <input type="text" placeholder="Votre nom" name="contactname"
                             class=" lg:w-full text-white bg-[transparent] outline-none border border-accent1 rounded-md px-4 py-2  focus:border-2">
                             @error('contactname')
-                                <small class=" text-red">
+                                <small class="text-red">
                                     {{$message}}
                                 </small>
                             @enderror
@@ -155,9 +173,9 @@
                             @enderror
                         </div>
                     </div>
-                    <textarea name="contactmessage" id="" value="votre message !"
+                    <textarea name="contactmessage" id="contactmessage" placeholder="Votre message ici..." aria-placeholder="Votre message ici..."
                     class=" lg:w-full md:w-1/2 text-white bg-[transparent] lg:h-[4.2rem] outline-none border border-accent1 rounded-md p-2 focus:border-2">
-                        votre message
+                       
                     </textarea>
                     @error('contactmessage')
                         <small class=" text-red">

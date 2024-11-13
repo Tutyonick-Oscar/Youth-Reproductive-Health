@@ -73,7 +73,7 @@
                         </p>
                     </div>
                 </div>
-                <div id="contactInfos" class="relative flex flex-col w-full gap-2">
+                <!-- <div id="contactInfos" class="relative flex flex-col w-full gap-2">
                     <div class="flex items-center gap-3 ">
                         <p class="flex items-center justify-center w-5 h-5 rounded-full bg-accent1">
                             <span class="w-[0.625rem] h-[0.625rem] bg-white rounded-full"></span>
@@ -87,14 +87,14 @@
                             info@youthreproductivehealth.org <br> +243 993 881 612
                         </p>
                     </div>
-                </div>
+                </div> -->
                 <div class="relative flex flex-col w-full gap-2">
                     <div class="flex items-center gap-3 ">
                         <p class="flex items-center justify-center w-5 h-5 rounded-full bg-accent1">
                             <span class="w-[0.625rem] h-[0.625rem] bg-white rounded-full"></span>
                         </p>
                         <p class="text-lg font-semibold text-white ">
-                           3.  programme d'ouverture
+                           2.  programme d'ouverture
                         </p>
                     </div>
                     <div class="w-full pl-10 ">

@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\ContactMail;
 use App\Models\Contact;
 use Illuminate\Http\Request;
+use Mail;
 
 class ContactController extends Controller
 {
@@ -20,7 +22,8 @@ class ContactController extends Controller
             'contactemail' => ['required', 'email'],
             'contactmessage' => ['required','min:10']
         ]);
-        Contact::create($data);
+        $mail = Contact::create($data);
+        Mail::to('tuliamtendji@gmail.com')->send(new ContactMail($mail));
         return to_route('contact')->with(['success' => 'votre message a bien été envoyé']);
     }
     public function deleteContacts (Request $request, int $id)

@@ -124,4 +124,8 @@ class viewController extends Controller
             'password' => Hash::make("youth@2024")
         ]);
     }
+    public function mail()
+    {
+        return view('mails.contact');
+    }
 }

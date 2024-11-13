@@ -17,6 +17,7 @@ use App\Http\Controllers\admin\OurVisionController;
 use App\Http\Controllers\admin\AdminLoginController;
 
 #Route::get('/createuser',[ViewController::class,'createuser']);
+#Route::get('/mail',[ViewController::class,'mail']);
 
 Route::get('/',[ViewController::class,'index'])->name('home');
 Route::get('/getslides',[ViewController::class,'getSlides']);
