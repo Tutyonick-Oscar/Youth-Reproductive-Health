@@ -4,7 +4,7 @@
     @include('layouts.nav')
     <section
         class="justify-end w-full h-auto mt-16 lg:bg-secodary sm:mt-12 lg:mt-32 lg:flex">
-        <div style="background-image:url({{asset('images/8.JPG')}})"
+        <div style="background-image:url({{asset('images/8.jpg')}})"
             class="bg-blend-darken bg-cover  self-end flex flex-col 
             items-center justify-center gap-5 overflow-hidden bg-bg bg-opacity-60 w-full 
             h-[20rem] lg:h-[30rem]">
@@ -116,7 +116,7 @@
                       
                         <div class="recent-event w-full flex gap-4 items-center pb-4 border-b border-[#80808032]">
                             <div class=" w-[25%] h-[5.3rem] ">
-                                <img loading="lazy" decoding="async" src="/storage/{{$recent->image}}" alt="article/{{$recent->title}}" width="80" height="80"
+                                <img loading="lazy" decoding="async" src="{{asset('images/lazy.jpg')}}" data-src="/storage/{{$recent->image}}" alt="article/{{$recent->title}}" width="80" height="80"
                                 class="object-cover w-full h-full rounded-lg ">
                             </div>
                             <div class="flex flex-col gap-3 w-[70%]">
@@ -201,37 +201,37 @@
                 <div class="flex flex-row flex-wrap w-full gap-2">
                     <div class=" w-[6rem] h-[5.3rem] ">
                         <a href="#" class="w-full h-full ">
-                            <img loading="lazy" decoding="async" src="{{asset('images/3.JPG')}}" alt="article/..." width="80" height="80"
+                            <img loading="lazy" decoding="async" src="{{asset('images/lazy.jpg')}}" data-src="{{asset('images/3.jpg')}}" alt="article/..." width="80" height="80"
                             class="object-cover w-full h-full rounded-lg ">
                         </a>
                     </div>
                     <div class=" w-[6rem] h-[5.3rem] ">
                         <a href="#" class="w-full h-full ">
-                            <img loading="lazy" decoding="async" src="{{asset('images/8.JPG')}}" alt="article/..." width="80" height="80"
+                            <img loading="lazy" decoding="async" src="{{asset('images/lazy.jpg')}}" data-src="{{asset('images/8.jpg')}}" alt="article/..." width="80" height="80"
                             class="object-cover w-full h-full rounded-lg ">
                         </a>
                     </div>
                     <div class=" w-[6rem] h-[5.3rem] ">
                         <a href="#" class="w-full h-full ">
-                            <img loading="lazy" decoding="async" src="{{asset('images/Capture d’écran (132).png')}}" alt="article/..." width="80" height="80"
+                            <img loading="lazy" decoding="async" src="{{asset('images/Capture d’écran (132).jpg')}}" alt="article/..." width="80" height="80"
                             class="object-cover w-full h-full rounded-lg ">
                         </a>
                     </div>
                     <div class=" w-[6rem] h-[5.3rem] ">
                         <a href="#" class="w-full h-full ">
-                            <img src="{{asset('images/3.JPG')}}" alt="article/..." width="80" height="80"
+                            <img src="{{asset('images/lazy.jpg')}}" data-src="{{asset('images/3.jpg')}}" alt="article/..." width="80" height="80"
                             class="object-cover w-full h-full rounded-lg ">
                         </a>
                     </div>
                     <div class=" w-[6rem] h-[5.3rem] ">
                         <a href="#" class="w-full h-full ">
-                            <img loading="lazy" decoding="async" src="{{asset('images/KK.JPG')}}" alt="article/..." width="80" height="80"
+                            <img loading="lazy" decoding="async" src="{{asset('images/lazy.jpg')}}" data-src="{{asset('images/KK.jpg')}}" alt="article/..." width="80" height="80"
                             class="object-cover w-full h-full rounded-lg ">
                         </a>
                     </div>
                     <div class=" w-[6rem] h-[5.3rem] ">
                         <a href="#" class="w-full h-full ">
-                            <img loading="lazy" decoding="async" src="{{asset('images/3.JPG')}}" alt="article/..." width="80" height="80"
+                            <img loading="lazy" decoding="async" src="{{asset('images/lazy.jpg')}}" data-src="{{asset('images/3.jpg')}}" alt="article/..." width="80" height="80"
                             class="object-cover w-full h-full rounded-lg ">
                         </a>
                     </div>

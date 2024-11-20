@@ -4,7 +4,7 @@
     @include('layouts.nav')
     <section
         class="relative w-full h-auto mt-16 juexstify-end lg:bg-secodary sm:mt-12 lg:mt-32 lg:flex">
-        <div style="background-image:url({{asset('images/8.JPG')}})"
+        <div style="background-image:url({{asset('images/8.jpg')}})"
             class="bg-blend-darken bg-cover  self-end flex flex-col lg:pl-40
              justify-center items-center lg:items-start gap-5 overflow-hidden bg-bg bg-opacity-60 w-full 
             h-[20rem] lg:h-[37rem]">

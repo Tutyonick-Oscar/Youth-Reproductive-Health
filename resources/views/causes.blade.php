@@ -4,7 +4,7 @@
 @include('layouts.nav')
     <section
         class=" w-full h-auto lg:bg-secodary mt-16 sm:mt-12 lg:mt-32 lg:flex justify-end ">
-        <div style="background-image:url({{asset('images/8.JPG')}})"
+        <div style="background-image:url({{asset('images/8.jpg')}})"
             class="bg-blend-darken bg-cover  self-end flex flex-col 
             items-center justify-center gap-5 overflow-hidden bg-bg bg-opacity-60 w-full 
             h-[20rem] lg:h-[30rem]">
@@ -46,7 +46,7 @@
                     </p>
                 </div>
                 <div class=" w-full h-[27.5rem] lg:h-[22.1rem] -ml-10">
-                    <img loading="lazy" decoding="async" src="{{asset('images/3.JPG')}}" width="300" height="432" alt="youth | image"
+                    <img loading="lazy" decoding="async" src="{{asset('images/lazy.jpg')}}" data-src="{{asset('images/3.jpg')}}" width="300" height="432" alt="youth | image"
                     class=" w-full h-full object-cover rounded-tr-xl rounded-br-xl">
                 </div>
             </div>

@@ -4,7 +4,7 @@
     @include('layouts.nav')
     <section
         class="justify-end w-full h-auto mt-16 lg:bg-secodary sm:mt-12 lg:mt-32 lg:flex">
-        <div style="background-image:url({{asset('images/8.JPG')}})"
+        <div style="background-image:url({{asset('images/8.jpg')}})"
              class="bg-blend-darken bg-cover rounded-b-[5rem] md:rounded-b-[2rem] lg:rounded-b-none self-end flex flex-col 
              items-center justify-center gap-5 overflow-hidden bg-bg bg-opacity-60 w-full 
              h-[20rem] lg:h-[35rem] lg:w-[92%] lg:rounded-tl-[10rem]">
@@ -54,7 +54,7 @@
             <div class="w-full h-auto md:flex md:gap-8">
                 <div class="flex w-full gap-8 bg-white rounded-md shadow-lg md:w-1/2 lg:gap-0">
                    <div class=" w-[8rem] sm:w-[12rem] md:w-[10rem] sm:h-[14rem] h-[9rem] lg:w-1/2 lg:h-[20rem] rounded-md ">
-                        <img loading="lazy" decoding="async" src="{{asset('images/KK.JPG')}}" alt="managing director" width="250" height="300"
+                        <img loading="lazy" decoding="async"  src="{{asset('images/lazy.jpg')}}" data-src="{{asset('images/KK.jpg')}}" alt="managing director" width="250" height="300"
                         class= "object-cover w-full h-full "
                         >
                    </div>
@@ -82,7 +82,7 @@
                 </div>
                 <div class="hidden w-full gap-8 bg-white rounded-md shadow-lg md:flex md:w-1/2 lg:gap-0">
                     <div class="w-[8rem] sm:w-[12rem] md:w-[10rem] sm:h-[14rem] h-[9rem] lg:w-1/2 lg:h-[20rem] rounded-md">
-                        <img loading="lazy" decoding="async" src="{{asset('images/KK.JPG')}}" alt="managing director" width="250" height="300"
+                        <img loading="lazy" decoding="async"  src="{{asset('images/lazy.jpg')}}" data-src="{{asset('images/KK.jpg')}}" alt="managing director" width="250" height="300"
                             class="object-cover w-full h-full "
                             >
                     </div>
@@ -136,7 +136,7 @@
                     <div class="flex items-center justify-between w-full ">
                         <div class="flex items-center justify-center gap-4">
                             <div class="p-2 border rounded-full cursor-pointer border-accent1">
-                                <img loading="lazy" decoding="async" src="https://youthreproductivehealth.org/uploads/package/261669296118.jpg" alt="Muhigirwa Sifa Ghislaine" width="80" height="80"
+                                <img loading="lazy" decoding="async"  src="{{asset('images/lazy.jpg')}}" data-src="{{asset('images/261669296118.jpg')}}" alt="Muhigirwa Sifa Ghislaine" width="80" height="80"
                                     class="object-cover w-20 h-20 rounded-full md:w-16 md:h-16" 
                                 >
                             </div>
@@ -166,7 +166,7 @@
                     <div class="flex items-center justify-between w-full ">
                         <div class="flex items-center justify-center gap-4">
                             <div class="p-2 border rounded-full cursor-pointer border-accent1">
-                                <img loading="lazy" decoding="async" src="https://youthreproductivehealth.org/uploads/package/261669296118.jpg" alt="Muhigirwa Sifa Ghislaine" width="80" height="80"
+                                <img loading="lazy" decoding="async"  src="{{asset('images/lazy.jpg')}}" data-src="{{asset('images/261669296118.jpg')}}" alt="Muhigirwa Sifa Ghislaine" width="80" height="80"
                                     class="object-cover w-20 h-20 rounded-full md:w-16 md:h-16" 
                                 >
                             </div>

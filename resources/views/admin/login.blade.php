@@ -10,7 +10,7 @@
       >
         <div class="lg:h-[400px] md:h-[300px] max-md:mt-8">
           <img loading="lazy" decoding="async"
-            src="{{asset('images/Design stats-pana.png')}}"
+            src="{{asset('images/Design stats-pana.jpg')}}"
             class="w-full h-full max-md:w-4/5 mx-auto block object-cover"
             alt="LOGIN DASHBOARD IMG"
           />

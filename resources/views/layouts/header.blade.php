@@ -20,6 +20,15 @@
             /* background-image: radial-gradient(#1e5e98 2px, transparent 2px );
             background-size: 50px 50px; */
         }
+        img[data-src] {
+            filter: blur(0.2em);
+        }
+
+        img {
+            filter: blur(0em);
+            transition: filter 0.5s;
+        }
+
     </style>
     <title>@yield('title')</title>
 </head>
