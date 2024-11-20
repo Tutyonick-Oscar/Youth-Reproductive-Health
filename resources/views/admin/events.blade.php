@@ -67,7 +67,7 @@
                 <tr class="h-[2rem]">
                     <td class="w-[8%]  border-r dash-border h-[4rem] text-center"> {{$event->id}} </td>
                     <td class="w-[12%] border-r dash-border  py-2 h-[50px] px-4"> 
-                        <img src="/storage/{{$event->image}}" alt="event img" width="80" height="50" class="
+                        <img loading="lazy" decoding="async" src="/storage/{{$event->image}}" alt="event img" width="80" height="50" class="
                         w-full h-[50px] object-cover img rounded-md">
                     </td>
                     <td class="w-[60%] border-r dash-border text-center "> {{$event->title}} </td>

@@ -41,7 +41,7 @@
                 </p>
                 <div class="w-full flex flex-col gap-6">
                     <div class=" w-[13rem] h-[10rem] relative">
-                        <img id="noimage1" src="
+                        <img loading="lazy" decoding="async" id="noimage1" src="
                         @if (isset($vision))/storage/{{$vision->image1}}
                         @else
                           {{asset('images/noimage.png')}}  
@@ -58,7 +58,7 @@
                         @enderror
                     </div>
                     <div class=" w-[13rem] h-[10rem] relative ">
-                        <img id="noimage2" src="
+                        <img loading="lazy" decoding="async" id="noimage2" src="
                         @if (isset($vision))/storage/{{$vision->image2}}
                         @else
                           {{asset('images/noimage.png')}}  

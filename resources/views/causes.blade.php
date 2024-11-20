@@ -46,7 +46,7 @@
                     </p>
                 </div>
                 <div class=" w-full h-[27.5rem] lg:h-[22.1rem] -ml-10">
-                    <img src="{{asset('images/3.JPG')}}" width="300" height="432" alt="youth | image"
+                    <img loading="lazy" decoding="async" src="{{asset('images/3.JPG')}}" width="300" height="432" alt="youth | image"
                     class=" w-full h-full object-cover rounded-tr-xl rounded-br-xl">
                 </div>
             </div>

@@ -38,14 +38,14 @@
                 </p>
                 <div class="w-full flex flex-col gap-3">
                     <div class=" w-[13rem] h-[10rem] relative">
-                        <img src="{{asset('images/youth-removebg-preview.png')}}" alt="" width="200" height="150"
+                        <img loading="lazy" decoding="async" src="{{asset('images/youth-removebg-preview.png')}}" alt="" width="200" height="150"
                         class=" rounded-[4px] w-full h-full">
                         <p class="hidden text-sm text-white opacity-0 centered w-6 h-6 bg-red rounded-full absolute -top-2 cursor-pointer -right-2">
                             <i class=" fa-solid fa-x "></i>
                         </p>
                     </div>
                     <div class=" w-[13rem] h-[10rem] relative">
-                        <img src="{{asset('images/noimage.png')}}" alt="" width="200" height="150"
+                        <img loading="lazy" decoding="async" src="{{asset('images/noimage.png')}}" alt="" width="200" height="150"
                         class=" object-cover rounded-[4px] w-full h-full">
                         <p class="hidden text-sm text-white opacity-0 centered w-6 h-6 bg-red rounded-full absolute -top-2 cursor-pointer -right-2">
                             <i class=" fa-solid fa-x "></i>

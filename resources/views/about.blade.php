@@ -54,7 +54,7 @@
             <div class="w-full h-auto md:flex md:gap-8">
                 <div class="flex w-full gap-8 bg-white rounded-md shadow-lg md:w-1/2 lg:gap-0">
                    <div class=" w-[8rem] sm:w-[12rem] md:w-[10rem] sm:h-[14rem] h-[9rem] lg:w-1/2 lg:h-[20rem] rounded-md ">
-                        <img src="{{asset('images/KK.JPG')}}" alt="managing director" width="250" height="300"
+                        <img loading="lazy" decoding="async" src="{{asset('images/KK.JPG')}}" alt="managing director" width="250" height="300"
                         class= "object-cover w-full h-full "
                         >
                    </div>
@@ -82,7 +82,7 @@
                 </div>
                 <div class="hidden w-full gap-8 bg-white rounded-md shadow-lg md:flex md:w-1/2 lg:gap-0">
                     <div class="w-[8rem] sm:w-[12rem] md:w-[10rem] sm:h-[14rem] h-[9rem] lg:w-1/2 lg:h-[20rem] rounded-md">
-                        <img src="{{asset('images/KK.JPG')}}" alt="managing director" width="250" height="300"
+                        <img loading="lazy" decoding="async" src="{{asset('images/KK.JPG')}}" alt="managing director" width="250" height="300"
                             class="object-cover w-full h-full "
                             >
                     </div>
@@ -136,7 +136,7 @@
                     <div class="flex items-center justify-between w-full ">
                         <div class="flex items-center justify-center gap-4">
                             <div class="p-2 border rounded-full cursor-pointer border-accent1">
-                                <img src="https://youthreproductivehealth.org/uploads/package/261669296118.jpg" alt="Muhigirwa Sifa Ghislaine" width="80" height="80"
+                                <img loading="lazy" decoding="async" src="https://youthreproductivehealth.org/uploads/package/261669296118.jpg" alt="Muhigirwa Sifa Ghislaine" width="80" height="80"
                                     class="object-cover w-20 h-20 rounded-full md:w-16 md:h-16" 
                                 >
                             </div>
@@ -166,7 +166,7 @@
                     <div class="flex items-center justify-between w-full ">
                         <div class="flex items-center justify-center gap-4">
                             <div class="p-2 border rounded-full cursor-pointer border-accent1">
-                                <img src="https://youthreproductivehealth.org/uploads/package/261669296118.jpg" alt="Muhigirwa Sifa Ghislaine" width="80" height="80"
+                                <img loading="lazy" decoding="async" src="https://youthreproductivehealth.org/uploads/package/261669296118.jpg" alt="Muhigirwa Sifa Ghislaine" width="80" height="80"
                                     class="object-cover w-20 h-20 rounded-full md:w-16 md:h-16" 
                                 >
                             </div>

@@ -36,14 +36,14 @@
                 </p>
                 <div class="flex flex-col w-full gap-3">
                     <div class=" w-[13rem] h-[10rem] relative">
-                        <img src="{{asset('images/youth-removebg-preview.png')}}" alt="" width="200" height="150"
+                        <img loading="lazy" decoding="async" src="{{asset('images/youth-removebg-preview.png')}}" alt="" width="200" height="150"
                         class=" rounded-[4px] w-full h-full">
                         <p class="absolute hidden w-6 h-6 text-sm text-white rounded-full opacity-0 cursor-pointer centered bg-red -top-2 -right-2">
                             <i class=" fa-solid fa-x"></i>
                         </p>
                     </div>
                     <div class=" w-[13rem] h-[10rem] relative">
-                        <img id="noimage" src="
+                        <img loading="lazy" decoding="async" id="noimage" src="
                         @if (isset($member))
                             /storage/{{$member->image}}
                         @else

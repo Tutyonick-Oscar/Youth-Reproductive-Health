@@ -116,7 +116,7 @@
                       
                         <div class="recent-event w-full flex gap-4 items-center pb-4 border-b border-[#80808032]">
                             <div class=" w-[25%] h-[5.3rem] ">
-                                <img src="/storage/{{$recent->image}}" alt="article/{{$recent->title}}" width="80" height="80"
+                                <img loading="lazy" decoding="async" src="/storage/{{$recent->image}}" alt="article/{{$recent->title}}" width="80" height="80"
                                 class="object-cover w-full h-full rounded-lg ">
                             </div>
                             <div class="flex flex-col gap-3 w-[70%]">
@@ -201,37 +201,37 @@
                 <div class="flex flex-row flex-wrap w-full gap-2">
                     <div class=" w-[6rem] h-[5.3rem] ">
                         <a href="#" class="w-full h-full ">
-                            <img src="{{asset('images/3.JPG')}}" alt="article/..." width="80" height="80"
+                            <img loading="lazy" decoding="async" src="{{asset('images/3.JPG')}}" alt="article/..." width="80" height="80"
                             class="object-cover w-full h-full rounded-lg ">
                         </a>
                     </div>
                     <div class=" w-[6rem] h-[5.3rem] ">
                         <a href="#" class="w-full h-full ">
-                            <img src="{{asset('images/8.JPG')}}" alt="article/..." width="80" height="80"
+                            <img loading="lazy" decoding="async" src="{{asset('images/8.JPG')}}" alt="article/..." width="80" height="80"
                             class="object-cover w-full h-full rounded-lg ">
                         </a>
                     </div>
                     <div class=" w-[6rem] h-[5.3rem] ">
                         <a href="#" class="w-full h-full ">
-                            <img src="{{asset('images/Capture d’écran (132).png')}}" alt="article/..." width="80" height="80"
-                            class="object-cover w-full h-full rounded-lg ">
-                        </a>
-                    </div>
-                    <div class=" w-[6rem] h-[5.3rem] ">
-                        <a href="#" class="w-full h-full ">
-                            <img src="{{asset('images/3.JPG')}}" alt="article/..." width="80" height="80"
-                            class="object-cover w-full h-full rounded-lg ">
-                        </a>
-                    </div>
-                    <div class=" w-[6rem] h-[5.3rem] ">
-                        <a href="#" class="w-full h-full ">
-                            <img src="{{asset('images/KK.JPG')}}" alt="article/..." width="80" height="80"
+                            <img loading="lazy" decoding="async" src="{{asset('images/Capture d’écran (132).png')}}" alt="article/..." width="80" height="80"
                             class="object-cover w-full h-full rounded-lg ">
                         </a>
                     </div>
                     <div class=" w-[6rem] h-[5.3rem] ">
                         <a href="#" class="w-full h-full ">
                             <img src="{{asset('images/3.JPG')}}" alt="article/..." width="80" height="80"
+                            class="object-cover w-full h-full rounded-lg ">
+                        </a>
+                    </div>
+                    <div class=" w-[6rem] h-[5.3rem] ">
+                        <a href="#" class="w-full h-full ">
+                            <img loading="lazy" decoding="async" src="{{asset('images/KK.JPG')}}" alt="article/..." width="80" height="80"
+                            class="object-cover w-full h-full rounded-lg ">
+                        </a>
+                    </div>
+                    <div class=" w-[6rem] h-[5.3rem] ">
+                        <a href="#" class="w-full h-full ">
+                            <img loading="lazy" decoding="async" src="{{asset('images/3.JPG')}}" alt="article/..." width="80" height="80"
                             class="object-cover w-full h-full rounded-lg ">
                         </a>
                     </div>

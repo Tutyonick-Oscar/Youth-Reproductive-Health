@@ -1,7 +1,7 @@
 
     <nav id="phoneNav"  class="fixed top-0 left-0 right-0 z-50 flex justify-between w-full h-auto px-4 py-2 bg-secodary lg:hidden">
         <div class="flex items-center justify-center gap-2 ">
-            <img src="{{asset('images/youth.jpg')}}" alt="youth logo" width="50" height="50" class="h-12 w-14 sm:w-10 sm:h-8">
+            <img loading="lazy" decoding="async" src="{{asset('images/youth.jpg')}}" alt="youth logo" width="50" height="50" class="h-12 w-14 sm:w-10 sm:h-8">
             <h1 class="hidden text-lg text-white md:flex">Youth Reproductive Health</h1>
             <h1 class="text-lg text-white md:hidden">YRHealth</h1>
         </div>
@@ -21,7 +21,7 @@
                         <i id="close" class="text-lg fa-solid fa-x text-accent2"></i>
                     </p>
                     <div class="flex items-center justify-center gap-2">
-                        <img src="{{asset('images/youth-removebg-preview.png')}}" alt="youth logo" width="50" height="50"
+                        <img loading="lazy" decoding="async" src="{{asset('images/youth-removebg-preview.png')}}" alt="youth logo" width="50" height="50"
                             class="w-20 h-20">
                         <h1 class="text-xl font-bold text-accent2">Youth Reproductive Health</h1>
                     </div>
@@ -159,7 +159,7 @@
         </div>
         <div class="flex items-center justify-between w-full pt-2 links">
             <div class="flex items-center justify-center w-auto gap-2 mt-5 ">
-                <img src="{{asset('images/youth.jpg')}}" alt="youth logo" width="50" height="50" class="h-12 w-14">
+                <img loading="lazy" decoding="async" src="{{asset('images/youth.jpg')}}" alt="youth logo" width="50" height="50" class="h-12 w-14">
                 <h1 class="hidden text-lg font-semibold text-white xl:block">Youth Reproductive Health</h1>
                 <h1 class="hidden text-xl font-bold tracking-wider text-white lg:block xl:hidden">YRHealth</h1>
             </div>

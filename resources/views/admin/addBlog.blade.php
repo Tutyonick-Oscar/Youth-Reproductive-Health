@@ -36,7 +36,7 @@
                 </p>
                 <div class="flex flex-col w-full gap-4">
                     <div class=" w-[13rem] h-[10rem] relative ">
-                        <img id="noimage" src="
+                        <img loading="lazy" decoding="async" id="noimage" src="
                         @if (isset($blog))
                             /storage/{{$blog->image}}
                         @else

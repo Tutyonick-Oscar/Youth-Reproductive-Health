@@ -17,6 +17,8 @@
         body {
             font-family: "Abel",sans-serif;
             font-style: normal;
+            /* background-image: radial-gradient(#1e5e98 2px, transparent 2px );
+            background-size: 50px 50px; */
         }
     </style>
     <title>@yield('title')</title>

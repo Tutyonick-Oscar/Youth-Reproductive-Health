@@ -65,7 +65,7 @@
                 <tr class="h-[2rem]">
                     <td class="w-10  border-r dash-border h-[4rem] text-center"> {{$cause->id}} </td>
                     <td class="w-[10rem] border-r dash-border  py-2 h-[50px] px-2"> 
-                        <img src="/storage/{{$cause->image}}" alt="" width="80" height="50" class="
+                        <img loading="lazy" decoding="async" src="/storage/{{$cause->image}}" alt="" width="80" height="50" class="
                         w-[90%] h-[50px] object-cover img rounded-md">
                     </td>
                     <td class="w-[35rem] border-r dash-border text-center "> {{$cause->title}} </td>

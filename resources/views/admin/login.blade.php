@@ -9,7 +9,7 @@
         class="grid md:grid-cols-2 items-center justify-center gap-4 max-w-6xl w-full"
       >
         <div class="lg:h-[400px] md:h-[300px] max-md:mt-8">
-          <img
+          <img loading="lazy" decoding="async"
             src="{{asset('images/Design stats-pana.png')}}"
             class="w-full h-full max-md:w-4/5 mx-auto block object-cover"
             alt="LOGIN DASHBOARD IMG"
