@@ -100,7 +100,7 @@ class BlogController extends Controller
             'header' => Header::class,
             'list'=>ListBlock::class,
         ]);
-        $blog = Blog::find($id);
+        $blog = Blog::with('user','comments')->find($id);
         return view('blog-detail',[
             'blog'=> $blog,
             'blogs'=>Blog::orderBy('created_at','desc')->get(),

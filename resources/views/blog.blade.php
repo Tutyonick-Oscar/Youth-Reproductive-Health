@@ -7,12 +7,12 @@
         <div style="background-image:url({{asset('images/8.jpg')}})"
             class="bg-blend-darken bg-cover  self-end flex flex-col 
             items-center justify-center gap-5 overflow-hidden bg-bg bg-opacity-60 w-full 
-            h-[20rem] lg:h-[30rem]">
-            <h1 class="text-3xl text-white lg:text-5xl">
+            h-[20rem] lg:h-[30rem] xl:h-[38rem]">
+            <h1 class="text-3xl text-white lg:text-5xl xl:text-7xl">
                 Droits sexuels et reproductifs
             </h1>
-            <p class="text-2xl font-semibold text-white">Nos articles de blog</p>
-            <span class="font-semibold text-accent2">
+            <p class="text-2xl font-semibold text-white xl:text-4xl">Nos articles de blog</p>
+            <span class="font-semibold text-accent2 xl:text-2xl">
                 YRHealth / blog
             </span>
         </div>

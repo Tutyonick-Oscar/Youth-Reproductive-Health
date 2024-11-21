@@ -36,10 +36,6 @@ class AdminViewsController extends Controller
         if ($vision === null) {
             return view('admin.contentsetter');
         }
-        // $editor =  EditorPhp::make($vision->content);
-        // //dd($editor);
-        // $json = $editor->blocks->jsonSerialize();
-        // //dd($json);
         return view('admin.contentsetter',[
             'vision'=>$vision,
         ]);
@@ -51,10 +47,6 @@ class AdminViewsController extends Controller
         if ($mission === null) {
             return view('admin.mission');
         }
-        // $editor =  EditorPhp::make($vision->content);
-        // //dd($editor);
-        // $json = $editor->blocks->jsonSerialize();
-        // //dd($json);
         return view('admin.mission',[
             'mission'=>$mission,
         ]);
@@ -86,7 +78,7 @@ class AdminViewsController extends Controller
     public function blogComments ()
     {
         return view('admin.comments',[
-            'comments'=> Blogcomment::paginate(5),
+            'comments'=> Blogcomment::with('blog')->paginate(5),
         ]);
     }
     public function login ()

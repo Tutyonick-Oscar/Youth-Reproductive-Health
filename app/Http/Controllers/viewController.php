@@ -82,12 +82,6 @@ class viewController extends Controller
     }
     public function blogs () 
     {
-
-    // $editor = EditorPhp::make($json);
-
-    // // This will return ['time' => ..., 'blocks' => [...], 'version' => '...']
-    // $array = $editor->toArray();
-    
         EditorPhp::useTailwind();
 
         EditorPhp::register([
@@ -102,7 +96,7 @@ class viewController extends Controller
             'blogs'=>$blogs,
             'editorphp'=> EditorPhp::class,
             'allblogs'=> Blog::all(),
-            'causes' => Cause::limit(4)->get(),
+            'causes' => Cause::limit(4)->orderBy('created_at','desc')->get(),
             'recentBlogs'=>Blog::where('created_at','<',$blogs[0]->created_at)->orderBy('created_at','desc')->limit(3)->get(),
 
         ]);

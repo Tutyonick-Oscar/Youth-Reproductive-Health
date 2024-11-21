@@ -100,7 +100,7 @@ class EventController extends Controller
     }
     public function getEvent ( int $id)
     {
-        $event =  Event::find($id);
+        $event =  Event::with('user')->find($id);
         return view('admin.addEvent',[
             'event' => $event
         ]);
