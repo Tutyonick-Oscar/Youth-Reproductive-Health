@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Jobs\Compress;
 use App\Models\Mission;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -15,9 +16,11 @@ class MissionController extends Controller
        
         if ($request->image1 !== null && !$request->image1->getError()){
             $data['image1'] = $request->image1->store('vision','public');
+            Compress::dispatch($data,'image1');
         }
         if ($request->image2 !== null && !$request->image2->getError()){
           $data['image2'] = $request->image2->store('vision','public');
+          Compress::dispatch($data,'image2');
         }
         //dd($data);
         Mission::create($data);
@@ -37,9 +40,11 @@ class MissionController extends Controller
         
         if ($request->image1 !== null && !$request->image1->getError()){
             $data['image1'] = $request->image1->store('vision','public');
+            Compress::dispatch($data,'image1');
         }
         if ($request->image2 !== null && !$request->image2->getError()){
           $data['image2'] = $request->image2->store('vision','public');
+          Compress::dispatch($data,'image2');
         }
         $mission->update($data);
         return to_route('admin.storeMission')->with('success','mission mis à jour !');

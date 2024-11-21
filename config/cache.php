@@ -41,7 +41,7 @@ return [
         'database' => [
             'driver' => 'database',
             'table' => env('DB_CACHE_TABLE', 'cache'),
-            'connection' => env('DB_CACHE_CONNECTION'),
+            'connection' => env('DB_CACHE_CONNECTION','mysql'),
             'lock_connection' => env('DB_CACHE_LOCK_CONNECTION'),
         ],
 

@@ -12,7 +12,7 @@ use Illuminate\Mail\Mailables\Content;
 use Illuminate\Mail\Mailables\Envelope;
 use Illuminate\Queue\SerializesModels;
 
-class ContactMail extends Mailable
+class ContactMail extends Mailable implements ShouldQueue
 {
     use Queueable, SerializesModels;
 
@@ -22,9 +22,6 @@ class ContactMail extends Mailable
         $this->data = $data;
     }
 
-    /**
-     * Get the message envelope.
-     */
     public function envelope(): Envelope
     {
         return new Envelope(

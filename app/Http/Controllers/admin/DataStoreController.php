@@ -3,9 +3,12 @@
 namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
+use App\Jobs\Compress;
 use App\Models\HomeSlide;
+use App\Services\ImageService;
 use Auth;
 use Illuminate\Http\Request;
+
 
 class DataStoreController extends Controller
 {
@@ -17,6 +20,7 @@ class DataStoreController extends Controller
         ]);
         if ($request->image !== null && !$request->image->getError()){
             $data['image'] = $request->image->store('slides','public');
+            Compress::dispatch($data,'image');
         }
         $admin = Auth::user();
         $admin->slides()->create($data);
@@ -39,6 +43,7 @@ class DataStoreController extends Controller
         ]);
         if ($request->image !== null && !$request->image->getError()){
             $data['image'] = $request->image->store('slides','public');
+            Compress::dispatch($data,'image');
         }
         $slide->update($data);
         return to_route('admin.slider')->with('success','slide mise à jour avec succès !');

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Jobs\Compress;
 use App\Models\About;
 use Illuminate\Http\Request;
 
@@ -26,6 +27,7 @@ class AboutUsController extends Controller
         ]);
         if ($request->image !== null && !$request->image->getError()){
             $data['image'] = $request->image->store('about','public');
+            Compress::dispatch($data,'image');
         }
         About::create($data);
 
@@ -41,6 +43,7 @@ class AboutUsController extends Controller
         ]);
         if ($request->image !== null && !$request->image->getError()){
             $data['image'] = $request->image->store('about','public');
+            Compress::dispatch($data,'image');
         }
         $about->update($data);
         return to_route('admin.about')->with('success','à propos mis à jour avec succès !');

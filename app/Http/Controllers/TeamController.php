@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Jobs\Compress;
 use App\Models\TeamMember;
 use Illuminate\Http\Request;
 
@@ -25,6 +26,7 @@ class TeamController extends Controller
         ]);
         if ($request->image !== null && !$request->image->getError()){
             $data['image'] = $request->image->store('members','public');
+            Compress::dispatch($data,'image');
         }
         TeamMember::create($data);
 
@@ -50,6 +52,7 @@ class TeamController extends Controller
 
         if ($request->image !== null && !$request->image->getError()){
             $data['image'] = $request->image->store('members','public');
+            Compress::dispatch($data,'image');
         }
         $member->update($data);
         return to_route('admin.members')->with('success','membre mis à jour avec succès !');

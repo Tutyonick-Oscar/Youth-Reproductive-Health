@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Jobs\Compress;
 use App\Models\Cause;
 use Illuminate\Http\Request;
 
@@ -24,6 +25,7 @@ class CauseContoller extends Controller
         ]);
         if ($request->image !== null && !$request->image->getError()){
             $data['image'] = $request->image->store('causes','public');
+            Compress::dispatch($data,'image');
         }
         Cause::create($data);
 
@@ -48,6 +50,7 @@ class CauseContoller extends Controller
 
         if ($request->image !== null && !$request->image->getError()){
             $data['image'] = $request->image->store('causes','public');
+            Compress::dispatch($data,'image');
         }
         $cause->update($data);
         return to_route('admin.causes')->with('success','cause mis à jour avec succès !');

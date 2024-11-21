@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 
+use App\Jobs\Compress;
 use App\Models\About;
 use App\Models\Blog;
 use App\Models\Cause;
@@ -86,6 +87,7 @@ class EventController extends Controller
     
         if ($request->image !== null && !$request->image->getError()){
             $data['image'] = $request->image->store('events','public');
+            Compress::dispatch($data,'image');
         }
 
         $user->events()->create($data);
@@ -118,6 +120,7 @@ class EventController extends Controller
 
         if ($request->image !== null && !$request->image->getError()){
             $data['image'] = $request->image->store('events','public');
+            Compress::dispatch($data,'image');
         }
         $event->update($data);
         return to_route('admin.getEvents',['status'=> $data['status']])->with('success','event mis à jour avec succès !');

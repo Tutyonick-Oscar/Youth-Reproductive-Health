@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\admin;
 
+use App\Jobs\Compress;
 use App\Models\Vision;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -16,11 +17,13 @@ class OurVisionController extends Controller
        
         if ($request->image1 !== null && !$request->image1->getError()){
             $data['image1'] = $request->image1->store('vision','public');
+            Compress::dispatch($data,'image1');
         }
         if ($request->image2 !== null && !$request->image2->getError()){
-          $data['image2'] = $request->image2->store('vision','public');
+            $data['image2'] = $request->image2->store('vision','public');
+            Compress::dispatch($data,'image2');
         }
-        //dd($data);
+
         Vision::create($data);
         return to_route('admin.setVision')->with('success','vision définit avec succès !');
     }
@@ -38,9 +41,11 @@ class OurVisionController extends Controller
         
         if ($request->image1 !== null && !$request->image1->getError()){
             $data['image1'] = $request->image1->store('vision','public');
+            Compress::dispatch($data,'image1');
         }
         if ($request->image2 !== null && !$request->image2->getError()){
-          $data['image2'] = $request->image2->store('vision','public');
+            $data['image2'] = $request->image2->store('vision','public');
+            Compress::dispatch($data,'image2');
         }
         $vision->update($data);
         return to_route('admin.setVision')->with('success','vision mis à jour !');
