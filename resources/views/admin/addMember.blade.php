@@ -103,7 +103,7 @@
                 <small id="error" class="hidden text-red">la description ne doit pas être vide !</small>
                 <input type="text" name="content" id="content" class="hidden">
                 <div id="json" class="hidden json">
-                    {{isset($member) ? $member->content : ''}}
+                    {{isset($member) ? $member->content->toJson() : ''}}
                 </div>
                 <div class="flex gap-3 ">
                     <button type="submit" class=" cursor-pointer px-4 py-1 rounded-[4px] bg-accent1 text-white text-base font-semibold">

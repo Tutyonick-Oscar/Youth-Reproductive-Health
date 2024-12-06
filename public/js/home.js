@@ -213,8 +213,8 @@ document.querySelectorAll('.lefthidden').forEach(element =>{
  */
 
 const members = Array.from(document.querySelectorAll('#member'));
-const left = document.getElementById('left');
-const right = document.getElementById('right');
+const left = document.getElementById('backward');
+const right = document.getElementById('forward');
 let memberCount = 0;
 /**
  * incrementing the variable memberCount for handling the slide
@@ -236,7 +236,8 @@ const counting = (direction)=>{
 const  memberSliding = ( direction )=> {
 
     members[memberCount].animate([
-        {transform : 'translateX(0)', display :'flex'}, {transform : 'translateX(-50%)',display:'none'},
+        {transform : 'translateX(0)', display :'flex', opacity:1}, 
+        {transform : 'translateX(-50%)',display:'none', opacity:0},
     ],{
         duration : 500,
         fill : 'forwards'
@@ -245,7 +246,8 @@ const  memberSliding = ( direction )=> {
    counting(direction);
 
     members[memberCount].animate([
-        {display :'none', transform : 'translateX(50%)'}, {display :'flex', transform : 'translateX(0)'},
+        {display :'none', transform : 'translateX(50%)',opacity:0}, 
+        {display :'flex', transform : 'translateX(0)',opacity:1},
     ],{
         duration : 500,
         fill : 'forwards',
@@ -265,6 +267,7 @@ right.addEventListener('click',(e)=>{
      */
     memberSliding ('right');
 })
+
 
 /**
  * our vision slides

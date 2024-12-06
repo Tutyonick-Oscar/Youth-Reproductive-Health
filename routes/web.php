@@ -24,6 +24,7 @@ Route::get('/getslides',[ViewController::class,'getSlides']);
 
 Route::get('/about',[ViewController::class,'aboutUs'])->name('about');
 Route::get('/causes',[ViewController::class,'causes'])->name('causes');
+Route::get('/causes/{id}',[CauseContoller::class,'detail'])->name('cause.detail');
 Route::get('/blogs',action: [ViewController::class,'blogs'])->name('blogs');
 Route::get('/blogs/{type}',action: [BlogController::class,'typeOfBlog'])->name('typeOfBlog');
 Route::get('/events/{status}',action: [EventController::class,'events'])->name('events');

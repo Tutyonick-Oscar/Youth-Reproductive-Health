@@ -6,7 +6,6 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/air-datepicker@3.5.3/air-datepicker.min.css">
-    {{-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flowbite@2.5.1/dist/flowbite.min.css"> --}}
     @vite(['resources/css/app.css', 'resources/js/script.js'])
     <link rel="stylesheet" href="{{ asset('css/dash.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
@@ -24,7 +23,7 @@
     </style>
     <title>@yield('title')</title>
 </head>
-    <body class=" w-full bg-white">
+    <body class="w-full bg-white ">
         @yield('content')
     </body>
 </html>

@@ -4,6 +4,8 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use BumpCore\EditorPhp\Casts\EditorPhpCast;
+
 
 class Vision extends Model
 {
@@ -13,5 +15,8 @@ class Vision extends Model
         'image1',
         'image2',
         'content'
+    ];
+    protected $casts = [
+        'content' => EditorPhpCast::class,
     ];
 }

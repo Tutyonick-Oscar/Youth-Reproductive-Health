@@ -56,7 +56,7 @@
                         
                     </h2>
                     <div id='aboutContent' class="unobserve text-[gray] lg:text-lg">
-                         {!!$editorphp::make($about->content)->toHtml()!!}
+                         {!!mb_convert_encoding($about->content->render(),"UTF-8")!!}
                     </div>
                     <span class="-mt-4 underline text-bg">
                         <a href="{{route('about')}}">lire plus...</a>
@@ -77,7 +77,7 @@
                     {{$causes->first()->title}}
                 </h2>
                 <div id = 'causesFirstContent' class="unobserve text-[gray] lg:text-lg">
-                   {!!$editorphp::make($causes->first()->content)->toHtml()!!}
+                   {!! mb_convert_encoding($causes->first()->content->render(),"UTF-8")!!}
                 </div>
                 <span class="pb-6 -mt-4 underline text-bg">
                     <a href="#">lire plus...</a>
@@ -88,28 +88,6 @@
         </div>
     </section>
     <section id="what we do suite" class="flex w-full gap-4 px-8 pt-16 ">
-        {{-- <div class="lefthidden  boxs relative md:w-[33%] w-full shadow-md px-10 pb-10 flex flex-col gap-3">
-            <h2 class="text-lg font-semibold text-bg">
-                Promouvoir l'égalité entre le sexes
-            </h2>
-            <p class="text-sm text-accent1">
-                Dans les régions rurales de l’Est de la RD Congo, les mœurs et coutumes rétrogrades ont encore une emprise...
-            </p>
-            <p class="absolute flex items-center justify-center w-8 h-8 text-white duration-500 ease-in-out rounded-full cursor-pointer hover:bg-bg hover:text-white right-2 bottom-2 bg-accent1">
-                <i class="fa-solid fa-arrow-right"></i>
-            </p>
-        </div>
-        <div class="lefthidden boxs relative w-full md:w-[33%] shadow-md px-10 pb-10 hidden md:flex flex-col gap-3">
-            <h2 class="text-lg font-semibold text-bg">
-                Sante et droits sexuels et reproductifs
-            </h2>
-            <p class="text-sm text-accent1">
-                Informer la communauté sur ses droits, son pouvoir et ses capacités constitue une importante ressource...
-            </p>
-            <p class="absolute flex items-center justify-center w-8 h-8 text-white duration-500 ease-in-out rounded-full cursor-pointer hover:bg-bg hover:text-white right-2 bottom-2 bg-accent1">
-                <i class="fa-solid fa-arrow-right"></i>
-            </p>
-        </div> --}}
         @foreach ($causes as $cause)
             @if ($cause != $causes->first())
                 <div class="lefthidden boxs relative w-full md:w-[33%] shadow-md px-10 pb-10 hidden md:flex flex-col gap-3">
@@ -117,7 +95,7 @@
                         {{$cause->title}}
                     </h2>
                     <div id = 'causeSmallDescript' class="text-sm text-accent1">
-                       {!!$editorphp::make($cause->content)->toHtml()!!}
+                       {!!mb_convert_encoding($cause->content->render(),"UTF-8")!!}
                     </div>
                     <p class="absolute flex items-center justify-center w-8 h-8 text-white duration-500 ease-in-out rounded-full cursor-pointer hover:bg-bg hover:text-white right-2 bottom-2 bg-accent1">
                         <i class="fa-solid fa-arrow-right"></i>
@@ -145,7 +123,7 @@
         <div class="flex flex-col items-center w-full gap-6 lg:w-1/2 lg:pl-28 xl:pr-16 xl:pl-32 lg:gap-4 ">
             <h2 class="text-3xl font-semibold text-bg">Notre Vision</h2>
             <div id='visionContent' class=" text-accent1 unobserve">
-                 {!!$editorphp::make($vision->content)->toHtml()!!}
+                 {!!mb_convert_encoding($vision->content->render(),"UTF-8")!!}
             </div>
             <div class="flex flex-wrap w-full gap-6 unobserve">
                 <p class="flex flex-col text-3xl font-bold text-accent1">
@@ -178,7 +156,7 @@
             </div>
             <div id="missionContent" class="w-full lg:w-[40%] md:w-1/2 text-white unobserve">
             
-                    {!!$editorphp::make($mission->content)->toHtml()!!}
+                    {!!mb_convert_encoding($mission->content->render(),"UTF-8")!!}
             </div>
         </div>
         <div class="flex flex-row w-full gap-8 lg:gap-10 md:gap-5 ">
@@ -228,15 +206,15 @@
             </div>
         </div>
     </section>
-    <section id="team" class="w-full h-auto px-8 py-10 overflow-x-hidden ">
+    <section id="team" class="relative w-full h-auto px-8 py-10 overflow-x-hidden">
         <h2 class="w-40 px-4 py-2 mb-10 text-xl text-white rounded-md bg-gradient-to-l from-accent2 to-accent1">
             <a href="#">Notre Equipe</a>
         </h2>
         @forelse ($members as $member)
-        <div id="member" class="flex w-full gap-4 @if($member!=$members[0]) translate-x-[50%] hidden @endif">
+        <div id="member" class="w-full gap-4 {{$loop->first ? 'flex':'-translate-x-[50%] hidden'}}">
             <div class="flex flex-col w-full gap-4 p-4 bg-white border-l-2 shadow-lg md:w-1/2 rounded-xl border-accent1 md:p-10">
                 <div class="text-lg text-bg">
-                    {!!$editorphp::make($member->content)->toHtml()!!}
+                    {!!mb_convert_encoding($member->content->render(),"UTF-8")!!}
                 </div>
                 <div class="flex items-center justify-between w-full ">
                     <div class="flex items-center justify-center gap-4">
@@ -280,7 +258,7 @@
                         class="object-cover w-full h-full rounded-md "
                     >
                 </div>
-                <div class=" w-full xl:w-[40%] flex justify-center items-center flex-col gap-4 xl:gap-10">
+                <div class="w-full xl:w-[40%] flex justify-center items-center flex-col gap-4 xl:gap-10">
                     <div class="flex flex-col gap-3 ">
                         <h3 class="font-bold text-bg">{{$member->name}}</h3>
                         <p class="text-sm text-bg">{{$member->function}}</p>
@@ -305,17 +283,15 @@
                 </div>
             </div>
         </div>
-            
-        @empty
-            
+        @empty  
         @endforelse
         <div class="flex items-center justify-center w-full gap-3 my-10 ">
             <div class=" w-[40%] lg:w-[45%] h-[1px] bg-secodary"></div>
             <div class=" w-[22%] lg:w-[10%] flex gap-2 sm:gap-4 sm:pl-1 md:gap-8 lg:gap-4 xl:gap-10 md:pl-8 lg:pl-3">
-                <p id="left" class="flex items-center justify-center w-8 h-8 border rounded-full cursor-pointer border-secodary">
+                <p id="backward" class="flex items-center justify-center w-8 h-8 border rounded-full cursor-pointer border-secodary">
                     <i class="text-xl fa-solid fa-arrow-left text-secodary"></i>
                 </p>
-                <p id="right" class="flex items-center justify-center w-8 h-8 border rounded-full cursor-pointer border-secodary">
+                <p id="forward" class="flex items-center justify-center w-8 h-8 border rounded-full cursor-pointer border-secodary">
                     <i class="text-xl fa-solid fa-arrow-right text-secodary"></i>
                 </p>
             </div>
@@ -453,7 +429,7 @@
                     </div>
                     <div class="w-full ">
                         <div id="blogContent" class="text-[gray] text-sm">
-                           {!!$editorphp::make($blog->content)->toHtml()!!}
+                           {!!mb_convert_encoding($blog->content->render(),"UTF-8")!!}
                         </div>
                     </div>
                 </div>

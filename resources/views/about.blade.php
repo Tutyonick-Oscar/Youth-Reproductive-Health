@@ -20,7 +20,7 @@
     <section id="text" class="w-full h-auto px-4 pt-16 pb-5 -mt-1 lg:px-8">
         <div class=" w-full px-4 lg:px-8 border-b border-x border-[gray] py-5">
             <div class=" text-[gray] text-justify">
-                  {!!$editorphp::make($about->content)->toHtml()!!}
+                  {!!mb_convert_encoding($about->content->render(),"UTF-8")!!}
             </div>
         </div>
     </section>

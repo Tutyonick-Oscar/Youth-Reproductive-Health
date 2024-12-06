@@ -34,7 +34,7 @@
                     </p>
                 </div>
                 <div class="w-full ">
-                     {!! $editorphp::make($event->content)->toHtml() !!}
+                     {!! mb_convert_encoding($event->content->render(),"UTF-8")!!}
                 </div>
                 <div class="share w-full border-t border-[#80808042] pt-10 flex flex-col gap-3">
                     <div class="flex w-full gap-3 ">

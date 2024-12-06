@@ -19,28 +19,16 @@ use BumpCore\EditorPhp\EditorPhp;
 use Carbon\Carbon;
 use Hash;
 use Illuminate\Http\Request;
-use BumpCore\EditorPhp\Casts\EditorPhpCast;
 
 class viewController extends Controller
 {
-
-    protected $casts = [
-        'content' => EditorPhpCast::class,
-    ];
    
     public function index () 
-    {
-        EditorPhp::register([
-            'image' =>Image::class,
-            'paragraph' => Paragraph::class,
-            'header' => Header::class,
-            'list'=>ListBlock::class,
-        ]);
+    { 
         return view('index',[
             'causes' => Cause::limit(4)->orderBy('created_at','desc')->get(),
             'blogs' => Blog::orderBy('created_at','desc')->limit(3)->get(),
             'about' => About::first(),
-            'editorphp'=> EditorPhp::class,
             'vision' => Vision::first(),
             'mission' => Mission::first(),
             'members' => TeamMember::all(),
@@ -70,7 +58,6 @@ class viewController extends Controller
             'causes' => Cause::limit(4)->get(),
             'blogs' => Blog::orderBy('created_at','desc')->limit(3)->get(),
             'about' => About::first(),
-            'editorphp'=> EditorPhp::class,
         ]);
     }
     public function causes () 

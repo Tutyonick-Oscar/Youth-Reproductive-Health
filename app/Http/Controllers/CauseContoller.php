@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Jobs\Compress;
 use App\Models\Cause;
 use Illuminate\Http\Request;
+use App\Models\Blog;
 
 class CauseContoller extends Controller
 {
@@ -60,5 +61,15 @@ class CauseContoller extends Controller
         $cause = Cause::find($id);
         $cause->delete();
         return to_route('admin.causes')->with('success','cause supprimée !');
+    }
+
+    public function detail(int $id)
+    {
+        $cause = Cause::find($id);
+        return view('cause_detail',[
+            'cause' => $cause,
+            'causes' => Cause::orderBy('created_at','desc')->limit(4)->get(),
+            'blogs' => Blog::orderBy('created_at','desc')->limit(3)->get(),
+        ]);
     }
 }

@@ -1,9 +1,11 @@
 let jsonData =''
 try {
-  jsonData = document.getElementById('json').innerText
+  jsonData = document.getElementById('json').innerHTML
 } catch (error) {
   console.log(error.message);
 }
+console.log(jsonData);
+
 const editor = new EditorJS(
   {
     holder: 'editorjs',

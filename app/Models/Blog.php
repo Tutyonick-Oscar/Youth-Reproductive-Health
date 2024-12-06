@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Models;
+use BumpCore\EditorPhp\Casts\EditorPhpCast;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -25,4 +26,7 @@ class Blog extends Model
     {
         return $this->hasMany(Blogcomment::class);
     }
+    protected $casts = [
+        'content' => EditorPhpCast::class,
+    ];
 }

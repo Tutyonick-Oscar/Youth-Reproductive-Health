@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Models;
+use BumpCore\EditorPhp\Casts\EditorPhpCast;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -12,5 +13,8 @@ class About extends Model
         'title',
         'image',
         'content'
+    ];
+    protected $casts = [
+        'content' => EditorPhpCast::class,
     ];
 }
