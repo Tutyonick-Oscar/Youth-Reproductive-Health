@@ -1,5 +1,6 @@
 <footer class="relative flex flex-col w-full ">
-    <div class="flex flex-row items-center w-full gap-5 px-4 py-3 overflow-x-scroll lg:justify-between lg:px-24 lg:overflow-hidden bg-gradient-to-l from-accent2 to-accent1">
+    <!-- Reseau de partenaires -->
+    <!-- <div class="flex flex-row items-center w-full gap-5 px-4 py-3 overflow-x-scroll lg:justify-between lg:px-24 lg:overflow-hidden bg-gradient-to-l from-accent2 to-accent1">
         <div class=" w-[9.4rem] h-auto">
             <a href="#" class="w-[9.4rem] h-auto flex flex-col justify-center items-center">
             <img loading="lazy" decoding="async" src="{{asset('images/lazy.jpg')}}" data-src="{{asset('images/logoAM.jpg')}}" alt="Logo patterner" width="100" height="100"
@@ -32,7 +33,7 @@
                 <p class="text-sm text-center text-white ">droits sexuels et reproductifs</p>
             </a>
         </div>
-    </div>
+    </div> -->
     <div class="flex flex-col w-full gap-5 px-4 pt-3 pb-16 bg-bg bg-blend-darken lg:pt-10 lg:flex-row lg:gap-10 lg:px-10">
         <div class=" w-full lg:w-[20%] h-auto flex flex-col bg-secodary rounded-md p-4 gap-4">
             <div class="flex items-center w-full gap-2 ">
@@ -42,9 +43,9 @@
             </div>
             <div class="w-full ">
                 <p class="text-white lg:text-sm">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum
-                    consequatur iure officia assumenda ipsa neque obcaecati delectus
-                    consequuntur sequi tenetur!
+                Vous avez une histoire à partager ou des questions sur nos thématiques ?
+                N'hésitez pas à commenter nos articles ou à nous contacter pour participer aux échanges. 
+                Votre voix compte pour construire un avenir plus informé et équitable.
                 </p>
             </div>
             <div class="flex w-full gap-2 ">
@@ -189,9 +190,9 @@
         </div>
         <div class="absolute flex items-center justify-center gap-3 bottom-5 right-1">
             <p class="text-sm text-white ">
-                copyright 2024 youth reproductive health
+                copyright {{ now()->year }} youth reproductive health
             </p>
-            <p class="flex items-center self-end justify-center w-10 h-10 p-3 text-white rounded-full bg-accent1">
+            <p id="backToTop" class="cursor-pointer flex items-center self-end justify-center w-10 h-10 p-3 text-white rounded-full bg-accent1">
                 <i class="text-lg text-center fa-solid fa-arrow-up"></i>
             </p>
         </div>

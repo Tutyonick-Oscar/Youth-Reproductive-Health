@@ -15,14 +15,16 @@ class MissionController extends Controller
         $data  =  $request->validated();
        
         if ($request->image1 !== null && !$request->image1->getError()){
-            $data['image1'] = $request->image1->store('vision','public');
+            $data['image1'] = $request->image1->store('mission','public');
+            dd($data['image1']);
             Compress::dispatch($data,'image1');
         }
+        else dd('hello');
         if ($request->image2 !== null && !$request->image2->getError()){
-          $data['image2'] = $request->image2->store('vision','public');
+          $data['image2'] = $request->image2->store('mission','public');
           Compress::dispatch($data,'image2');
         }
-        //dd($data);
+
         Mission::create($data);
         return to_route('admin.storeMission')->with('success','mission définit avec succès !');
     }
@@ -39,11 +41,12 @@ class MissionController extends Controller
             'content' => ['required']]);
         
         if ($request->image1 !== null && !$request->image1->getError()){
-            $data['image1'] = $request->image1->store('vision','public');
-            Compress::dispatch($data,'image1');
+            $data['image1'] = $request->image1->store('mission','public');
+            //dd($data['image1']);
+           Compress::dispatch($data,'image1');
         }
         if ($request->image2 !== null && !$request->image2->getError()){
-          $data['image2'] = $request->image2->store('vision','public');
+          $data['image2'] = $request->image2->store('mission','public');
           Compress::dispatch($data,'image2');
         }
         $mission->update($data);

@@ -29,7 +29,7 @@ class OurVisionController extends Controller
     }
     public function update (Request $request)
     {
-        if (Auth::user()->id !== 1) {
+        if (Auth::user()->id !== 2) {
             return  to_route('admin.setVision')->withErrors(['title'=>'Seuls les supers Admins peuvent mettre à jour la vision']);
         }
         $vision = Vision::find(1);

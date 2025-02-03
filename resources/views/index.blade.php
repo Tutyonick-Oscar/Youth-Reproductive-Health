@@ -24,9 +24,8 @@
                     id="title" class="text-3xl font-semibold tracking-wider text-white opacity-0 sm:-translate-x-80 xl:text-7xl lg:text-6xl">
                     Aider les pauvres femmes à jouir pleinement de leurs droits sexuels et reproductifs
                 </h1>
-                <p id="text" class="hidden text-white translate-y-20 opacity-0 md:block">
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptates, ipsa.
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ex, sapiente.
+                <p id="text" class=" self-start hidden text-white translate-y-20 opacity-0 md:block">
+                Aider nous à agir avec plus des forces, Leurs besoins augmentent, nos ressources diminuent.
                 </p>
                 <button class="self-start hidden px-6 py-4 duration-500 ease-in-out rounded-lg hover:bg-accent2 lg:block bg-accent1">
                     <a href="#" class="text-xl text-white ">Faire un Don maintenant</a>
@@ -80,7 +79,7 @@
                    {!! mb_convert_encoding($causes->first()->content->render(),"UTF-8")!!}
                 </div>
                 <span class="pb-6 -mt-4 underline text-bg">
-                    <a href="#">lire plus...</a>
+                    <a href="{{route('causes')}}">lire plus...</a>
                 </span>
             </div>
             <img loading="lazy" decoding="async" src="{{asset('images/lazy.jpg')}}" data-src="/storage/{{$causes->first()->image}}" alt="a propos de nous" height="400" width="300" 
@@ -98,7 +97,9 @@
                        {!!mb_convert_encoding($cause->content->render(),"UTF-8")!!}
                     </div>
                     <p class="absolute flex items-center justify-center w-8 h-8 text-white duration-500 ease-in-out rounded-full cursor-pointer hover:bg-bg hover:text-white right-2 bottom-2 bg-accent1">
+                        <a href=" {{route('cause.detail',['id'=>$cause->id])}} ">
                         <i class="fa-solid fa-arrow-right"></i>
+                        </a>
                     </p>
                 </div>
             @endif
@@ -120,7 +121,7 @@
                 >
             </div>
         </div>
-        <div class="flex flex-col items-center w-full gap-6 lg:w-1/2 lg:pl-28 xl:pr-16 xl:pl-32 lg:gap-4 ">
+        <div class="flex flex-col justify-center items-center w-full gap-6 lg:w-1/2 lg:pl-28 xl:pr-16 xl:pl-32 lg:gap-4 ">
             <h2 class="text-3xl font-semibold text-bg">Notre Vision</h2>
             <div id='visionContent' class=" text-accent1 unobserve">
                  {!!mb_convert_encoding($vision->content->render(),"UTF-8")!!}
@@ -134,14 +135,11 @@
                     +1000 <br>
                     <span class="text-base font-bold text-bg">Femmes accompagnées</span>
                 </p>
-                <p class="flex flex-col text-3xl font-bold text-accent1 lg:hidden xl:block">
+                <p class="flex flex-col text-3xl font-bold text-accent1 ">
                     +10 <br>
                     <span class="text-base font-bold text-bg">Collaborations</span>
                 </p>
-            </div>
-            <button class="self-start px-4 py-2 text-white rounded-md bg-gradient-to-l from-accent2 to-accent1">
-                <a href="#">En savoir plus</a>
-            </button>
+            </div>          
         </div>
     </section>
     <section class="flex flex-col w-full px-8 py-16 bg-secodary">
@@ -180,8 +178,8 @@
                 <p id="visionBtn" class="w-3 h-3 bg-white rounded-full">  </p>
             </div>
             <p class="text-lg text-white">
-                <a href="#">
-                    En savoir plus sur notre <span class="font-bold text-accent1">mission</span>
+                <a href="{{route('about')}}">
+                    En savoir plus sur <span class="font-bold text-accent1">youth reproductive health</span>
                 </a>
             </p>
         </div>
@@ -201,7 +199,7 @@
                     <a href="#" class="px-4 py-2 text-xl text-white rounded-lg bg-accent1">Fiare un don</a>
                 </button>
                 <button class="px-4 py-1 text-xl font-semibold text-white border border-white rounded-lg ">
-                    <a href="#">Nous rejoindre</a>
+                    <a href="{{route('contact')}}">Nous rejoindre</a>
                 </button>
             </div>
         </div>
@@ -307,15 +305,13 @@
                 <div class="flex flex-col w-full gap-4 pb-10 md:flex-row md:gap-10 lg:gap-24">
                     <div class="w-full md:w-1/2">
                         <h1 class="text-2xl font-bold lg:text-3xl text-bg text-start unobserve">
-                            Découvrez l'ensemble des événements Youth Reproductive Health
+                            Découvrez Les Initiatives Youth Reproductive Health
                         </h1>
                     </div>
                     <div class="w-full md:w-1/2">
                         <p class="text-justify text-bg unobserve">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi
-                            quasi facere accusantium reiciendis fuga laboriosam nobis maxime 
-                            sunt aspernatur rerum.
-                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsam, laboriosam.
+                            Restez informé des ateliers, conférences et campagnes que nous organisons pour promouvoir la santé sexuelle et reproductive et l’égalité des sexes. 
+                            Nos événements offrent des espaces d’échange, d’apprentissage et de mobilisation pour les jeunes et les communautés.
                         </p>
                     </div>
                 </div>
@@ -388,7 +384,7 @@
             <div class="flex flex-col w-full gap-4 pb-10 md:flex-row md:gap-10 lg:gap-24">
                 <div class="flex flex-col w-full gap-3 md:w-1/2">
                     <h1 class="text-2xl font-bold md:text-3xl text-bg unobserve">
-                        Découvrez nos articles de blog plus récents
+                        Découvrez nos articles de blog
                     </h1>
                     <p class="hidden px-4 py-2 font-bold duration-500 ease-in-out bg-white border-b-2 rounded-lg shadow-lg cursor-pointer md:block w-36 hover:bg-accent1 hover:text-white text-accent1 border-secodary">
                         <a href="{{route('blogs')}}">Voir tous les blog</a>
@@ -396,10 +392,8 @@
                 </div>
                 <div class="w-full md:w-1/2">
                     <p class=" text-bg unobserve">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi
-                        quasi facere accusantium reiciendis fuga laboriosam nobis maxime 
-                        sunt aspernatur rerum.
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsam, laboriosam.
+                    Plongez dans notre blog pour en apprendre davantage sur la santé sexuelle et reproductive, les initiatives en faveur de l’égalité des sexes et les actions de plaidoyer menées par nos équipes et partenaires. 
+                    Retrouvez des analyses, des témoignages et des conseils pratiques pour mieux comprendre les enjeux actuels.
                     </p>
                 </div>
             </div>

@@ -34,7 +34,8 @@
                     </p>
                 </div>
                 <div class="w-full ">
-                     {!! $editorphp::make($blog->content)->toHtml() !!}
+                    {!!mb_convert_encoding($blog->content->render(),"UTF-8")!!}
+                     
                 </div>
                 <div class="share w-full border-t border-[#80808042] pt-10 flex flex-col gap-3">
                     <div class="flex w-full gap-3 ">
@@ -95,14 +96,14 @@
                    <p class ='flex items-center justify-center w-full h-full border rounded-full border-secodary'>
                         <i class="text-[5rem] text-center rounded-full  fa-solid fa-user"></i>
                    </p>
-                    {{-- <img src="{{asset('images/KK.JPG')}}" alt="" width="230" height="300" class="object-cover w-full h-full rounded-full "> --}}
+                    <!-- {{--<img src="{{asset('images/KK.JPG')}}" alt="" width="230" height="300" class="object-cover w-full h-full rounded-full ">--}} -->
                 </div>
                 <div class="flex flex-col w-full gap-3 md:w-auto">
                     <h2 class="flex gap-3 font-semibold ">
                        {{$blog->user->user_name}} : <span>Auteur</span>
                     </h2>
                     <p class=" text-sm text-[gray]">
-                        program manger at youth reproductive health
+                        program manger à youth reproductive health
                     </p>
                     <div class="flex gap-4 ">
                         <p class="">

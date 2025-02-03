@@ -37,7 +37,8 @@
                 </div>
                 <div class="w-full h-[10rem] overflow-y-hidden">
                     <div id="content" class="text-[gray] text-sm">
-                         {!! $editorphp::make($blog->content)->toHtml() !!}
+                         
+                         {!!mb_convert_encoding($blog->content->render(),"UTF-8")!!}
                     </div>
                 </div>
                 <button type="button" class="duration-300 ease-in-out border-2 border-accent1 px-1 py-[0.7rem] rounded-lg  w-[10rem]">

@@ -9,13 +9,7 @@
     <!-- Main content -->
     <div class="w-full flex flex-col">
       <div class="flex flex-col px-6">
-        <div class="w-full flex justify-between items-center mt-4">
-          <p class="text-secodary">Admin</p>
-          <div class="md:flex items-center gap-2 text-secodary hidden">
-            <p>Log Out</p>
-            <i class="fa-solid fa-arrow-right"></i>
-          </div>
-        </div>
+        @include('admin.layouts.logout')
         <div class="w-full border-b-2 border-b-bg mt-8"></div>
       </div>
     </div>
@@ -94,7 +88,7 @@
                 </div> --}}
                 <div class=" flex gap-3">
                     <button type="submit" class=" cursor-pointer px-4 py-1 rounded-[4px] bg-accent1 text-white text-base font-semibold">
-                        {{isset($slide) ? 'Mettreb à jour' : 'Envoyer'}}
+                        {{isset($slide) ? 'Mettre à jour' : 'Envoyer'}}
                     </button>
                     <button type="button" class="px-4 py-1 rounded-[4px] dash-border cursor-pointer">
                         Reset

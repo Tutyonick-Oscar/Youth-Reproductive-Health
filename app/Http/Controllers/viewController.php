@@ -58,6 +58,7 @@ class viewController extends Controller
             'causes' => Cause::limit(4)->get(),
             'blogs' => Blog::orderBy('created_at','desc')->limit(3)->get(),
             'about' => About::first(),
+            'members' => TeamMember::all(),
         ]);
     }
     public function causes () 

@@ -24,22 +24,22 @@
                 Contact <span class="text-4xl text-accent1">us</span>
             </p>
             <p class=" text-[gray]">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit ea 
-                vitae fugit nulla voluptatibus hic officia odit mollitia delectus numquam!
+            Nous vous remercions de votre intérêt pour Youth Reproductive Health. 
+            Nous sommes à votre écoute pour répondre à vos questions et vous accompagner dans l'accès à l'information sur la santé reproductive et l'égalité des sexes.
             </p>
             <div class="flex gap-4 ">
                 <p class="">
-                    <a href="#" class="flex items-center justify-center w-8 h-8 border rounded-full border-accent1">
+                    <a href="https://www.facebook.com/profile.php?id=100086390902576" class="flex items-center justify-center w-8 h-8 border rounded-full border-accent1">
                         <i class="text-xl fa-brands fa-facebook text-bg"></i>
                     </a>
                 </p>
                 <p>
-                    <a href="#" class="flex items-center justify-center w-8 h-8 border rounded-full border-accent1">
+                    <a href="https://twitter.com/Y_R_Health" class="flex items-center justify-center w-8 h-8 border rounded-full border-accent1">
                         <i class="text-xl fa-solid fa-x text-bg"></i>
                     </a>
                 </p>
                 <p>
-                    <a href="#" class="flex items-center justify-center w-8 h-8 border rounded-full border-accent1">
+                    <a href="https://www.instagram.com/youth_rep_health/" class="flex items-center justify-center w-8 h-8 border rounded-full border-accent1">
                         <i class="text-xl fa-brands fa-instagram text-red"></i>
                     </a>
                 </p>
@@ -73,21 +73,6 @@
                         </p>
                     </div>
                 </div>
-                <!-- <div id="contactInfos" class="relative flex flex-col w-full gap-2">
-                    <div class="flex items-center gap-3 ">
-                        <p class="flex items-center justify-center w-5 h-5 rounded-full bg-accent1">
-                            <span class="w-[0.625rem] h-[0.625rem] bg-white rounded-full"></span>
-                        </p>
-                        <p class="text-lg font-semibold text-white ">
-                           2.  infos du contact
-                        </p>
-                    </div>
-                    <div class="w-full pl-10 ">
-                        <p class="text-white lg:text-sm">
-                            info@youthreproductivehealth.org <br> +243 993 881 612
-                        </p>
-                    </div>
-                </div> -->
                 <div class="relative flex flex-col w-full gap-2">
                     <div class="flex items-center gap-3 ">
                         <p class="flex items-center justify-center w-5 h-5 rounded-full bg-accent1">

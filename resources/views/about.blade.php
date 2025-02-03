@@ -5,10 +5,10 @@
     <section
         class="justify-end w-full h-auto mt-16 lg:bg-secodary sm:mt-12 lg:mt-32 lg:flex">
         <div style="background-image:url({{asset('images/8.jpg')}})"
-             class="bg-blend-darken bg-cover rounded-b-[5rem] md:rounded-b-[2rem] lg:rounded-b-none self-end flex flex-col 
+             class="bg-blend-darken bg-cover flex flex-col 
              items-center justify-center gap-5 overflow-hidden bg-bg bg-opacity-60 w-full 
-             h-[20rem] lg:h-[35rem] lg:w-[92%] lg:rounded-tl-[10rem]">
-            <h1 class="text-2xl text-white lg:text-5xl">
+             h-[20rem] lg:h-[35rem]">
+            <h1 class="text-3xl text-white lg:text-6xl">
                 Droits sexuels et reproductifs
             </h1>
             <p class="text-2xl font-semibold text-white">A propos de nous</p>
@@ -24,7 +24,7 @@
             </div>
         </div>
     </section>
-    <section class=" w-full h-[20rem] lg:h-[30rem] bg-no-repeat bg-cover bg-blend-darken bg-[#141821ac] flex justify-center items-center" 
+    <section class=" w-full h-[20rem] lg:h-[30rem] xl:h-[35rem] bg-no-repeat bg-cover bg-blend-darken bg-[#141821ac] flex justify-center items-center" 
         style="background-image: url({{asset('images/bgimg.jpg')}})">
         <div class="flex flex-col items-center justify-center w-full gap-4 px-4">
             <h1 class="text-3xl font-bold text-white lg:text-6xl md:text-5xl">
@@ -39,7 +39,7 @@
                     <a href="#" class="px-4 py-2 text-xl text-white rounded-lg bg-accent1">Fiare un don</a>
                 </button>
                 <button class="px-4 py-1 text-xl font-semibold text-white border border-white rounded-lg ">
-                    <a href="#">Nous rejoindre</a>
+                    <a href="{{route('contact')}}">Nous rejoindre</a>
                 </button>
             </div>
         </div>
@@ -48,19 +48,19 @@
         <div class="flex flex-col w-full gap-5 ">
             <p class="text-3xl font-semibold text-center text-bg">Nos volontaires</p>
             <p class=" text-[gray] md:text-center">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
-                Facilis exercitationem earum magni, dolorum ad, corrupti dolores 
+                Découvrez l'équipe passionnée et engagée qui œuvre chaque jour pour promouvoir la santé sexuelle et reproductive et l'égalité des sexes. 
             </p>
-            <div class="w-full h-auto md:flex md:gap-8">
-                <div class="flex w-full gap-8 bg-white rounded-md shadow-lg md:w-1/2 lg:gap-0">
-                   <div class=" w-[8rem] sm:w-[12rem] md:w-[10rem] sm:h-[14rem] h-[9rem] lg:w-1/2 lg:h-[20rem] rounded-md ">
-                        <img loading="lazy" decoding="async"  src="{{asset('images/lazy.jpg')}}" data-src="{{asset('images/KK.jpg')}}" alt="managing director" width="250" height="300"
+            <div id="scrollable" class="w-full h-auto flex gap-4 md:gap-8 flex-row flex-nowrap overflow-x-auto">
+                @foreach ($members as $member)
+                <div id="about_member" data-iteration="{{$loop->iteration}}" class="min-w-[25rem] gap-4 md:gap-8 bg-white rounded-md shadow-lg md:w-1/2 lg:gap-0 flex">
+                   <div class="w-1/2 sm:h-[14rem] h-[12rem] lg:w-1/2 lg:h-[20rem] rounded-md ">
+                        <img loading="lazy" decoding="async"  src="{{asset('images/lazy.jpg')}}" data-src="/storage/{{$member->image}}" alt="managing director" width="250" height="300"
                         class= "object-cover w-full h-full "
                         >
                    </div>
-                    <div class="flex flex-col items-center justify-center gap-4 lg:w-1/2">
-                        <h2 class="text-xl font-semibold text-bg">Dullin Lulinda</h2>
-                        <p class=" text-bg">Program manager</p>
+                    <div class="w-1/2 flex flex-col items-center justify-center gap-4 lg:w-1/2">
+                        <h2 class="text-xl font-semibold text-bg">{{$member->name}}</h2>
+                        <p class=" text-bg">{{$member->function}}</p>
                         <div class="flex gap-4 ">
                             <p class="">
                                 <a href="#" class="flex items-center justify-center w-10 h-10 border rounded-full border-accent1">
@@ -80,38 +80,12 @@
                         </div>
                     </div>
                 </div>
-                <div class="hidden w-full gap-8 bg-white rounded-md shadow-lg md:flex md:w-1/2 lg:gap-0">
-                    <div class="w-[8rem] sm:w-[12rem] md:w-[10rem] sm:h-[14rem] h-[9rem] lg:w-1/2 lg:h-[20rem] rounded-md">
-                        <img loading="lazy" decoding="async"  src="{{asset('images/lazy.jpg')}}" data-src="{{asset('images/KK.jpg')}}" alt="managing director" width="250" height="300"
-                            class="object-cover w-full h-full "
-                            >
-                    </div>
-                    <div class="flex flex-col items-center justify-center gap-4 lg:w-1/2">
-                        <h2 class="text-xl font-semibold text-bg">Dullin Lulinda</h2>
-                        <p class=" text-bg">Program manager</p>
-                        <div class="flex gap-4 ">
-                            <p class="">
-                                <a href="#" class="flex items-center justify-center w-10 h-10 border rounded-full border-accent1">
-                                    <i class="text-xl fa-brands fa-facebook text-bg"></i>
-                                </a>
-                            </p>
-                            <p>
-                                <a href="#" class="flex items-center justify-center w-10 h-10 border rounded-full border-accent1">
-                                    <i class="text-xl fa-solid fa-x text-bg"></i>
-                                </a>
-                            </p>
-                            <p>
-                                <a href="#" class="flex items-center justify-center w-10 h-10 border rounded-full border-accent1">
-                                    <i class="text-xl fa-brands fa-instagram text-red"></i>
-                                </a>
-                            </p>
-                        </div>
-                    </div>
-                </div>
+                @endforeach  
             </div>
             <div class="flex justify-center w-full gap-3 mt-3 ">
-                <p class="w-6 h-2 bg-accent1"></p>
-                <p class="w-2 h-2 bg-accent1"></p>
+                @foreach ( $members as $member )
+                <p id="count_member" data-iteration="{{$loop->iteration}}" class="{{$loop->first ? 'w-6':'w-2'}} h-2 bg-accent1 cursor-pointer"></p>
+                @endforeach               
             </div>
         </div>
     </section>
@@ -119,31 +93,25 @@
         <div class="flex flex-col w-full gap-5 ">
             <p class="text-3xl font-semibold text-center text-bg">Ce que les gens disent de nous</p>
             <p class=" text-[gray] md:text-center">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
-                Facilis exercitationem earum magni, dolorum ad, corrupti dolores 
+                Lisez les témoignages sincères de ceux qui ont vécu l'impact positif de nos actions et initiatives. 
             </p>
-            <div class="w-full h-auto md:flex md:gap-8">
-                <div class="flex flex-col w-full gap-4 p-4 bg-white border-l-2 shadow-lg md:w-1/2 rounded-xl border-accent1 md:p-10">
+            <div id="notice_scrollable" class="w-full h-auto flex md:gap-8 overflow-x-auto flex-row flex-nowrap">
+                <div id="notice" data-number="1" class="flex flex-col min-w-[23rem] gap-4 p-4 bg-white border-l-2 shadow-lg md:w-1/2 rounded-xl border-accent1 md:p-10">
                     <p class="text-lg">
                         <i class=" text-bg">
-                            Mme Muhigirwa Sifa Ghislaine est une professionnelle en biologie médicale, avec une grande
-                            expérience dans la promotion du droit des femmes et des filles à accéder aux informations, 
-                            ressources et compétences en matière de santé qui leur permettent de devenir économiquement 
-                            indépendantes et de jouir de leur autonomie. Elle est la coordinatrice de Youth Reproductive 
-                            Health DRC.
+                        "Grâce aux ateliers et aux ressources de Youth Reproductive Health, j'ai enfin pu comprendre mes droits et mieux appréhender ma santé reproductive. 
+                        Les informations étaient claires, accessibles et adaptées à mes questions. 
+                        Je me sens désormais plus autonome et en confiance pour prendre mes décisions."
                         </i>
                     </p>
                     <div class="flex items-center justify-between w-full ">
                         <div class="flex items-center justify-center gap-4">
-                            <div class="p-2 border rounded-full cursor-pointer border-accent1">
-                                <img loading="lazy" decoding="async"  src="{{asset('images/lazy.jpg')}}" data-src="{{asset('images/261669296118.jpg')}}" alt="Muhigirwa Sifa Ghislaine" width="80" height="80"
-                                    class="object-cover w-20 h-20 rounded-full md:w-16 md:h-16" 
-                                >
+                            <div class="w-16 h-16 flex items-center justify-center p-2 border rounded-full cursor-pointer border-accent1">
+                                <i class="text-[2.5rem] text-center fa-solid fa-user"></i>
                             </div>
                             <div class="flex flex-col gap-1 ">
-                                <h3 class="font-bold text-bg">Muhigirwa Sifa Ghislaine</h3>
-                                <p class="text-sm text-bg">Coordinatrice</p>
-                                <p class="text-sm text-bg"> Société de l'etat civil</p>
+                                <h3 class="font-bold text-bg">Amina 19 ans</h3>
+                               
                             </div>
                         </div>
                         <div>
@@ -153,27 +121,21 @@
                         </div>
                     </div>
                 </div>
-                <div class="flex flex-col w-full gap-4 p-4 bg-white border-l-2 shadow-lg md:w-1/2 rounded-xl border-accent1 md:p-10">
+                <div id="notice" data-number="2" class="flex flex-col min-w-[23rem] gap-4 p-4 bg-white border-l-2 shadow-lg md:w-1/2 rounded-xl border-accent1 md:p-10">
                     <p class="text-lg">
                         <i class=" text-bg">
-                            Mme Muhigirwa Sifa Ghislaine est une professionnelle en biologie médicale, avec une grande
-                            expérience dans la promotion du droit des femmes et des filles à accéder aux informations, 
-                            ressources et compétences en matière de santé qui leur permettent de devenir économiquement 
-                            indépendantes et de jouir de leur autonomie. Elle est la coordinatrice de Youth Reproductive 
-                            Health DRC.
+                            "Les sessions de discussion et de sensibilisation proposées par Youth Reproductive Health ont véritablement changé ma vision de la santé sexuelle. 
+                            J'ai appris à surmonter les tabous et à parler ouvertement des sujets qui me concernaient. 
+                            Leur approche respectueuse et pédagogique m'a permis de me sentir soutenu et compris."
                         </i>
                     </p>
                     <div class="flex items-center justify-between w-full ">
                         <div class="flex items-center justify-center gap-4">
-                            <div class="p-2 border rounded-full cursor-pointer border-accent1">
-                                <img loading="lazy" decoding="async"  src="{{asset('images/lazy.jpg')}}" data-src="{{asset('images/261669296118.jpg')}}" alt="Muhigirwa Sifa Ghislaine" width="80" height="80"
-                                    class="object-cover w-20 h-20 rounded-full md:w-16 md:h-16" 
-                                >
+                            <div class="w-16 h-16 flex items-center justify-center p-2 border rounded-full cursor-pointer border-accent1">
+                            <i class="text-[2.5rem] text-center fa-solid fa-user"></i>
                             </div>
                             <div class="flex flex-col gap-1 ">
-                                <h3 class="font-bold text-bg">Muhigirwa Sifa Ghislaine</h3>
-                                <p class="text-sm text-bg">Coordinatrice</p>
-                                <p class="text-sm text-bg"> Société de l'etat civil</p>
+                                <h3 class="font-bold text-bg">Marline, 21 ans</h3>
                             </div>
                         </div>
                         <div>
@@ -185,10 +147,11 @@
                 </div>
             </div>
             <div class="flex justify-center w-full gap-3 mt-3 ">
-                <p class="w-6 h-2 bg-accent1"></p>
-                <p class="w-2 h-2 bg-accent1"></p>
+                <p id ="count_notice" data-number="1" class="w-6 h-2 bg-accent1"></p>
+                <p id="count_notice" data-number="2" class="w-2 h-2 bg-accent1"></p>
             </div>
         </div>
     </section>
     @include('layouts.footer')
+    <script src="{{asset('js/about.js')}}"></script>
 @endsection
