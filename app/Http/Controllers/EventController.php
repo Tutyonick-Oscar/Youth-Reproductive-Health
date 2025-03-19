@@ -11,6 +11,7 @@ use App\Models\Event;
 use App\Rules\pastDate;
 use App\Rules\upcomingDate;
 use Carbon\Carbon;
+use Throwable;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use BumpCore\EditorPhp\Blocks\Header;
@@ -29,13 +30,18 @@ class EventController extends Controller
             'header' => Header::class,
             'list'=>ListBlock::class,
         ]);
+        try {
+            $recentevents = Event::where([['created_at','<',$events[0]->created_at],['status',$status]])->orderBy('created_at','desc')->limit(3)->get();
+        } catch (\Throwable $th) {
+            $recentevents = [];
+        }
         $events = Event::where('status', $status)->paginate(3);
         return view('events',[
             'events' => $events,
             'carbon'=>Carbon::class,
             'causes' => Cause::limit(4)->orderBy('created_at','desc')->get(),
             'blogs' => Blog::orderBy('created_at','desc')->limit(3)->get(),
-            'recentevents'=>Event::where([['created_at','<',$events[0]->created_at],['status',$status]])->orderBy('created_at','desc')->limit(3)->get(),
+            'recentevents'=> $recentevents,
             'editorphp'=> EditorPhp::class,
             'allevents' => Event::all(),
 

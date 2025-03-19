@@ -18,6 +18,7 @@ use BumpCore\EditorPhp\Blocks\Paragraph;
 use BumpCore\EditorPhp\EditorPhp;
 use Carbon\Carbon;
 use Hash;
+use Throwable;
 use Illuminate\Http\Request;
 
 class viewController extends Controller
@@ -25,6 +26,12 @@ class viewController extends Controller
    
     public function index () 
     { 
+
+        $event =  Event::where('status','upcoming')->latest()->first();
+        if ($event == null){
+            $event =  Event::where('status','past')->orderBy('date','desc')->first();
+        }
+        
         return view('index',[
             'causes' => Cause::limit(4)->orderBy('created_at','desc')->get(),
             'blogs' => Blog::orderBy('created_at','desc')->limit(3)->get(),
@@ -33,7 +40,7 @@ class viewController extends Controller
             'mission' => Mission::first(),
             'members' => TeamMember::all(),
             'carbon' => Carbon::class,
-            'event' => Event::where('status','upcoming')->latest()->first(),
+            'event' => $event,
             'pastEvents' => Event::where('status','past')->orderBy('created_at','desc')->limit(5)->get(),
         ]);
     }

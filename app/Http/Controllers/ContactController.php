@@ -23,7 +23,7 @@ class ContactController extends Controller
             'contactmessage' => ['required','min:10']
         ]);
         $mail = Contact::create($data);
-        Mail::to('tuliamtendji@gmail.com')->send(new ContactMail($mail));
+        Mail::to('info@youthreproductivehealth.org')->send(new ContactMail($mail));
         return to_route('contact')->with(['success' => 'votre message a bien été envoyé']);
     }
     public function deleteContacts (Request $request, int $id)

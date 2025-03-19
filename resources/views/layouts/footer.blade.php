@@ -157,7 +157,7 @@
                    <div class="flex flex-col w-full gap-2 lg:justify-between md:flex-row">
                         <div class="w-full md:w-1/2">
                             <input type="text" placeholder="Votre nom" name="contactname"
-                            class=" lg:w-full text-white bg-[transparent] outline-none border border-accent1 rounded-md px-4 py-2  focus:border-2">
+                            class="w-full lg:w-full text-white bg-[transparent] outline-none border border-accent1 rounded-md px-4 py-2  focus:border-2">
                             @error('contactname')
                                 <small class="text-red">
                                     {{$message}}
@@ -166,7 +166,7 @@
                         </div>
                         <div class="w-full md:w-1/2">
                             <input type="email" placeholder="Votre E-mail" name="contactemail"
-                            class=" lg:w-full text-white bg-[transparent] outline-none border border-accent1 rounded-md px-4 py-2 focus:border-2">
+                            class="w-full lg:w-full text-white bg-[transparent] outline-none border border-accent1 rounded-md px-4 py-2 focus:border-2">
                             @error('contactemail')
                                 <small class=" text-red">
                                     {{$message}}
@@ -175,7 +175,7 @@
                         </div>
                     </div>
                     <textarea name="contactmessage" id="contactmessage" placeholder="Votre message ici..." aria-placeholder="Votre message ici..."
-                    class=" lg:w-full md:w-1/2 text-white bg-[transparent] lg:h-[4.2rem] outline-none border border-accent1 rounded-md p-2 focus:border-2">
+                    class="text-left lg:w-full text-white bg-[transparent] lg:h-[4.2rem] outline-none border border-accent1 rounded-md p-2 focus:border-2">
                        
                     </textarea>
                     @error('contactmessage')

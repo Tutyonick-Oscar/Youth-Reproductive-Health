@@ -5,6 +5,7 @@ namespace App\Http\Controllers\admin;
 use App\Jobs\Compress;
 use App\Models\Vision;
 use Illuminate\Http\Request;
+use App\Jobs\MultipleFilesCompress;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\SetVisionRequest;
@@ -17,13 +18,12 @@ class OurVisionController extends Controller
        
         if ($request->image1 !== null && !$request->image1->getError()){
             $data['image1'] = $request->image1->store('vision','public');
-            Compress::dispatch($data,'image1');
         }
         if ($request->image2 !== null && !$request->image2->getError()){
             $data['image2'] = $request->image2->store('vision','public');
-            Compress::dispatch($data,'image2');
         }
 
+        MultipleFilesCompress::dispatch([$data['image1'],$data['image2']]);
         Vision::create($data);
         return to_route('admin.setVision')->with('success','vision définit avec succès !');
     }
@@ -41,12 +41,11 @@ class OurVisionController extends Controller
         
         if ($request->image1 !== null && !$request->image1->getError()){
             $data['image1'] = $request->image1->store('vision','public');
-            Compress::dispatch($data,'image1');
         }
         if ($request->image2 !== null && !$request->image2->getError()){
-            $data['image2'] = $request->image2->store('vision','public');
-            Compress::dispatch($data,'image2');
+            $data['image2'] = $request->image2->store('vision','public');;
         }
+        MultipleFilesCompress::dispatch([$data['image1'],$data['image2']]);
         $vision->update($data);
         return to_route('admin.setVision')->with('success','vision mis à jour !');
     }

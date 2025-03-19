@@ -29,6 +29,11 @@
             GESTIONNAIRE DES COMMENTAIRES
         </h1>
     </div>
+    @session('success')
+        <p class="fixed right-6 px-4 py-2 rounded-[4px] dash-border text-[gray] bg-[#00800031]">
+            {{session('success')}}
+        </p>
+    @endsession
    </section>
    <section class="flex flex-col w-full gap-4 px-8 ">
         <div class=" w-full flex justify-between items-center bg-[#fff] py-4 px-4 rounded-sm">

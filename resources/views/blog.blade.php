@@ -21,7 +21,7 @@
         <div class="blogs w-full lg:w-[65%] flex flex-col gap-6 pt-10 ">
            
            @forelse ($blogs as $blog)
-                <div class="flex flex-col w-full h-auto gap-6 px-8 py-6 bg-white rounded-md shadow-lg blog">
+                <div class="flex flex-col w-full h-auto gap-6 md:px-6 py-6 bg-white md:rounded-md md:shadow-lg blog">
                 <h1 class="text-3xl text-bg">
                     {{$blog->title}}
                 </h1>
@@ -74,12 +74,12 @@
             </div>
         </div>
         <div class="blogs-specifications w-full lg:w-[35%] flex flex-col gap-6 lg:pt-10 pb-16">
-            <div class="relative w-full px-6 py-6 bg-white rounded-md shadow-xl search-bar">
+            <div class="relative w-full px-4 py-6 bg-white rounded-md shadow-xl search-bar">
                 <input type="text" name="search" class=" w-full border border-[gray] rounded-lg pl-4 py-2 pr-10
                 outline-none focus:border-2 text-bg" placeholder="rechercher...">
                 <i class="absolute flex justify-center items-center fa-solid fa-search text-[gray] px-4 border-l border-bg py-2 right-4 top-7"></i>
             </div>
-            <div class="flex flex-col w-full gap-6 px-4 py-6 bg-white rounded-md shadow-xl categories">
+            <div class="flex flex-col w-full gap-6 md:px-4 py-6 bg-white md:rounded-md md:shadow-xl categories">
                 <p class="w-auto pb-2 text-3xl border-b text-bg border-bg">
                     Categories
                 </p>
@@ -119,21 +119,21 @@
                     </div>
                 </div>
             </div>
-            <div class="flex flex-col w-full gap-6 px-4 py-6 bg-white rounded-md shadow-xl recents">
+            <div class="flex flex-col w-full gap-6 md:px-4 py-6 bg-white md:rounded-md md:shadow-xl recents">
                 <p class="w-auto pb-2 text-3xl border-b text-bg border-bg">
-                    Blogs recents
+                    Blogs récents
                 </p>
                 <div class="flex flex-col w-full gap-4 recents-blogs">
                    @forelse ($recentBlogs as $recent)
                       
                         <div class="recent-blog w-full flex gap-4 items-center pb-4 border-b border-[#80808032]">
                             <div class=" w-[25%] h-[5.3rem] ">
-                                <img loading="lazy" decoding="async" src="{{asset('images/lazy.jpg')}}" data-src="/storage/{{$recent->image}}" alt="article/{{$recent->title}}" width="80" height="80"
+                                <img loading="lazy" decoding="async" src="{{asset('images/lazy.jpg')}}" data-src="/store/{{$recent->image}}" alt="article img" width="80" height="80"
                                 class="object-cover w-full h-full rounded-lg ">
                             </div>
                             <div class="flex flex-col gap-3 w-[70%]">
                                 <h1 class="text-xl cursor-pointer text-bg">
-                                    <a id="recentEventTitle" href="{{route('blog.detail',['id'=>$recent->id])}}">
+                                    <a class="text-[16px]" id="recentEventTitle" href="{{route('blog.detail',['id'=>$recent->id])}}">
                                     {{$recent->title}}
                                     </a>
                                 </h1>
@@ -145,7 +145,7 @@
                         </div>
                      
                    @empty
-                    <p>Aucun blog recement publie</p>
+                    <p>Aucun blog récement publié</p>
                    @endforelse
                 </div>
             </div>
@@ -175,7 +175,7 @@
                     <button id="tag" type="button" class="relative w-auto px-4 py-2 rounded-md border border-[#80808032]">
                         <a href="#" class="opacity-0">Reseautage</a>
                         <a href="#" class="absolute top-0 bottom-0 left-0 right-0 z-20 px-4 py-2 text-bg hover:text-white">
-                            Reseautage
+                            Réseautage
                         </a>
                     </button>
                     <button id="tag" type="button" class="relative w-auto px-4 py-2 rounded-md border border-[#80808032]">

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Blog;
+use App\Models\Blogcomment;
 use Illuminate\Http\Request;
 
 class CommentController extends Controller
@@ -18,5 +19,12 @@ class CommentController extends Controller
 
         $blog->comments()->create($data);
         return to_route("blog.detail",["id" =>$blog->id])->with('success' , "comment send successfuly");
+    }
+
+    public function deleteComment(Request $request, int $id)
+    {
+        $comment = Blogcomment::findOrFail($id);
+        $comment->delete();
+        return to_route('admin.blogComments')->with(['success' => 'Commentaire supprimé']);
     }
 }

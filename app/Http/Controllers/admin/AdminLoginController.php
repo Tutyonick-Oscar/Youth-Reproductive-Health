@@ -14,7 +14,7 @@ class AdminLoginController extends Controller
     {
         $credentials = $request->validate([
             'user_name'=>['required'],
-            'password' =>['required','min:8','max:10','regex:/^youth@[a-z\d]+$/i']
+            'password' =>['required']
         ]);
         if(Auth::attempt($credentials))
         {

@@ -6,6 +6,7 @@ use App\Jobs\Compress;
 use App\Models\Mission;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use App\Jobs\MultipleFilesCompress;
 use App\Http\Requests\StoreMissionRequest;
 
 class MissionController extends Controller
@@ -16,15 +17,12 @@ class MissionController extends Controller
        
         if ($request->image1 !== null && !$request->image1->getError()){
             $data['image1'] = $request->image1->store('mission','public');
-            dd($data['image1']);
-            Compress::dispatch($data,'image1');
         }
-        else dd('hello');
+        
         if ($request->image2 !== null && !$request->image2->getError()){
           $data['image2'] = $request->image2->store('mission','public');
-          Compress::dispatch($data,'image2');
         }
-
+        MultipleFilesCompress::dispatch([$data['image1'],$data['image2']]);
         Mission::create($data);
         return to_route('admin.storeMission')->with('success','mission définit avec succès !');
     }
@@ -42,14 +40,23 @@ class MissionController extends Controller
         
         if ($request->image1 !== null && !$request->image1->getError()){
             $data['image1'] = $request->image1->store('mission','public');
-            //dd($data['image1']);
-           Compress::dispatch($data,'image1');
         }
         if ($request->image2 !== null && !$request->image2->getError()){
           $data['image2'] = $request->image2->store('mission','public');
-          Compress::dispatch($data,'image2');
         }
-        $mission->update($data);
+        if (isset($data['image1']) && !isset($data['image2'])){
+            Compress::dispatch($data['image1']);
+            $mission->update($data);
+        }
+        elseif (isset($data['image2']) && !isset($data['image1'])) {
+            Compress::dispatch($data['image2']);
+            $mission->update($data);
+        }
+        elseif (isset($data['image1']) && isset($data['image2'])){
+            MultipleFilesCompress::dispatch([$data['image1'],$data['image2']]);
+            $mission->update($data);
+        }
+        else {$mission->update($data);}
         return to_route('admin.storeMission')->with('success','mission mis à jour !');
     }
 }

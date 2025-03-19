@@ -24,7 +24,7 @@ class MultipleFilesCompress implements ShouldQueue
     {
         \Tinify\setKey(env('TINIFY_API_KEY'));
         foreach ($this->files as $file) {
-            \Tinify\fromFile('storage/app/public/'.$file)->toFile('storage/app/public/'.$this->array[$this->key]);
+            \Tinify\fromFile('storage/app/public/'.$file)->toFile('storage/app/public/'.$file);
         }
     }
 }

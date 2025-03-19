@@ -32,9 +32,7 @@ scrollable.addEventListener('scroll',(e)=>{
 })
 
 notice_scrollable.addEventListener('scroll',(e)=>{
-    notices.forEach(notice => {
-        console.log(isElementHorizontallyVisible(notice));
-        
+    notices.forEach(notice => {        
         count_notices.forEach(count_notice =>{
             if (isElementHorizontallyVisible(notice)){
                 if (notice.dataset.number == count_notice.dataset.number){

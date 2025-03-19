@@ -1,7 +1,9 @@
 
     <nav id="phoneNav"  class="fixed top-0 left-0 right-0 z-50 flex justify-between w-full h-auto px-4 py-2 bg-secodary lg:hidden">
         <div class="flex items-center justify-center gap-2 ">
-            <img loading="lazy" decoding="async" src="{{asset('images/lazy.jpg')}}" data-src="{{asset('images/youth.jpg')}}" alt="youth logo" width="50" height="50" class="h-12 w-14 sm:w-10 sm:h-8">
+            <a href="{{route('home')}}">
+            <img loading="lazy" decoding="async" src="{{asset('images/lazy.jpg')}}" data-src="{{asset('images/youth.jpg')}}" alt="youth logo" width="50" height="50" class="h-12 w-14 sm:w-10 sm:h-8 cursor-pointer">
+            </a>
             <h1 class="hidden text-lg text-white md:flex">Youth Reproductive Health</h1>
             <h1 class="text-lg text-white md:hidden">YRHealth</h1>
         </div>
@@ -9,7 +11,7 @@
             <a href="{{route('contact')}}" class="px-3 py-1 text-lg text-white rounded-md bg-gradient-to-l from-accent1 to-accent2">
                 Nous contacter
             </a>
-            <p id="menu">
+            <p class=" cursor-pointer" id="menu">
                 <i class="text-2xl text-white fa-solid fa-bars"></i>
             </p>
         </div>
@@ -17,19 +19,21 @@
             class=" fixed w-0 h-screen bg-[rgba(0,0,0,0.32)]  bg-blend-darken left-0 right-0 top-0 bottom-0 ">
             <div id="side" class="fixed top-0 left-0 w-0 h-screen overflow-y-scroll bg-white ">
                 <div class="flex flex-col items-center justify-center w-full gap-5 pt-20 ">
-                    <p class="absolute top-10 right-5">
+                    <p class="absolute top-10 right-5 cursor-pointer">
                         <i id="close" class="text-lg fa-solid fa-x text-accent2"></i>
                     </p>
                     <div class="flex items-center justify-center gap-2">
+                        <a href="{{route('home')}}">
                         <img loading="lazy" decoding="async" src="{{asset('images/lazy.jpg')}}" data-src="{{asset('images/youth-removebg-preview.png')}}" alt="youth logo" width="50" height="50"
-                            class="w-20 h-20">
+                        class="w-20 h-20">
+                        </a>
                         <h1 class="text-xl font-bold text-accent2">Youth Reproductive Health</h1>
                     </div>
                 </div>
                 <div class="flex flex-col w-full h-auto gap-4 pt-10 ">
                     <ul class="flex flex-col w-full h-auto gap-6 pl-14">
                         <li class="w-full border-b border-bg">
-                            <a class="uppercase " href="{{route('home')}}  navLink">Accueil</a>
+                            <a class="uppercase navLink" href="{{route('home')}}">Accueil</a>
                         </li>
                         <li class=" w-full flex flex-col gap-1 h-[1.5625rem] overflow-y-hidden border-b border-bg">
                             <div class="flex items-center justify-between w-full pr-5 ">
@@ -159,7 +163,9 @@
         </div>
         <div class="flex items-center justify-between w-full pt-2 links">
             <div class="flex items-center justify-center w-auto gap-2 mt-5 ">
+                <a href="{{route('home')}}">
                 <img loading="lazy" decoding="async" src="{{asset('images/lazy.jpg')}}" data-src="{{asset('images/youth.jpg')}}" alt="youth logo" width="50" height="50" class="h-12 w-14">
+                </a>
                 <h1 class="hidden text-lg font-semibold text-white xl:block">Youth Reproductive Health</h1>
                 <h1 class="hidden text-xl font-bold tracking-wider text-white lg:block xl:hidden">YRHealth</h1>
             </div>

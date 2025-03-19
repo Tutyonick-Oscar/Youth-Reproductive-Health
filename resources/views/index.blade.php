@@ -61,7 +61,7 @@
                         <a href="{{route('about')}}">lire plus...</a>
                     </span>
                 </div>
-                <img loading="lazy" decoding="async" src="{{asset('images/lazy.jpg')}}" data-src="/storage/{{$about->image}}" alt="a propos de nous" height="400" width="300" 
+                <img loading="lazy" decoding="async" src="{{asset('images/lazy.jpg')}}" data-src="/store/{{$about->image}}" alt="a propos de nous" height="400" width="300" 
                 class="rounded-md w-full object-cover h-[10rem] md:h-full md:w-1/2 lg:h-[25rem]">
             </div>
         </div>
@@ -82,7 +82,7 @@
                     <a href="{{route('causes')}}">lire plus...</a>
                 </span>
             </div>
-            <img loading="lazy" decoding="async" src="{{asset('images/lazy.jpg')}}" data-src="/storage/{{$causes->first()->image}}" alt="a propos de nous" height="400" width="300" 
+            <img loading="lazy" decoding="async" src="{{asset('images/lazy.jpg')}}" data-src="/store/{{$causes->first()->image}}" alt="a propos de nous" height="400" width="300" 
             class="unobserve md:pr-6  float-left rounded-md w-full object-cover h-[10rem] md:h-full md:w-1/2 lg:h-[25rem]">
         </div>
     </section>
@@ -111,12 +111,12 @@
             <div class="w-[70%] lg:w-[80%] h-full"
                  style="clip-path: polygon(0 0, 93% 0, 75% 100%, 0% 100%);"
             >
-                <img loading="lazy" decoding="async" src="{{asset('images/lazy.jpg')}}" data-src="/storage/{{$vision->image1}}" alt="our vision images" width="500" height="600"
+                <img loading="lazy" decoding="async" src="{{asset('images/lazy.jpg')}}" data-src="/store/{{$vision->image1}}" alt="our vision images" width="500" height="600"
                     class=" w-full h-80 xl:h-[25rem] object-cover rounded-tl-xl rounded-bl-xl"
                 >
             </div>
             <div class="lg:top-0 bottom-0 right-0 lg:-right-24 xl:-right-20 absolute w-1/2 lg:w-[18rem] xl:w-[20rem] h-80 xl:h-[25rem]"  style="clip-path: polygon(29% 0, 100% 0, 100% 100%, 0% 100%);">
-                <img loading="lazy" decoding="async" src="{{asset('images/lazy.jpg')}}" data-src="/storage/{{$vision->image2}}" alt="our vision images" width="500" height="600"
+                <img loading="lazy" decoding="async" src="{{asset('images/lazy.jpg')}}" data-src="/store/{{$vision->image2}}" alt="our vision images" width="500" height="600"
                     class="object-cover w-full h-full rounded-tr-xl rounded-br-xl"
                 >
             </div>
@@ -159,11 +159,11 @@
         </div>
         <div class="flex flex-row w-full gap-8 lg:gap-10 md:gap-5 ">
             <div id="visionImg" class="lefthidden boxs2 w-full  lg:min-w-[31%] md:min-w-[32%] md:h-[17rem] h-[20rem]">
-                <img loading="lazy" decoding="async" src="{{asset('images/lazy.jpg')}}" data-src="/storage/{{$mission->image1}}" alt="" height="320" width="400"
+                <img loading="lazy" decoding="async" src="{{asset('images/lazy.jpg')}}" data-src="/store/{{$mission->image1}}" alt="" height="320" width="400"
                 class="object-cover w-full h-full rounded-md md:w-full">
             </div>
             <div id="visionImg" class="lefthidden boxs2 w-full hidden md:block lg:min-w-[31%] md:min-w-[32%] md:h-[17rem] h-[20rem]">
-                <img loading="lazy" decoding="async" src="{{asset('images/lazy.jpg')}}" data-src="/storage/{{$mission->image2}}" alt="" height="320" width="400"
+                <img loading="lazy" decoding="async" src="{{asset('images/lazy.jpg')}}" data-src="/store/{{$mission->image2}}" alt="" height="320" width="400"
                 class="object-cover w-full h-full rounded-md ">
             </div>
             <div id="visionImg" class="lefthidden boxs2 w-full hidden md:block lg:min-w-[31%] md:min-w-[32%] md:h-[17rem] h-[20rem]">
@@ -204,12 +204,13 @@
             </div>
         </div>
     </section>
-    <section id="team" class="relative w-full h-auto px-8 py-10 overflow-x-hidden">
+    <section id="team" class="relative w-full h-auto px-8 py-10">
         <h2 class="w-40 px-4 py-2 mb-10 text-xl text-white rounded-md bg-gradient-to-l from-accent2 to-accent1">
             <a href="#">Notre Equipe</a>
         </h2>
-        @forelse ($members as $member)
-        <div id="member" class="w-full gap-4 {{$loop->first ? 'flex':'-translate-x-[50%] hidden'}}">
+       <div id="member_scrollable" class =" flex w-full overflow-x-auto flex-row flex-nowrap gap-4">
+       @forelse ($members as $member)
+        <div id="member" class="min-w-full gap-4 flex ">
             <div class="flex flex-col w-full gap-4 p-4 bg-white border-l-2 shadow-lg md:w-1/2 rounded-xl border-accent1 md:p-10">
                 <div class="text-lg text-bg">
                     {!!mb_convert_encoding($member->content->render(),"UTF-8")!!}
@@ -217,7 +218,7 @@
                 <div class="flex items-center justify-between w-full ">
                     <div class="flex items-center justify-center gap-4">
                         <div class="p-2 border rounded-full cursor-pointer border-accent1">
-                            <img loading="lazy" decoding="async" src="{{asset('images/lazy.jpg')}}" data-src="/storage/{{$member->image}}" alt="{{$member->name}}" width="80" height="80"
+                            <img loading="lazy" decoding="async" src="{{asset('images/lazy.jpg')}}" data-src="/store/{{$member->image}}" alt="{{$member->name}}" width="80" height="80"
                                 class="object-cover w-20 h-20 rounded-full md:w-16 md:h-16" 
                             >
                         </div>
@@ -252,7 +253,7 @@
             </div>
             <div class="flex-col hidden w-1/2 gap-4 bg-white shadow-lg md:flex xl:flex-row rounded-xl">
                 <div class=" w-full xl:w-[60%] md:h-[70%] xl:h-full">
-                    <img loading="lazy" decoding="async" src="{{asset('images/lazy.jpg')}}" data-src="/storage/{{$member->image}}" alt="{{$member->name}}" width="300" height="400"
+                    <img loading="lazy" decoding="async" src="{{asset('images/lazy.jpg')}}" data-src="/store/{{$member->image}}" alt="{{$member->name}}" width="300" height="400"
                         class="object-cover w-full h-full rounded-md "
                     >
                 </div>
@@ -283,6 +284,7 @@
         </div>
         @empty  
         @endforelse
+       </div>
         <div class="flex items-center justify-center w-full gap-3 my-10 ">
             <div class=" w-[40%] lg:w-[45%] h-[1px] bg-secodary"></div>
             <div class=" w-[22%] lg:w-[10%] flex gap-2 sm:gap-4 sm:pl-1 md:gap-8 lg:gap-4 xl:gap-10 md:pl-8 lg:pl-3">
@@ -317,7 +319,7 @@
                 </div>
                 <div class="flex flex-col w-full gap-4 md:flex-row md:gap-10 lg:gap-24">
                     <div class="flex flex-col w-full gap-4 bg-white border-b rounded-lg shadow-lg md:w-1/2 border-accent1">
-                        <img loading="lazy" decoding="async" src="{{asset('images/lazy.jpg')}}" data-src="/storage/{{$event->image}}" alt="" width="300" height="400"
+                        <img loading="lazy" decoding="async" src="{{asset('images/lazy.jpg')}}" data-src="/store/{{$event->image}}" alt="" width="300" height="400"
                             class="w-full h-[20rem] object-cover rounded-t-lg"
                         >
                         <div class="flex flex-col w-full gap-2 px-4 pb-4 ">
@@ -409,7 +411,7 @@
                         
                     </div>
                     <div class=" w-full h-[15rem]">
-                        <img loading="lazy" decoding="async" src="{{asset('images/lazy.jpg')}}" data-src="/storage/{{$blog->image}}" alt="{{$blog->title}}" width="300" height="400" class="object-cover w-full h-full rounded-lg ">
+                        <img loading="lazy" decoding="async" src="{{asset('images/lazy.jpg')}}" data-src="/store/{{$blog->image}}" alt="{{$blog->title}}" width="300" height="400" class="object-cover w-full h-full rounded-lg ">
                     </div>
                     <div class="flex justify-between w-full ">
                         <p class=" flex gap-3 text-[gray] items-center">

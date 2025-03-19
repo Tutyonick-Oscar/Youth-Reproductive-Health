@@ -49,7 +49,7 @@
                     </div>
                     <div class=" w-[13rem] h-[10rem] relative">
                         <img loading="lazy" decoding="async" id="noimage" src="@if (isset($slide))
-                            /storage/{{$slide->image}}
+                            /store/{{$slide->image}}
                         @else
                            {{asset('images/noimage.png')}} 
                         @endif" alt="" width="200" height="150"

@@ -17,8 +17,8 @@ return Application::configure(basePath: dirname(__DIR__))
         /**
          * Handling all errors here with Exceptions Object
          */
-    //    $exceptions->render(function (ErrorException $exception) {
-    //         return response()->view('errors.server-error',status:500);
-    //    });
+       $exceptions->render(function (ErrorException $exception) {
+            return response()->view('errors.server-error',status:500);
+       });
        
     })->create();

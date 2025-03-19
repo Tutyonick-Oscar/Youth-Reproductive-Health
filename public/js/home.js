@@ -143,7 +143,7 @@ const sliding = ()=>{
         fill : 'backwards'
     })
     setTimeout(() => {
-        Slidescontainer.style.backgroundImage = `url(/storage/${slides[countSlides].image})`
+        Slidescontainer.style.backgroundImage = `url(/store/${slides[countSlides].image})`
         Slidescontainer.animate([
             {backgroundSize : '100rem'},{backgroundSize : '83.125rem'},
         ],
@@ -191,7 +191,9 @@ const elementsObserver = new IntersectionObserver (entries =>{
     entries.forEach(entry =>{
         if (entry.isIntersecting) {
             entry.target.classList.add('observed');
+            elementsObserver.unobserve(entry.target)
         }else entry.target.classList.remove('observed');
+        
     })
 })
 document.querySelectorAll('.unobserve').forEach(element =>{
@@ -202,7 +204,9 @@ const toleftElementObserver = new IntersectionObserver (entries =>{
     entries.forEach(entry =>{
         if (entry.isIntersecting) {
             entry.target.classList.add('leftshow');
+            toleftElementObserver.unobserve(entry.target)
         }else entry.target.classList.remove('leftshow');
+        
     })
 })
 document.querySelectorAll('.lefthidden').forEach(element =>{
@@ -212,60 +216,31 @@ document.querySelectorAll('.lefthidden').forEach(element =>{
  * Team slides
  */
 
-const members = Array.from(document.querySelectorAll('#member'));
+const member_scrollable = document.getElementById('member_scrollable')
 const left = document.getElementById('backward');
 const right = document.getElementById('forward');
-let memberCount = 0;
-/**
- * incrementing the variable memberCount for handling the slide
- */
-const counting = (direction)=>{
 
-   if (direction === 'left') {
-    memberCount==0?memberCount=members.length-1:memberCount--;
-    
-    return;
-   }
-
-    memberCount==members.length-1?memberCount=0:memberCount++;
-    
-}
 /**
  * slides animation
  */
-const  memberSliding = ( direction )=> {
 
-    members[memberCount].animate([
-        {transform : 'translateX(0)', display :'flex', opacity:1}, 
-        {transform : 'translateX(-50%)',display:'none', opacity:0},
-    ],{
-        duration : 500,
-        fill : 'forwards'
-    })
-
-   counting(direction);
-
-    members[memberCount].animate([
-        {display :'none', transform : 'translateX(50%)',opacity:0}, 
-        {display :'flex', transform : 'translateX(0)',opacity:1},
-    ],{
-        duration : 500,
-        fill : 'forwards',
-        delay : 501
-    })
-   
-}
 left.addEventListener('click',(e)=>{
     /**
      * play slide animation
      */
-    memberSliding ('left');
+    member_scrollable.scrollBy({
+        left: -member_scrollable.clientWidth,
+        behavior: 'smooth' 
+      });
 })
 right.addEventListener('click',(e)=>{
     /**
      * play slide animation
      */
-    memberSliding ('right');
+    member_scrollable.scrollBy({
+        left: member_scrollable.clientWidth,
+        behavior: 'smooth' 
+      });
 })
 
 

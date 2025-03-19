@@ -12,11 +12,11 @@
         <p class="text-6xl font-bold tracking-wider text-[#80808057] md:text-7xl lg:text-9xl">404</p>
         <p class="mt-4 text-2xl font-bold tracking-wider text-accent1 md:text-3xl lg:text-5xl">Page Not Found</p>
         <p class="pb-4 mt-4 text-center border-b-2 text-[#8080807c]">Sorry, the page you are looking for could not be found.</p>
-        <a href="{{route('home')}}" class="flex items-center px-4 py-2 mt-6 space-x-2 text-white transition duration-150 rounded bg-accent1 hover:bg-blue-700" title="Return Home">
+        <a href="{{url()->previous()}}" class="flex items-center px-4 py-2 mt-6 space-x-2 text-white transition duration-150 rounded bg-accent1 hover:bg-blue-700" title="Return Home">
             <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 20 20" fill="currentColor">
                 <path fill-rule="evenodd" d="M9.707 14.707a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 1.414L7.414 9H15a1 1 0 110 2H7.414l2.293 2.293a1 1 0 010 1.414z" clip-rule="evenodd"></path>
             </svg>
-                <span>Return Home</span>
+                <span>Return Back</span>
         </a>
     </div>
 </div>

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mail from youthreproductivehealth.com</title>
+    <title>Mail from youthreproductivehealth.org</title>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 <body class=" flex  w-screen h-screen items-center pt-10">
@@ -38,7 +38,7 @@
             <a href="https://microgels.vercel.app">Your dev team</a>
         </p>
 
-        <p class="mt-3 text-bg dark:text-gray-400">© 2024 youthreproductivehealth. All Rights Reserved.</p>
+        <p class="mt-3 text-bg dark:text-gray-400">© {{ now()->year }} youthreproductivehealth. All Rights Reserved.</p>
     </footer>
 </section>
 </body>

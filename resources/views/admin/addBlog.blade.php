@@ -38,7 +38,7 @@
                     <div class=" w-[13rem] h-[10rem] relative ">
                         <img loading="lazy" decoding="async" id="noimage" src="
                         @if (isset($blog))
-                            /storage/{{$blog->image}}
+                            /store/{{$blog->image}}
                         @else
                             {{asset('images/noimage.png')}}
                         @endif
@@ -98,7 +98,7 @@
                 <small id="error" class="hidden text-red">la description ne doit pas être vide !</small>
                 <input type="text" name="content" id="content" class="hidden">
                 <div id="json" class="hidden json">
-                    {{isset($blog) ? $blog->content : ''}}
+                    {{isset($blog) ? $blog->content->toJson() : ''}}
                 </div>
                 <div class=" w-full flex gap-2 px-4 py-4 rounded-[4px] bg-[#fff] items-center">
                     <label for="tags" class="text-base font-bold text-bg">Tags : </label>
@@ -143,11 +143,11 @@
  <script src="https://cdn.jsdelivr.net/npm/@editorjs/list@1.10.0/dist/list.umd.min.js"></script>
   {{-- EditorJs simple image --}}
   <script src="https://cdn.jsdelivr.net/npm/@editorjs/simple-image@1.6.0/dist/simple-image.umd.min.js"></script>
- <script src="{{asset('js/setter.js')}}"></script>
  {{-- datepicker --}}
  <script src="https://cdn.jsdelivr.net/npm/air-datepicker@3.5.3/air-datepicker.min.js" ></script>
  {{-- <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.1/dist/flowbite.min.js"></script> --}}
 
+ <script src="{{asset('js/setter.js')}}"></script>
  <script src="{{asset('js/tags.js')}}"></script>
  <script src="{{asset('js/date.js')}}" type="module"></script>
  <script src="{{asset('js/imgUpload.js')}}"></script>

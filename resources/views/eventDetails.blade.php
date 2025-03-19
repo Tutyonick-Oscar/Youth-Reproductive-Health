@@ -4,23 +4,23 @@
     @include('layouts.nav')
     <section
         class="justify-end w-full h-auto mt-16 lg:bg-secodary sm:mt-12 lg:mt-32 lg:flex">
-        <div style="background-image:url(/storage/{{$event->image}})"
-            class="bg-blend-darken bg-cover  self-end flex flex-col 
+        <div style="background-image:url(/store/{{$event->image}})"
+            class="px-10 bg-blend-darken bg-cover  self-end flex flex-col 
             items-center justify-center gap-5 overflow-hidden bg-bg bg-opacity-60 w-full 
             h-[20rem] lg:h-[30rem]">
             <h1 class="text-3xl text-center text-white lg:text-5xl">
                 {{$event->title}}
             </h1>
-            <p class="text-2xl font-semibold text-white">Descriptions de l'evenement</p>
-            <span class="font-semibold text-accent1">
+            <p class="text-2xl hidden md:flex font-semibold text-white">Descriptions de l'evenement</p>
+            <span class="font-semibold text-accent1 hidden md:flex">
                 YRHealth / {{$event->title}}
             </span>
         </div>
     </section>
     <section class="flex flex-col w-full gap-10 px-8 lg:flex-row">
         <div class="events w-full lg:w-[65%] flex flex-col gap-6 pt-10">
-            <div class="flex flex-col w-full h-auto gap-6 px-8 py-8 bg-white rounded-md shadow-lg event">
-                <h1 class="text-3xl text-bg">
+            <div class="flex flex-col w-full h-auto gap-6 md:px-8 py-8 bg-white md:rounded-md md:shadow-lg event">
+                <h1 class="text-3xl text-bg hidden md:flex ">
                     {{$event->title}}
                 </h1>
                 <div class="flex justify-between w-full ">
@@ -74,21 +74,18 @@
                         @endforelse
                     </div>
                 </div>
-            </div>
-
-            <div class="flex flex-col items-center w-full gap-3 px-4 py-5 bg-white rounded-md shadow-xl about_admin md:flex-row md:gap-10">
-                <div class=" w-[6rem] h-[6rem] md:w-28 md:h-28 flex justify-center items-center">
+                <div class="border-t pt-5 border-[#80808042] flex flex-col md:items-center w-full gap-3 about_admin md:flex-row md:gap-10">
+                <div class=" w-[4rem] h-[4rem] md:w-24 md:h-24 flex justify-center items-center">
                    <p class ='flex items-center justify-center w-full h-full border rounded-full border-secodary'>
-                        <i class="text-[5rem] text-center rounded-full  fa-solid fa-user"></i>
+                        <i class="text-[2.5rem] md:text-[3.5rem] text-center rounded-full  fa-solid fa-user"></i>
                    </p>
-                    {{-- <img src="{{asset('images/KK.JPG')}}" alt="" width="230" height="300" class="object-cover w-full h-full rounded-full "> --}}
                 </div>
                 <div class="flex flex-col w-full gap-3 md:w-auto">
                     <h2 class="flex gap-3 font-semibold ">
                        {{$event->user->user_name}} : <span>Auteur</span>
                     </h2>
                     <p class=" text-sm text-[gray]">
-                        {{$event->user->function}} 
+                        program manger à youth reproductive health
                     </p>
                     <div class="flex gap-4 ">
                         <p class="">
@@ -109,21 +106,22 @@
                     </div>
                 </div>
             </div>
+            </div>
         </div>
         <div class="events-specifications w-full lg:w-[35%] flex flex-col gap-6 lg:pt-10 pb-16">
-            <div class="relative w-full px-6 py-6 bg-white rounded-md shadow-xl search-bar">
+            <div class="relative w-full px-4 py-6 bg-white rounded-md shadow-xl search-bar">
                 <input type="text" name="search" class="w-full py-2 pl-4 pr-10 border rounded-lg outline-none border-bg focus:border-2 text-bg" placeholder="rechercher...">
                 <i class="absolute flex justify-center items-center fa-solid fa-search text-[gray] px-4 border-l border-bg py-2 right-4 top-7"></i>
             </div>
-             <div class="flex flex-col w-full gap-6 px-4 py-6 bg-white rounded-md shadow-xl categories">
+             <div class="flex flex-col w-full gap-6 md:px-4 py-6 bg-white md:rounded-md md:shadow-xl categories">
                 <p class="w-auto pb-2 text-3xl border-b text-bg border-bg">
-                    Categories
+                    Catégories
                 </p>
                 <div class="flex flex-col w-full gap-4 ">
                     <div class=" w-full flex justify-between items-center pb-4 border-b border-[#80808032]">
                         <a href="{{route('events',['status'=>'upcoming'])}}" h id="categorie" class="flex items-center justify-center gap-4 text-xl duration-300 ease-in-out cursor-pointer hover:text-accent1">
                             <span class="font-bold duration-300 ease-in-out text-bg hover:text-accent1"> > </span>
-                            Evenements a venir
+                            Evénements à venir
                         </a>
                         <a href="{{route('events',['status'=>'upcoming'])}}" id="tag" class="relative bg-[#80808032] w-10 h-10 flex justify-center items-center border border-[gray] rounded-md cursor-pointer">
                             <p  class="absolute top-0 bottom-0 left-0 right-0 z-20 flex items-center justify-center text-lg font-semibold text-bg hover:text-white">
@@ -134,7 +132,7 @@
                     <div class=" w-full flex justify-between items-center pb-4 border-b border-[#80808032]">
                         <a href="{{route('events',['status'=>'past'])}}" class="flex items-center justify-center gap-4 text-xl duration-300 ease-in-out cursor-pointer hover:text-accent1">
                             <span class="font-bold duration-300 ease-in-out text-bg hover:text-accent1"> > </span>
-                            Evenements passes
+                            Evénements passés
                         </a>
                         <a href="{{route('events',['status'=>'past'])}}" id="tag" class="relative bg-[#80808032] w-10 h-10 flex justify-center items-center border border-[gray] rounded-md cursor-pointer">
                             <p class="absolute top-0 bottom-0 left-0 right-0 z-20 flex items-center justify-center text-lg font-semibold text-bg hover:text-white">
@@ -144,21 +142,21 @@
                     </div>
                 </div>
             </div>
-            <div class="flex flex-col w-full gap-6 px-4 py-6 bg-white rounded-md shadow-xl recents">
+            <div class="flex flex-col w-full md:gap-4 md:px-4 py-6 bg-white md:rounded-md md:shadow-xl recents">
                 <p class="w-auto pb-2 text-3xl border-b text-bg border-bg">
-                    Evenements recents
+                    Evénements récents
                 </p>
                 <div class="flex flex-col w-full gap-4 recents-events">
                    @forelse ($recentevents as $recent)
     
                         <div class="recent-event w-full flex gap-4 items-center pb-4 border-b border-[#80808032]">
                             <div class=" w-[25%] h-[5.3rem] ">
-                                <img loading="lazy" decoding="async" src="{{asset('images/lazy.jpg')}}" data-src="/storage/{{$recent->image}}" alt="article/{{$recent->title}}" width="80" height="80"
+                                <img loading="lazy" decoding="async" src="{{asset('images/lazy.jpg')}}" data-src="/store/{{$recent->image}}" alt="event img" width="80" height="80"
                                 class="object-cover w-full h-full rounded-lg ">
                             </div>
                             <div class="flex flex-col w-[70%]gap-3 ">
                                 <h1 class="text-xl cursor-pointer text-bg">
-                                    <a id="recentEventTitle" href="{{route('event.detail',['id'=>$recent->id])}}">
+                                    <a class="text-[16px]" id="recentEventTitle" href="{{route('event.detail',['id'=>$recent->id])}}">
                                         {{$recent->title}}
                                     </a>
                                 </h1>
@@ -169,7 +167,7 @@
                             </div>
                         </div>
                    @empty
-                    <p>Aucun Evenement recement publie</p>
+                    <p>Aucun Evénement récement publié</p>
                    @endforelse
                 </div>
             </div>
@@ -199,7 +197,7 @@
                     <button id="tag" type="button" class="relative w-auto px-4 py-2 rounded-md border border-[#80808032]">
                         <a href="#" class="opacity-0">Reseautage</a>
                         <a href="#" class="absolute top-0 bottom-0 left-0 right-0 z-20 px-4 py-2 text-bg hover:text-white">
-                            Reseautage
+                            Réseautage
                         </a>
                     </button>
                     <button id="tag" type="button" class="relative w-auto px-4 py-2 rounded-md border border-[#80808032]">

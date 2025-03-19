@@ -50,7 +50,7 @@
                     <div class=" w-[13rem] h-[10rem] relative">
                         <img loading="lazy" decoding="async" id="noimage" src="
                         @if (isset($about))
-                            /storage/{{$about->image}}
+                            /store/{{$about->image}}
                         @else
                             {{asset('images/noimage.png')}}
                         @endif

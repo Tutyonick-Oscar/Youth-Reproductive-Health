@@ -42,7 +42,8 @@
                 <div class="flex flex-col w-full gap-6">
                     <div class=" w-[13rem] h-[10rem] relative">
                         <img loading="lazy" decoding="async" id="noimage1" src="
-                        @if (isset($mission))/storage/{{$mission->image1}}
+                        @if (isset($mission))
+                            /store/{{$mission->image1}}
                         @else
                           {{asset('images/noimage.png')}}  
                         @endif" alt="" width="200" height="150"
@@ -58,10 +59,11 @@
                         @enderror
                     </div>
                     <div class=" w-[13rem] h-[10rem] relative ">
-                        <img id="noimage2" src="
-                        @if (isset($mission))/storage/{{$mission->image2}}
+                        <img id="noimage2"src="
+                        @if (isset($mission))
+                            /store/$mission->image2
                         @else
-                          {{asset('images/noimage.png')}}  
+                        asset('images/noimage.png')
                         @endif"
                         alt="" width="200" height="150"
                         class=" object-cover rounded-[4px] w-full h-full">

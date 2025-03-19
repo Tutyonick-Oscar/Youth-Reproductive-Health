@@ -4,8 +4,8 @@
 @include('layouts.nav')
     <section
         class="justify-end w-full h-auto mt-16 xl lg:bg-secodary sm:mt-12 lg:mt-32 lg:flex">
-        <div style="background-image:url(/storage/{{$cause->image}})"
-            class="bg-blend-darken bg-cover  self-end flex flex-col 
+        <div style="background-image:url(/store/{{$cause->image}})"
+            class="px-10 bg-blend-darken bg-cover  self-end flex flex-col 
             items-center justify-center gap-5 overflow-hidden bg-bg bg-opacity-60 w-full 
             h-[20rem] lg:h-[38rem]">
             <h1 class="text-3xl text-white lg:text-5xl xl:text-7xl">

@@ -4,10 +4,10 @@
     @include('layouts.nav')
     <section
         class="justify-end w-full h-auto mt-16 lg:bg-secodary sm:mt-12 lg:mt-32 lg:flex">
-        <div style="background-image:url({{asset('images/8.jpg')}})"
+        <div style="background-image:url(/store/{{$about->image}})"
              class="bg-blend-darken bg-cover flex flex-col 
              items-center justify-center gap-5 overflow-hidden bg-bg bg-opacity-60 w-full 
-             h-[20rem] lg:h-[35rem]">
+             h-[20rem] lg:h-[38rem]">
             <h1 class="text-3xl text-white lg:text-6xl">
                 Droits sexuels et reproductifs
             </h1>
@@ -54,7 +54,7 @@
                 @foreach ($members as $member)
                 <div id="about_member" data-iteration="{{$loop->iteration}}" class="min-w-[25rem] gap-4 md:gap-8 bg-white rounded-md shadow-lg md:w-1/2 lg:gap-0 flex">
                    <div class="w-1/2 sm:h-[14rem] h-[12rem] lg:w-1/2 lg:h-[20rem] rounded-md ">
-                        <img loading="lazy" decoding="async"  src="{{asset('images/lazy.jpg')}}" data-src="/storage/{{$member->image}}" alt="managing director" width="250" height="300"
+                        <img loading="lazy" decoding="async"  src="{{asset('images/lazy.jpg')}}" data-src="/store/{{$member->image}}" alt="managing director" width="250" height="300"
                         class= "object-cover w-full h-full "
                         >
                    </div>
